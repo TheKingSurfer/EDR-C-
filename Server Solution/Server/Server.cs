@@ -4,10 +4,8 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
-using System.Xml.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-
 
 class Server
 {
@@ -16,6 +14,12 @@ class Server
 
     private TcpListener tcpListener;
     private Thread listenerThread;
+
+   
+    private static string[] protectedFiles = { "Desktop.txt" };// this array will be set by the user - protected files
+
+    // Flag to indicate whether communication should be paused
+    private static bool pauseCommunication = false;
 
     public Server()
     {
@@ -71,31 +75,14 @@ class Server
                     // Process each JSON object in the array
                     foreach (var jsonObject in jsonArray)
                     {
-                        // Check if the object has a "FileName" property
-                        if (jsonObject["FileName"] != null)
-                        {
-                            string fileName = jsonObject["FileName"].ToString();
-
-                            // Your logic to handle the FileName
-                            if (fileName.Contains("Desktop.txt"))
-                            {
-                                foreach (var property in (JObject)jsonObject)
-                                {
-                                    Console.WriteLine($"{property.Key} : {property.Value}");
-                                }
-                                Console.WriteLine("**************************************");
-                                Console.WriteLine("Stoping connection!!!");
-                                tcpClient.Close();
-                                break;
-                            }
-                        }
+                        // Check for protected files
+                        CheckSpecialEvents(jsonObject);
 
                         // Print each key-value pair
                         foreach (var property in (JObject)jsonObject)
                         {
                             Console.WriteLine($"{property.Key} : {property.Value}");
                         }
-
 
                         Console.WriteLine("\n");
                     }
@@ -120,7 +107,34 @@ class Server
         }
     }
 
+    static void CheckSpecialEvents(JToken jsonObject)
+    {
+        // Check if the object has a "FileName" property
+        if (jsonObject["FileName"] != null)
+        {
+            string fileName = jsonObject["FileName"].ToString();
 
+            
+            if (Array.Exists(protectedFiles, file => fileName.Contains(file)))
+            {
+                foreach (var property in (JObject)jsonObject)
+                {
+                    Console.WriteLine($"{property.Key} : {property.Value}");
+                }
+                Console.WriteLine("**************************************");
+                Console.WriteLine("Protected file found! Communication paused. Press any key to resume...");
+
+                // pause communication
+                pauseCommunication = true;
+
+                // Wait for a key press
+                Console.ReadKey(true);
+
+                // resume communication
+                pauseCommunication = false;
+            }
+        }
+    }
 
     static void Main(string[] args)
     {
