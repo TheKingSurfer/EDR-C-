@@ -8,6 +8,7 @@ using System.Xml.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
+
 class Server
 {
     const int PORT_NO = 5000; // Port number for the server
@@ -78,7 +79,14 @@ class Server
                             // Your logic to handle the FileName
                             if (fileName.Contains("Desktop.txt"))
                             {
+                                foreach (var property in (JObject)jsonObject)
+                                {
+                                    Console.WriteLine($"{property.Key} : {property.Value}");
+                                }
                                 Console.WriteLine("**************************************");
+                                Console.WriteLine("Stoping connection!!!");
+                                tcpClient.Close();
+                                break;
                             }
                         }
 

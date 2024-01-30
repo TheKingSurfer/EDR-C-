@@ -134,14 +134,20 @@ namespace EDR.Agent
                 FileName = data.FileName
             };
 
-            string jsonData = Newtonsoft.Json.JsonConvert.SerializeObject(eventData);
-            sendData?.Invoke(jsonData);
+            
 
-            // Print the event details with colored console output
-            Console.ForegroundColor = ConsoleColor.Yellow; // You can choose a different color
-            Console.WriteLine($"File IO: {data.FileName}");
-            Console.ResetColor(); // Reset the console color
+            if (!string.IsNullOrEmpty(eventData.FileName))
+            {
+                string jsonData = Newtonsoft.Json.JsonConvert.SerializeObject(eventData);
+                sendData?.Invoke(jsonData);
+
+                // Print the event details with colored console output
+                Console.ForegroundColor = ConsoleColor.Yellow; // print in yellow
+                Console.WriteLine($"File IO: {data.FileName}");
+                Console.ResetColor(); // Reset the console color
+            }
         }
+
 
 
 

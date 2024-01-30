@@ -40,10 +40,7 @@ namespace EDR.Agent
             byte[] buffer = Encoding.UTF8.GetBytes(jsonArray + Environment.NewLine);
             nwStream.Write(buffer, 0, buffer.Length);
 
-            //buffer = new byte[1024];
-            //int bytesRead = nwStream.Read(buffer, 0, buffer.Length);
-            //string response = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-            //Console.WriteLine("Received from server: " + response);
+            
         }
     }
 }
