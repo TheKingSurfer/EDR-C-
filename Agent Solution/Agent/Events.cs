@@ -131,7 +131,8 @@ namespace EDR.Agent
             {
                 EventName = "********* FileIOReadWrite *********",
                 ProcessId = data.ProcessID,
-                FileName = data.FileName
+                FileName = data.FileName,
+                TimeStamp = data.TimeStamp
             };
 
             
