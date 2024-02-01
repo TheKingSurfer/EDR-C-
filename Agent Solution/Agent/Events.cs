@@ -11,6 +11,14 @@ using Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP;
 
 namespace EDR.Agent
 {
+    public class FileIOEventData
+    {
+        public string EventName { get; set; }
+        public int ProcessId { get; set; }
+        public string FileName { get; set; }
+        public DateTime TimeStamp { get; set; }
+        public string HashCode { get; set; }
+    }
     public class EDRProcessor
     {
         public readonly TraceEventSession kernelSession;
@@ -35,6 +43,7 @@ namespace EDR.Agent
 
         public EDRProcessor(Action<string> sendDataCallback)
         {
+
             if (!(TraceEventSession.IsElevated() ?? false))
             {
                 Console.WriteLine("Please run as administrator");
@@ -125,9 +134,10 @@ namespace EDR.Agent
             CheckProcessPermissions(data.ProcessID);
         }
 
+
         private void fileIOReadWrite(FileIOReadWriteTraceData data)
         {
-            var eventData = new
+            var eventData = new FileIOEventData
             {
                 EventName = "********* FileIOReadWrite *********",
                 ProcessId = data.ProcessID,
@@ -135,17 +145,31 @@ namespace EDR.Agent
                 TimeStamp = data.TimeStamp
             };
 
-            
-
             if (!string.IsNullOrEmpty(eventData.FileName))
             {
+                // Generate hash code for the involved values
+                eventData.HashCode = GenerateHashCode(eventData.ProcessId, eventData.FileName, eventData.TimeStamp);
+
+                // Convert the named class object to JSON
                 string jsonData = Newtonsoft.Json.JsonConvert.SerializeObject(eventData);
                 sendData?.Invoke(jsonData);
 
                 // Print the event details with colored console output
                 Console.ForegroundColor = ConsoleColor.Yellow; // print in yellow
-                Console.WriteLine($"File IO: {data.FileName}");
+                Console.WriteLine($"File IO: {data.FileName} - Hash Code: {eventData.HashCode}");
                 Console.ResetColor(); // Reset the console color
+            }
+        }
+
+        // Helper method to generate SHA-256 hash code
+        private string GenerateHashCode(int processId, string fileName, DateTime timeStamp)
+        {
+            string concatenatedString = $"{processId}-{fileName}-{timeStamp}";
+
+            using (var sha256 = System.Security.Cryptography.SHA256.Create())
+            {
+                byte[] hashBytes = sha256.ComputeHash(System.Text.Encoding.UTF8.GetBytes(concatenatedString));
+                return BitConverter.ToString(hashBytes).Replace("-", "");
             }
         }
 
