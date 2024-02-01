@@ -36,7 +36,7 @@ namespace EDR.Agent
             // Create a JSON array from the provided data
             string jsonArray = "[" + string.Join(",", data) + "]";
 
-            // Use UTF-8 encoding
+            
             byte[] buffer = Encoding.UTF8.GetBytes(jsonArray + Environment.NewLine);
             nwStream.Write(buffer, 0, buffer.Length);
 
