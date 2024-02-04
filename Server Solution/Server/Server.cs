@@ -40,19 +40,21 @@ class Server
         while (true)
         {
             clientCounter++;
-            // Blocks until a client has connected to the server
             TcpClient client = this.tcpListener.AcceptTcpClient();
 
-            // Create a thread to handle communication with the connected client
+            // Notify the WebSocket server when a new client is connected
+
+            NotifyWebSocketServer($"New client connected: {client}");
             Thread clientThread = new Thread(new ParameterizedThreadStart(HandleClientComm));
             Console.WriteLine($"Client Detected {clientCounter} : IP - {client.ToString()}");
-
             clientThread.Start(client);
         }
     }
 
+
     private void HandleClientComm(object clientObj)
     {
+        
         TcpClient tcpClient = (TcpClient)clientObj;
         NetworkStream clientStream = tcpClient.GetStream();
 
@@ -198,6 +200,15 @@ class Server
         }
         return true;
     }
+    private static void NotifyWebSocketServer(string message)
+    {
+        // Use a WebClient to send a notification to the WebSocket server
+        using (var client = new WebClient())
+        {
+            client.UploadString("http://localhost:8080/notify", message);
+        }
+    }
+
 
     static void Main(string[] args)
     {
