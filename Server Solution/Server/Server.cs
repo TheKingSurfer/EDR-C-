@@ -80,18 +80,18 @@ class Server
                     {
                         CheckSpecialEvents(jsonObject,clientStream);
 
-                        foreach (var property in (JObject)jsonObject)
-                        {
-                            Console.WriteLine($"{property.Key} : {property.Value}");
-                        }
+                        //foreach (var property in (JObject)jsonObject)
+                        //{
+                        //    Console.WriteLine($"{property.Key} : {property.Value}");
+                        //}
 
-                        Console.WriteLine("\n");
+                        //Console.WriteLine("\n");
                     }
                 }
                 catch (JsonReaderException)
                 {
                     Console.WriteLine("Invalid JSON format, skipping...");
-                    Console.WriteLine($"Received data: {jsonData}");
+                    Console.WriteLine($"Received data: {jsonData}\n");
                     Console.WriteLine("\n");
 
                     continue;
@@ -173,6 +173,7 @@ class Server
 
             Console.WriteLine($"Process ID: {processId}");
             //Console.WriteLine($"Process State: {(process.HasExited ? "Exited" : "Running")}"); System.ComponentModel.Win32Exception: 'Access is denied'
+            Console.WriteLine($"Process Name : {process.ProcessName}");
 
             Console.WriteLine($"Is Suspended: {AreAllThreadsSuspended(process)}");
             
@@ -181,6 +182,9 @@ class Server
         {
             Console.WriteLine($"Process with ID {processId} not found.");
         }
+
+        //Microsoft.Diagnostics.Tracing.AutomatedAnalysis.Process process = Microsoft.Diagnostics.Tracing.AutomatedAnalysis.Process. ;
+        //Console.WriteLine($"process path : {process.}");
     }
     static bool AreAllThreadsSuspended(System.Diagnostics.Process process)
     {

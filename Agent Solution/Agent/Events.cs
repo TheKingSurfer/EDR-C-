@@ -110,7 +110,7 @@ namespace EDR.Agent
                 if (payloadString != null && payloadString.Contains(@"C:\Users\Owner\Desktop\Desktop.txt"))
                 {
                     // Print the event details
-                    Console.WriteLine($"************{traceEvent.TimeStamp} - {traceEvent.ProcessName} ({traceEvent.ProcessID}) - {traceEvent.EventName} - {payloadString} ************");
+                    //Console.WriteLine($"************{traceEvent.TimeStamp} - {traceEvent.ProcessName} ({traceEvent.ProcessID}) - {traceEvent.EventName} - {payloadString} ************");
                 }
             }
         }
@@ -131,7 +131,7 @@ namespace EDR.Agent
             string jsonData = Newtonsoft.Json.JsonConvert.SerializeObject(eventData);
             sendData?.Invoke(jsonData);
 
-            CheckProcessPermissions(data.ProcessID);
+            //CheckProcessPermissions(data.ProcessID);
         }
 
 
@@ -155,9 +155,9 @@ namespace EDR.Agent
                 sendData?.Invoke(jsonData);
 
                 // Print the event details with colored console output
-                Console.ForegroundColor = ConsoleColor.Yellow; // print in yellow
-                Console.WriteLine($"File IO: {data.FileName} - Hash Code: {eventData.HashCode}");
-                Console.ResetColor(); // Reset the console color
+                //Console.ForegroundColor = ConsoleColor.Yellow; // print in yellow
+                //Console.WriteLine($"File IO: {data.FileName} - Hash Code: {eventData.HashCode}");
+                //Console.ResetColor(); // Reset the console color
             }
         }
 

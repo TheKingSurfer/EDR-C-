@@ -8,10 +8,10 @@ namespace ProcessC
 {
     public class ProcessCommand
     {
-        public string Command { get; set; } // Change the type to string
+        public string Command { get; set; } 
         public int ProcessId { get; set; }
 
-        public ProcessCommand(string command, int processId) // Change the type of the parameter
+        public ProcessCommand(string command, int processId) 
         {
             Command = command;
             ProcessId = processId;
