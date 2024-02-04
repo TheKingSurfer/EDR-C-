@@ -45,7 +45,8 @@ class Server
 
             // Create a thread to handle communication with the connected client
             Thread clientThread = new Thread(new ParameterizedThreadStart(HandleClientComm));
-            Console.WriteLine($"Client Detected {clientCounter}");
+            Console.WriteLine($"Client Detected {clientCounter} : IP - {client.ToString()}");
+
             clientThread.Start(client);
         }
     }
