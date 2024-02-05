@@ -108,11 +108,8 @@ class Program
         context.Response.Headers.Add("Access-Control-Allow-Methods", "GET");
         context.Response.Headers.Add("Access-Control-Allow-Headers", "Content-Type");
 
-        // Extract and clean up IP addresses for better display
-        List<string> cleanedUpAddresses = connectedClients.ConvertAll(address => CleanUpIpAddress(address));
-
         // Return the list of connected clients as a JSON array
-        string response = Newtonsoft.Json.JsonConvert.SerializeObject(cleanedUpAddresses);
+        string response = Newtonsoft.Json.JsonConvert.SerializeObject(connectedClients);
         byte[] buffer = Encoding.UTF8.GetBytes(response);
 
         context.Response.ContentType = "application/json"; // Set content type to JSON
@@ -120,6 +117,7 @@ class Program
         context.Response.StatusCode = 200;
         context.Response.Close();
     }
+
 
     private static string CleanUpIpAddress(string ipAddress)
     {
