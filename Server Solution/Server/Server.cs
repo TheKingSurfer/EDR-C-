@@ -216,11 +216,13 @@ class Server
         // Use a WebClient to send a notification to the WebSocket server
         using (var webClient = new WebClient())
         {
-            // Include the IP address and port number in the message
+            // Include the IP address and port number in the message in the correct format
             string message = $"{ipAddress}:{port}";
+            webClient.Headers[HttpRequestHeader.ContentType] = "application/json"; // Set content type to JSON
             webClient.UploadString("http://localhost:8080/notify", message);
         }
     }
+
 
 
     static void Main(string[] args)

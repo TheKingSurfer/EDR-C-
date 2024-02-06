@@ -66,7 +66,7 @@ class Program
         {
             await Task.Delay(1000); // Adjust this delay as needed
 
-            // You can add more functionality here to handle real-time events
+            
         }
 
         Console.WriteLine("WebSocket connection closed.");
@@ -76,19 +76,28 @@ class Program
 
     private static void ListenForClients()
     {
-        while (true)
+        try
         {
-            var context = httpListener.GetContext();
-            if (context.Request.HttpMethod == "POST" && context.Request.Url.AbsolutePath == "/notify")
+            while (true)
             {
-                HandleNotification(context);
-            }
-            else if (context.Request.HttpMethod == "GET" && context.Request.Url.AbsolutePath == "/connected-clients")
-            {
-                ReturnConnectedClients(context);
+                var context = httpListener.GetContext();
+                if (context.Request.HttpMethod == "POST" || context.Request.Url.AbsolutePath == "/notify")
+                {
+                    HandleNotification(context);
+                }
+                else if (context.Request.HttpMethod == "GET" || context.Request.Url.AbsolutePath == "/connected-clients")
+                {
+                    ReturnConnectedClients(context);
+                }
             }
         }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error in ListenForClients: {ex.Message}");
+            // You might want to handle the error here, such as logging it or taking appropriate action
+        }
     }
+
 
     private static void HandleNotification(HttpListenerContext context)
     {
