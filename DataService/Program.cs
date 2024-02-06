@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Net.WebSockets;
@@ -49,7 +50,7 @@ class Program
             Console.WriteLine("WebSocket connection established.");
 
             // Add the connected client information to the list
-            connectedClients.Add(context.Request.RemoteEndPoint.ToString());
+            //connectedClients.Add(context.Request.RemoteEndPoint.ToString());
         }
         catch (Exception ex)
         {
@@ -91,15 +92,33 @@ class Program
 
     private static void HandleNotification(HttpListenerContext context)
     {
-        using (var reader = new System.IO.StreamReader(context.Request.InputStream, context.Request.ContentEncoding))
+        using (var reader = new StreamReader(context.Request.InputStream, context.Request.ContentEncoding))
         {
             string message = reader.ReadToEnd();
             Console.WriteLine($"Notification received: {message}");
+
+            // Extract IP address and port number from the message
+            string[] parts = message.Split(':');
+            if (parts.Length == 2)
+            {
+                string ipAddress = parts[0];
+                string port = parts[1];
+
+                // Store the IP address and port number in a list
+                string clientInfo = $"{ipAddress}:{port}";
+                connectedClients.Add(clientInfo);
+                Console.WriteLine($"Client connected: {clientInfo}");
+            }
+            else
+            {
+                Console.WriteLine("Invalid notification format. Expected 'IPAddress:Port'.");
+            }
         }
 
         context.Response.StatusCode = 200;
         context.Response.Close();
     }
+
 
     private static void ReturnConnectedClients(HttpListenerContext context)
     {

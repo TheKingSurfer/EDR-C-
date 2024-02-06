@@ -44,9 +44,15 @@ class Server
 
             // Notify the WebSocket server when a new client is connected
 
-            NotifyWebSocketServer($"New client connected: {client}");
+            NotifyWebSocketServer(client);
             Thread clientThread = new Thread(new ParameterizedThreadStart(HandleClientComm));
-            Console.WriteLine($"Client Detected {clientCounter} : IP - {client.ToString()}");
+
+
+            // Get the client's IP address and port number
+            var endPoint = (IPEndPoint)client.Client.RemoteEndPoint;
+            string ipAddress = endPoint.Address.ToString();
+            int port = endPoint.Port;
+            Console.WriteLine($"Client Detected {clientCounter} : IP - {ipAddress}:{port}");
             clientThread.Start(client);
         }
     }
@@ -200,12 +206,19 @@ class Server
         }
         return true;
     }
-    private static void NotifyWebSocketServer(string message)
+    private static void NotifyWebSocketServer(TcpClient client)
     {
+        // Get the client's IP address and port number
+        var endPoint = (IPEndPoint)client.Client.RemoteEndPoint;
+        string ipAddress = endPoint.Address.ToString();
+        int port = endPoint.Port;
+
         // Use a WebClient to send a notification to the WebSocket server
-        using (var client = new WebClient())
+        using (var webClient = new WebClient())
         {
-            client.UploadString("http://localhost:8080/notify", message);
+            // Include the IP address and port number in the message
+            string message = $"{ipAddress}:{port}";
+            webClient.UploadString("http://localhost:8080/notify", message);
         }
     }
 
