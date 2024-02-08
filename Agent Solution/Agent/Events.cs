@@ -91,13 +91,13 @@ namespace EDR.Agent
 
             kernelSession.Source.Process();
 
-            sendData?.Invoke("Monitoring started");
+            //sendData?.Invoke("Monitoring started");
         }
 
         public void StopMonitoring()
         {
             kernelSession.Dispose();
-            sendData?.Invoke("Monitoring stopped");
+            //sendData?.Invoke("Monitoring stopped");
         }
         static void HandleEvent(TraceEvent traceEvent)
         {

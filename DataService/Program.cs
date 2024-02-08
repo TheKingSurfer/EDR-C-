@@ -31,8 +31,10 @@ class Program
             if (context.Request.IsWebSocketRequest)
             {
                 ProcessWebSocketRequest(context);
-            }
-            else
+            } else if (context.Request.HttpMethod == "POST" || context.Request.Url.AbsolutePath == "/notify")
+            {
+                HandleNotification(context);
+            }else
             {
                 context.Response.StatusCode = 400;
                 context.Response.Close();
@@ -104,7 +106,7 @@ class Program
         using (var reader = new StreamReader(context.Request.InputStream, context.Request.ContentEncoding))
         {
             string message = reader.ReadToEnd();
-            Console.WriteLine($"Notification received: {message}");
+            //Console.WriteLine($"Notification received: {message}");
 
             // Extract IP address and port number from the message
             string[] parts = message.Split(':');
