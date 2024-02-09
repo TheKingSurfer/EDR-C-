@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
@@ -220,6 +221,34 @@ class Server
             string message = $"{ipAddress}:{port}";
             webClient.Headers[HttpRequestHeader.ContentType] = "application/json"; // Set content type to JSON
             webClient.UploadString("http://localhost:8080/notify", message);
+        }
+    }
+    private static void SendEventDataToWebSocketServer(string ipAddress, int port, string eventData)
+    {
+        try
+        {
+            // Create a dictionary with the required data
+            var data = new Dictionary<string, object>
+        {
+            { "ipaddress", ipAddress },
+            { "PortNumber", port },
+            { "EventData", eventData }
+        };
+
+            // Serialize the dictionary to JSON format
+            string jsonData = JsonConvert.SerializeObject(data);
+
+            // Use a WebClient to send a notification to the WebSocket server
+            using (var webClient = new WebClient())
+            {
+                webClient.Headers[HttpRequestHeader.ContentType] = "application/json"; // Set content type to JSON
+                webClient.UploadString("http://localhost:8080/send-event-data", jsonData);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error sending event data to WebSocket server: {ex.Message}");
+            // Handle the error as needed
         }
     }
 

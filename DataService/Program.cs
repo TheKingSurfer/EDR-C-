@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
@@ -13,6 +14,7 @@ class Program
     private static HttpListener httpListener;
     private static Thread listenerThread;
     private static List<string> connectedClients = new List<string>();
+    private static Dictionary<string, List<string>> clientEventDataDict = new Dictionary<string, List<string>>();
 
     static async Task Main()
     {
@@ -91,6 +93,10 @@ class Program
                 {
                     ReturnConnectedClients(context);
                 }
+                else if (context.Request.HttpMethod == "POST" && context.Request.Url.AbsolutePath == "/event-notification")
+                {
+                    ClientsDetailsNotification(context); // Call HandleNotifications for handling event notifications
+                }
             }
         }
         catch (Exception ex)
@@ -148,6 +154,119 @@ class Program
         context.Response.Close();
     }
 
+
+
+
+
+
+    private static async void ClientsDetailsNotification(HttpListenerContext context)
+    {
+        HttpListenerWebSocketContext webSocketContext = null;
+
+        try
+        {
+            webSocketContext = await context.AcceptWebSocketAsync(subProtocol: null);
+            Console.WriteLine("WebSocket connection established.");
+
+            var webSocket = webSocketContext.WebSocket;
+
+
+            while (webSocket.State == WebSocketState.Open)
+            {
+                // Buffer to store incoming data
+                byte[] buffer = new byte[1024];
+                ArraySegment<byte> bufferSegment = new ArraySegment<byte>(buffer);
+
+                // Receive data from the WebSocket client
+                WebSocketReceiveResult result = await webSocket.ReceiveAsync(bufferSegment, CancellationToken.None);
+
+                if (result.MessageType == WebSocketMessageType.Text)
+                {
+                    // Convert the received data to a string
+                    string receivedData = Encoding.UTF8.GetString(bufferSegment.Array, 0, result.Count);
+
+                    // Parse the received JSON object
+                    JObject jsonNotification = JObject.Parse(receivedData);
+
+                    // Extract client IP address, port, and event data from the JSON object
+                    string clientIpAddress = jsonNotification["ClientIpAddress"].ToString();
+                    int clientPort = int.Parse(jsonNotification["ClientPort"].ToString());
+                    string eventData = jsonNotification["EventData"].ToString();
+
+                    // Construct the client identifier using IP address and port number
+                    string clientIdentifier = $"{clientIpAddress}:{clientPort}";
+
+                    // Check if the client identifier exists in the dictionary
+                    if (!clientEventDataDict.ContainsKey(clientIdentifier))
+                    {
+                        // If not, add a new entry with an empty list
+                        clientEventDataDict[clientIdentifier] = new List<string>();
+                    }
+
+                    // Add the event data to the list corresponding to the client
+                    clientEventDataDict[clientIdentifier].Add(eventData);
+
+                    // Print the updated dictionary for debugging
+                    Console.WriteLine("Client Event Data Dictionary:");
+                    foreach (var kvp in clientEventDataDict)
+                    {
+                        Console.WriteLine($"{kvp.Key}: {string.Join(", ", kvp.Value)}");
+                    }
+                }
+            }
+
+            Console.WriteLine("WebSocket connection closed.");
+        }
+        catch (Exception ex)
+        {
+            context.Response.StatusCode = 500;
+            context.Response.Close();
+            Console.WriteLine($"WebSocket connection error: {ex.Message}");
+            return;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    private static async Task ReturnClientEvents(HttpListenerContext context)
+    {
+        // Extract IP address and port number from query parameters
+        string ipAddress = context.Request.QueryString.Get("ip");
+        string port = context.Request.QueryString.Get("port");
+        string clientKey = $"{ipAddress}:{port}";
+
+        if (clientEventDataDict.ContainsKey(clientKey))
+        {
+            // Return client events as JSON response
+            string response = Newtonsoft.Json.JsonConvert.SerializeObject(clientEventDataDict[clientKey]);
+            byte[] buffer = System.Text.Encoding.UTF8.GetBytes(response);
+
+            context.Response.ContentType = "application/json";
+            context.Response.OutputStream.Write(buffer, 0, buffer.Length);
+            context.Response.StatusCode = 200;
+        }
+        else
+        {
+            context.Response.StatusCode = 404; // Client events not found
+        }
+
+        context.Response.Close();
+    }
 
     private static string CleanUpIpAddress(string ipAddress)
     {
