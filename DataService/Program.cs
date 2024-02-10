@@ -15,6 +15,17 @@ class Program
     private static Thread listenerThread;
     private static List<string> connectedClients = new List<string>();
     private static Dictionary<string, List<string>> clientEventDataDict = new Dictionary<string, List<string>>();
+    //private static Dictionary<string, (List<WebSocket> sockets, string page)> clientWebSocketDict = new Dictionary<string, (List<WebSocket>, string)>();
+    private static Dictionary<(string connIp, string connPort), (string clientIp, string clientPort, WebSocket)> clientWebSocketDict = new Dictionary<(string, string), (string, string, WebSocket)>();
+
+
+
+
+    // Inside the HandleHandshakeMessage method:
+
+
+
+
 
     static async Task Main()
     {
@@ -33,10 +44,19 @@ class Program
             if (context.Request.IsWebSocketRequest)
             {
                 ProcessWebSocketRequest(context);
-            } else if (context.Request.HttpMethod == "POST" || context.Request.Url.AbsolutePath == "/notify")
+            } else if ( context.Request.Url.AbsolutePath == "/notify")
             {
                 HandleNotification(context);
-            }else
+            }
+            else if (context.Request.Url.AbsolutePath == "/event-notification")
+            {
+                ClientsDetailsNotification(context); // Call HandleNotifications for handling event notifications
+
+            } else if (context.Request.Url.AbsolutePath == "/client-details-page")
+            {
+                ProcessWebSocketRequest(context);
+            }
+            else
             {
                 context.Response.StatusCode = 400;
                 context.Response.Close();
@@ -46,15 +66,35 @@ class Program
 
     private static async void ProcessWebSocketRequest(HttpListenerContext context)
     {
-        HttpListenerWebSocketContext webSocketContext = null;
+        
 
         try
         {
-            webSocketContext = await context.AcceptWebSocketAsync(subProtocol: null);
+            HttpListenerWebSocketContext webSocketContext = await context.AcceptWebSocketAsync(subProtocol: null);
             Console.WriteLine("WebSocket connection established.");
 
-            // Add the connected client information to the list
-            //connectedClients.Add(context.Request.RemoteEndPoint.ToString());
+            WebSocket webSocket = webSocketContext.WebSocket;
+
+            while (webSocket.State == WebSocketState.Open)
+            {
+                // Create a buffer to store incoming message data
+                var buffer = new ArraySegment<byte>(new byte[4096]);
+
+                // Receive message from WebSocket client
+                WebSocketReceiveResult result = await webSocket.ReceiveAsync(buffer, CancellationToken.None);
+
+                // Handle handshake messages
+                try
+                {
+                    string message = Encoding.UTF8.GetString(buffer.Array, 0, result.Count);
+                    HandleHandshakeMessage(webSocket, message);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"Error handling handshake message: {e}");
+                    // Handle the error as needed
+                }
+            }
         }
         catch (Exception ex)
         {
@@ -63,19 +103,6 @@ class Program
             Console.WriteLine($"WebSocket connection error: {ex.Message}");
             return;
         }
-
-        var webSocket = webSocketContext.WebSocket;
-
-        while (webSocket.State == WebSocketState.Open)
-        {
-            await Task.Delay(1000); // Adjust this delay as needed
-
-            
-        }
-
-        Console.WriteLine("WebSocket connection closed.");
-        // Remove the disconnected client information from the list
-        connectedClients.Remove(context.Request.RemoteEndPoint.ToString());
     }
 
     private static void ListenForClients()
@@ -85,17 +112,18 @@ class Program
             while (true)
             {
                 var context = httpListener.GetContext();
-                if (context.Request.HttpMethod == "POST" || context.Request.Url.AbsolutePath == "/notify")
+                if (context.Request.Url.AbsolutePath == "/notify")
                 {
                     HandleNotification(context);
                 }
-                else if (context.Request.HttpMethod == "GET" || context.Request.Url.AbsolutePath == "/connected-clients")
+                else if ( context.Request.Url.AbsolutePath == "/connected-clients")
                 {
                     ReturnConnectedClients(context);
                 }
-                else if (context.Request.HttpMethod == "POST" && context.Request.Url.AbsolutePath == "/event-notification")
+                else if ( context.Request.Url.AbsolutePath == "/event-notification")
                 {
-                    ClientsDetailsNotification(context); // Call HandleNotifications for handling event notifications
+                    // ClientsDetailsNotification(context); // Call HandleNotifications for handling event notifications
+                    ProcessWebSocketRequest(context);
                 }
             }
         }
@@ -159,86 +187,57 @@ class Program
 
 
 
-    private static async void ClientsDetailsNotification(HttpListenerContext context)
+    private static async Task ClientsDetailsNotification(HttpListenerContext context)
     {
-        HttpListenerWebSocketContext webSocketContext = null;
-
         try
         {
-            webSocketContext = await context.AcceptWebSocketAsync(subProtocol: null);
-            Console.WriteLine("WebSocket connection established.");
+            HttpListenerRequest request = context.Request;
 
-            var webSocket = webSocketContext.WebSocket;
-
-
-            while (webSocket.State == WebSocketState.Open)
+            using (var reader = new StreamReader(request.InputStream, request.ContentEncoding))
             {
-                // Buffer to store incoming data
-                byte[] buffer = new byte[1024];
-                ArraySegment<byte> bufferSegment = new ArraySegment<byte>(buffer);
+                string message = reader.ReadToEnd();
+                //Console.WriteLine($"Notification received: {message}");
 
-                // Receive data from the WebSocket client
-                WebSocketReceiveResult result = await webSocket.ReceiveAsync(bufferSegment, CancellationToken.None);
+                // Extract client IP address, port, and event data from the message
+                JObject jsonNotification = JObject.Parse(message);
 
-                if (result.MessageType == WebSocketMessageType.Text)
+                string clientIpAddress = jsonNotification["ClientIpAddress"].ToString();
+                int clientPort = int.Parse(jsonNotification["ClientPort"].ToString());
+                string eventData = jsonNotification["EventData"].ToString();
+
+                // Construct the client identifier using IP address and port number
+                string clientIdentifier = $"{clientIpAddress}:{clientPort}";
+
+                // Check if the client identifier exists in the dictionary
+                if (!clientEventDataDict.ContainsKey(clientIdentifier))
                 {
-                    // Convert the received data to a string
-                    string receivedData = Encoding.UTF8.GetString(bufferSegment.Array, 0, result.Count);
+                    // If not, add a new entry with an empty list
+                    clientEventDataDict[clientIdentifier] = new List<string>();
+                }
 
-                    // Parse the received JSON object
-                    JObject jsonNotification = JObject.Parse(receivedData);
+                // Add the event data to the list corresponding to the client
+                clientEventDataDict[clientIdentifier].Add(eventData);
 
-                    // Extract client IP address, port, and event data from the JSON object
-                    string clientIpAddress = jsonNotification["ClientIpAddress"].ToString();
-                    int clientPort = int.Parse(jsonNotification["ClientPort"].ToString());
-                    string eventData = jsonNotification["EventData"].ToString();
-
-                    // Construct the client identifier using IP address and port number
-                    string clientIdentifier = $"{clientIpAddress}:{clientPort}";
-
-                    // Check if the client identifier exists in the dictionary
-                    if (!clientEventDataDict.ContainsKey(clientIdentifier))
-                    {
-                        // If not, add a new entry with an empty list
-                        clientEventDataDict[clientIdentifier] = new List<string>();
-                    }
-
-                    // Add the event data to the list corresponding to the client
-                    clientEventDataDict[clientIdentifier].Add(eventData);
-
-                    // Print the updated dictionary for debugging
-                    Console.WriteLine("Client Event Data Dictionary:");
-                    foreach (var kvp in clientEventDataDict)
-                    {
-                        Console.WriteLine($"{kvp.Key}: {string.Join(", ", kvp.Value)}");
-                    }
+                // Print the updated dictionary for debugging
+                Console.WriteLine("Client Event Data Dictionary:");
+                foreach (var kvp in clientEventDataDict)
+                {
+                    Console.WriteLine($"{kvp.Key}: {string.Join(", ", kvp.Value)}");
                 }
             }
 
-            Console.WriteLine("WebSocket connection closed.");
+            // Send a success response to the client
+            context.Response.StatusCode = 200;
+            context.Response.Close();
         }
         catch (Exception ex)
         {
+            // Send an error response to the client
             context.Response.StatusCode = 500;
             context.Response.Close();
             Console.WriteLine($"WebSocket connection error: {ex.Message}");
-            return;
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -302,5 +301,28 @@ class Program
 
         return string.Empty;
     }
+   
+
+    private static void HandleHandshakeMessage(WebSocket webSocket, string message)
+    {
+        JObject jsonMessage = JObject.Parse(message);
+        string page = jsonMessage["page"].ToString();
+        string connIp = jsonMessage["connIp"]?.ToString();
+        string connPort = jsonMessage["connPort"]?.ToString();
+        string clientIp = jsonMessage["clientIp"]?.ToString();
+        string clientPort = jsonMessage["clientPort"]?.ToString();
+
+        if (page == "ClientDetailsPage")
+        {
+            // Store client WebSocket instance with associated IP and port information
+            clientWebSocketDict[(connIp, connPort)] = (clientIp, clientPort, webSocket);
+        }
+        else if (page == "MainContent")
+        {
+            // Remove client WebSocket instance when it navigates away from ClientDetailsPage
+            clientWebSocketDict.Remove((connIp, connPort));
+        }
+    }
+
 
 }

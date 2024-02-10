@@ -88,7 +88,7 @@ class Server
                     // Process each JSON object in the array
                     foreach (var jsonObject in jsonArray)
                     {
-                        CheckSpecialEvents(jsonObject,clientStream);
+                        CheckSpecialEvents(jsonObject,clientStream,tcpClient);
 
                         //foreach (var property in (JObject)jsonObject)
                         //{
@@ -118,19 +118,20 @@ class Server
         }
     }
 
-    static void CheckSpecialEvents(JToken jsonObject, NetworkStream nwStream)
+    static void CheckSpecialEvents(JToken jsonObject, NetworkStream nwStream,TcpClient client)
     {
         // Check if the object has a "FileName" property
         if (jsonObject["FileName"] != null)
         {
             string fileName = jsonObject["FileName"].ToString();
             int ProcessId=0;
-
+            string eventDataString = "";
             if (Array.Exists(protectedFiles, file => fileName.Contains(file)))
             {
                 foreach (var property in (JObject)jsonObject)
                 {
                     Console.WriteLine($"{property.Key} : {property.Value}");
+                    eventDataString += $"{property.Key}: {property.Value}\n";
                     //extracting the process id 
                     if (property.Key == "ProcessId") 
                     {
@@ -145,6 +146,10 @@ class Server
                         }
                     }
                 }
+                var endPoint = (IPEndPoint)client.Client.RemoteEndPoint;
+                string ipAddress = endPoint.Address.ToString();
+                int port = endPoint.Port;
+                SendEventDataToWebSocketServer(ipAddress,port,eventDataString);
                 pauseCommunication = true;
 
                 Console.WriteLine("**************************************");
@@ -230,8 +235,8 @@ class Server
             // Create a dictionary with the required data
             var data = new Dictionary<string, object>
         {
-            { "ipaddress", ipAddress },
-            { "PortNumber", port },
+            { "ClientIpAddress", ipAddress },
+            { "ClientPort", port.ToString() }, // Convert port to string
             { "EventData", eventData }
         };
 
@@ -242,15 +247,15 @@ class Server
             using (var webClient = new WebClient())
             {
                 webClient.Headers[HttpRequestHeader.ContentType] = "application/json"; // Set content type to JSON
-                webClient.UploadString("http://localhost:8080/send-event-data", jsonData);
+                webClient.UploadString("http://localhost:8080/event-notification", jsonData);
             }
         }
         catch (Exception ex)
         {
             Console.WriteLine($"Error sending event data to WebSocket server: {ex.Message}");
-            // Handle the error as needed
         }
     }
+
 
 
 
