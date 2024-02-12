@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,6 +15,7 @@ class Program
     private static HttpListener httpListener;
     private static Thread listenerThread;
     private static List<string> connectedClients = new List<string>();
+    private static List<WebSocket> webSocketConnection = new List<WebSocket>();
     private static Dictionary<string, List<string>> clientEventDataDict = new Dictionary<string, List<string>>();
     //private static Dictionary<string, (List<WebSocket> sockets, string page)> clientWebSocketDict = new Dictionary<string, (List<WebSocket>, string)>();
     private static Dictionary<(string connIp, string connPort), (string clientIp, string clientPort, WebSocket)> clientWebSocketDict = new Dictionary<(string, string), (string, string, WebSocket)>();
@@ -35,16 +37,18 @@ class Program
 
         Console.WriteLine("WebSocket Server is listening on http://localhost:8080/");
 
-        listenerThread = new Thread(ListenForClients);
-        listenerThread.Start();
+        //listenerThread = new Thread(ListenForClients);
+        //listenerThread.Start();
 
         while (true)
         {
             var context = await httpListener.GetContextAsync();
             if (context.Request.IsWebSocketRequest)
             {
-                ProcessWebSocketRequest(context);
-            } else if ( context.Request.Url.AbsolutePath == "/notify")
+                //ProcessWebSocketRequest(context);
+                HandleFirstConnection(context);
+            }
+            else if (context.Request.Url.AbsolutePath == "/notify")
             {
                 HandleNotification(context);
             }
@@ -52,15 +56,21 @@ class Program
             {
                 ClientsDetailsNotification(context); // Call HandleNotifications for handling event notifications
 
-            } else if (context.Request.Url.AbsolutePath == "/client-details-page")
+            }
+            else if (context.Request.Url.AbsolutePath == "/client-details-page")
             {
                 ProcessWebSocketRequest(context);
             }
-            else
+            else if (context.Request.Url.AbsolutePath == "/connected-clients")
             {
-                context.Response.StatusCode = 400;
-                context.Response.Close();
+                ReturnConnectedClients(context);
+
             }
+            //else
+            //{
+            //    context.Response.StatusCode = 400;
+            //    context.Response.Close();
+            //}
         }
     }
 
@@ -135,34 +145,53 @@ class Program
     }
 
 
-    private static void HandleNotification(HttpListenerContext context)
+    private static async Task NotifyConnectedClient(List<string> connectedClients)
     {
-        using (var reader = new StreamReader(context.Request.InputStream, context.Request.ContentEncoding))
+        string clientInfo = JsonConvert.SerializeObject(connectedClients);
+
+        foreach (var webSocket in webSocketConnection)
         {
-            string message = reader.ReadToEnd();
-            //Console.WriteLine($"Notification received: {message}");
-
-            // Extract IP address and port number from the message
-            string[] parts = message.Split(':');
-            if (parts.Length == 2)
+            if (webSocket.State == WebSocketState.Open)
             {
-                string ipAddress = parts[0];
-                string port = parts[1];
-
-                // Store the IP address and port number in a list
-                string clientInfo = $"{ipAddress}:{port}";
-                connectedClients.Add(clientInfo);
-                Console.WriteLine($"Client connected: {clientInfo}");
-            }
-            else
-            {
-                Console.WriteLine("Invalid notification format. Expected 'IPAddress:Port'.");
+                var buffer = Encoding.UTF8.GetBytes(clientInfo);
+                await webSocket.SendAsync(new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
             }
         }
-
-        context.Response.StatusCode = 200;
-        context.Response.Close();
     }
+
+
+    private static void HandleNotification(HttpListenerContext context)
+{
+    using (var reader = new StreamReader(context.Request.InputStream, context.Request.ContentEncoding))
+    {
+        string message = reader.ReadToEnd();
+        //Console.WriteLine($"Notification received: {message}");
+
+        // Extract IP address and port number from the message
+        string[] parts = message.Split(':');
+        if (parts.Length == 2)
+        {
+            string ipAddress = parts[0];
+            string port = parts[1];
+
+            // Store the IP address and port number in a list
+            string clientInfo = $"{ipAddress}:{port}";
+            connectedClients.Add(clientInfo);
+            Console.WriteLine($"Client connected: {clientInfo}");
+
+            // Notify all connected clients about the new connection
+            Task.Run(async () => await NotifyConnectedClient(connectedClients));
+        }
+        else
+        {
+            Console.WriteLine("Invalid notification format. Expected 'IPAddress:Port'.");
+        }
+    }
+
+    context.Response.StatusCode = 200;
+    context.Response.Close();
+}
+
 
 
     private static void ReturnConnectedClients(HttpListenerContext context)
@@ -321,6 +350,29 @@ class Program
         {
             // Remove client WebSocket instance when it navigates away from ClientDetailsPage
             clientWebSocketDict.Remove((connIp, connPort));
+        }
+    }
+    private static async void HandleFirstConnection(HttpListenerContext context)
+    {
+
+
+        try
+        {
+            HttpListenerWebSocketContext webSocketContext = await context.AcceptWebSocketAsync(subProtocol: null);
+            Console.WriteLine("WebSocket connection established.");
+
+            WebSocket webSocket = webSocketContext.WebSocket;
+            webSocketConnection.Add(webSocket);
+
+
+
+        }
+        catch (Exception ex)
+        {
+            context.Response.StatusCode = 500;
+            context.Response.Close();
+            Console.WriteLine($"WebSocket connection error: {ex.Message}");
+            return;
         }
     }
 
