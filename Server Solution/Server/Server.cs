@@ -18,8 +18,9 @@ class Server
 
     private TcpListener tcpListener;
     private Thread listenerThread;
+    private static List<string> connectedClients = new List<string>();
 
-   
+
     private static string[] protectedFiles = { "Desktop.txt" };// this array will be set by the user - protected files
 
     // Flag to indicate whether communication should be paused
@@ -44,6 +45,7 @@ class Server
             TcpClient client = this.tcpListener.AcceptTcpClient();
 
             // Notify the WebSocket server when a new client is connected
+            
 
             NotifyWebSocketServer(client);
             Thread clientThread = new Thread(new ParameterizedThreadStart(HandleClientComm));
@@ -224,6 +226,7 @@ class Server
         {
             // Include the IP address and port number in the message in the correct format
             string message = $"{ipAddress}:{port}";
+            connectedClients.Add(message);// add the client info into the array
             webClient.Headers[HttpRequestHeader.ContentType] = "application/json"; // Set content type to JSON
             webClient.UploadString("http://localhost:8080/notify", message);
         }
