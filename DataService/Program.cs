@@ -140,7 +140,7 @@ class Program
                 }
                 else if (context.Request.Url.AbsolutePath == "/event-notification")
                 {
-                    // ClientsDetailsNotification(context); // Call HandleNotifications for handling event notifications
+                    
                     ProcessWebSocketRequest(context);
                 }
             }
@@ -148,7 +148,7 @@ class Program
         catch (Exception ex)
         {
             Console.WriteLine($"Error in ListenForClients: {ex.Message}");
-            // You might want to handle the error here, such as logging it or taking appropriate action
+          
         }
     }
 
@@ -377,30 +377,30 @@ class Program
         string clientIp = jsonMessage["clientIp"]?.ToString();
         string clientPort = jsonMessage["clientPort"]?.ToString();
 
-        // Construct the client identifier using IP address and port number
+        
         string clientIdentifier = $"{clientIp}:{clientPort}";
 
         if (page == "ClientDetailsPage")
         {
-            // Store client WebSocket instance with associated IP and port information
+            
             clientWebSocketDict[clientIdentifier] = (connIp, connPort, webSocket);
 
-            // Send the event data of the specific client
+            
             if (clientEventDataDict.ContainsKey(clientIdentifier))
             {
                 var eventData = clientEventDataDict[clientIdentifier];
 
-                // Serialize the event data to JSON
+                
                 var eventDataJson = JsonConvert.SerializeObject(eventData);
 
-                // Send the event data to the client
+                
                 var eventDataBuffer = Encoding.UTF8.GetBytes(eventDataJson);
                 webSocket.SendAsync(new ArraySegment<byte>(eventDataBuffer), WebSocketMessageType.Text, true, CancellationToken.None);
             }
         }
         else if (page == "MainContent")
         {
-            // Remove client WebSocket instance when it navigates away from ClientDetailsPage
+            
             clientWebSocketDict.Remove(clientIdentifier);
         }
     }
