@@ -18,7 +18,8 @@ class Program
     private static List<WebSocket> webSocketConnection = new List<WebSocket>();
     private static Dictionary<string, List<string>> clientEventDataDict = new Dictionary<string, List<string>>();
     //private static Dictionary<string, (List<WebSocket> sockets, string page)> clientWebSocketDict = new Dictionary<string, (List<WebSocket>, string)>();
-    private static Dictionary<(string connIp, string connPort), (string clientIp, string clientPort, WebSocket)> clientWebSocketDict = new Dictionary<(string, string), (string, string, WebSocket)>();
+    //private static Dictionary<(string connIp, string connPort), (string clientIp, string clientPort, WebSocket)> clientWebSocketDict = new Dictionary<(string, string), (string, string, WebSocket)>();
+    private static Dictionary<string, (string connIp, string connPort, WebSocket)> clientWebSocketDict = new Dictionary<string, (string, string, WebSocket)>();
 
 
 
@@ -365,7 +366,7 @@ class Program
 
         return string.Empty;
     }
-   
+
 
     private static void HandleHandshakeMessage(WebSocket webSocket, string message)
     {
@@ -376,15 +377,31 @@ class Program
         string clientIp = jsonMessage["clientIp"]?.ToString();
         string clientPort = jsonMessage["clientPort"]?.ToString();
 
+        // Construct the client identifier using IP address and port number
+        string clientIdentifier = $"{clientIp}:{clientPort}";
+
         if (page == "ClientDetailsPage")
         {
             // Store client WebSocket instance with associated IP and port information
-            clientWebSocketDict[(connIp, connPort)] = (clientIp, clientPort, webSocket);
+            clientWebSocketDict[clientIdentifier] = (connIp, connPort, webSocket);
+
+            // Send the event data of the specific client
+            if (clientEventDataDict.ContainsKey(clientIdentifier))
+            {
+                var eventData = clientEventDataDict[clientIdentifier];
+
+                // Serialize the event data to JSON
+                var eventDataJson = JsonConvert.SerializeObject(eventData);
+
+                // Send the event data to the client
+                var eventDataBuffer = Encoding.UTF8.GetBytes(eventDataJson);
+                webSocket.SendAsync(new ArraySegment<byte>(eventDataBuffer), WebSocketMessageType.Text, true, CancellationToken.None);
+            }
         }
         else if (page == "MainContent")
         {
             // Remove client WebSocket instance when it navigates away from ClientDetailsPage
-            clientWebSocketDict.Remove((connIp, connPort));
+            clientWebSocketDict.Remove(clientIdentifier);
         }
     }
     private static async void HandleFirstConnection(HttpListenerContext context)
