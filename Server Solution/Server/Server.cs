@@ -45,7 +45,7 @@ class Server
             TcpClient client = this.tcpListener.AcceptTcpClient();
 
             // Notify the WebSocket server when a new client is connected
-            
+
 
             NotifyWebSocketServer(client);
             Thread clientThread = new Thread(new ParameterizedThreadStart(HandleClientComm));
@@ -63,7 +63,6 @@ class Server
 
     private void HandleClientComm(object clientObj)
     {
-        
         TcpClient tcpClient = (TcpClient)clientObj;
         NetworkStream clientStream = tcpClient.GetStream();
 
@@ -90,7 +89,7 @@ class Server
                     // Process each JSON object in the array
                     foreach (var jsonObject in jsonArray)
                     {
-                        CheckSpecialEvents(jsonObject,clientStream,tcpClient);
+                        CheckSpecialEvents(jsonObject, clientStream, tcpClient);
 
                         //foreach (var property in (JObject)jsonObject)
                         //{
@@ -113,6 +112,16 @@ class Server
         catch (IOException)
         {
             Console.WriteLine("Client disconnected...");
+
+            // Remove the disconnected client from the connected clients list
+            var endPoint = (IPEndPoint)tcpClient.Client.RemoteEndPoint;
+            string ipAddress = endPoint.Address.ToString();
+            int port = endPoint.Port;
+            string clientInfo = $"{ipAddress}:{port}";
+            connectedClients.Remove(clientInfo);
+            NotifyWebSocketServerRemoved(clientInfo);
+
+
         }
         finally
         {
@@ -120,13 +129,14 @@ class Server
         }
     }
 
-    static void CheckSpecialEvents(JToken jsonObject, NetworkStream nwStream,TcpClient client)
+
+    static void CheckSpecialEvents(JToken jsonObject, NetworkStream nwStream, TcpClient client)
     {
         // Check if the object has a "FileName" property
         if (jsonObject["FileName"] != null)
         {
             string fileName = jsonObject["FileName"].ToString();
-            int ProcessId=0;
+            int ProcessId = 0;
             string eventDataString = "";
             if (Array.Exists(protectedFiles, file => fileName.Contains(file)))
             {
@@ -135,7 +145,7 @@ class Server
                     Console.WriteLine($"{property.Key} : {property.Value}");
                     eventDataString += $"{property.Key}: {property.Value}\n";
                     //extracting the process id 
-                    if (property.Key == "ProcessId") 
+                    if (property.Key == "ProcessId")
                     {
                         try
                         {
@@ -151,7 +161,7 @@ class Server
                 var endPoint = (IPEndPoint)client.Client.RemoteEndPoint;
                 string ipAddress = endPoint.Address.ToString();
                 int port = endPoint.Port;
-                SendEventDataToWebSocketServer(ipAddress,port,eventDataString);
+                SendEventDataToWebSocketServer(ipAddress, port, eventDataString);
                 pauseCommunication = true;
 
                 Console.WriteLine("**************************************");
@@ -193,7 +203,7 @@ class Server
             Console.WriteLine($"Process Name : {process.ProcessName}");
 
             Console.WriteLine($"Is Suspended: {AreAllThreadsSuspended(process)}");
-            
+
         }
         catch (ArgumentException)
         {
@@ -214,6 +224,21 @@ class Server
         }
         return true;
     }
+
+
+    private static void NotifyWebSocketServerRemoved(string message)
+    {
+        
+
+        using (var webClient = new WebClient())
+        {
+            
+            webClient.Headers[HttpRequestHeader.ContentType] = "application/json"; // Set content type to JSON
+            webClient.UploadString("http://localhost:8080/notify-remove", message);
+        }
+    }
+
+
     private static void NotifyWebSocketServer(TcpClient client)
     {
         // Get the client's IP address and port number

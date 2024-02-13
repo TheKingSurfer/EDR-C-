@@ -43,10 +43,10 @@ class Program
         while (true)
         {
             var context = await httpListener.GetContextAsync();
-            if (context.Request.IsWebSocketRequest)
+
+            if (context.Request.Url.AbsolutePath == "/notify-remove")
             {
-                //ProcessWebSocketRequest(context);
-                HandleFirstConnection(context);
+                HandleNotifyRemoveNotification(context);
             }
             else if (context.Request.Url.AbsolutePath == "/notify")
             {
@@ -65,6 +65,10 @@ class Program
             {
                 ReturnConnectedClients(context);
 
+            } else if (context.Request.IsWebSocketRequest)
+            {
+                //ProcessWebSocketRequest(context);
+                HandleFirstConnection(context);
             }
             //else
             //{
@@ -125,12 +129,15 @@ class Program
                 if (context.Request.Url.AbsolutePath == "/notify")
                 {
                     HandleNotification(context);
+                } else if(context.Request.Url.AbsolutePath == "/notify-remove")
+                {
+                    HandleNotifyRemoveNotification(context);
                 }
-                else if ( context.Request.Url.AbsolutePath == "/connected-clients")
+                else if (context.Request.Url.AbsolutePath == "/connected-clients")
                 {
                     ReturnConnectedClients(context);
                 }
-                else if ( context.Request.Url.AbsolutePath == "/event-notification")
+                else if (context.Request.Url.AbsolutePath == "/event-notification")
                 {
                     // ClientsDetailsNotification(context); // Call HandleNotifications for handling event notifications
                     ProcessWebSocketRequest(context);
@@ -157,6 +164,34 @@ class Program
                 await webSocket.SendAsync(new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
             }
         }
+    }
+
+
+
+
+    private static void HandleNotifyRemoveNotification(HttpListenerContext context)
+    {
+        using (var reader = new StreamReader(context.Request.InputStream, context.Request.ContentEncoding))
+        {
+            string message = reader.ReadToEnd();
+            //Console.WriteLine($"Notification received: {message}");
+
+            // Extract IP address and port number from the message
+            
+
+                // Store the IP address and port number in a list
+            connectedClients.Remove(message);
+            Console.WriteLine($"Client disconnected: {message}");
+
+                // Notify all connected clients about the new connection
+            Task.Run(async () => await NotifyConnectedClient(connectedClients));
+            
+            
+            
+        }
+
+        context.Response.StatusCode = 200;
+        context.Response.Close();
     }
 
 
