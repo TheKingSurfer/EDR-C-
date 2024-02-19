@@ -4,9 +4,11 @@ using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using Microsoft.Diagnostics.Tracing.AutomatedAnalysis;
+using Microsoft.Diagnostics.Tracing.Parsers.JSDumpHeap;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using ProcessC;
@@ -19,6 +21,8 @@ class Server
     private TcpListener tcpListener;
     private Thread listenerThread;
     private static List<string> connectedClients = new List<string>();
+    private static bool TaskManagerFlag = false;
+
 
 
     private static string[] protectedFiles = { "Desktop.txt" };// this array will be set by the user - protected files
@@ -166,7 +170,7 @@ class Server
 
                 Console.WriteLine("**************************************");
                 Console.WriteLine("Protected file found! Sending command to agent...");
-                Console.WriteLine("Press any key to resume process");
+                //Console.WriteLine("Press any key to resume process");
                 PrintProcessState(ProcessId);
 
                 // Send a command to suspend the process
@@ -176,7 +180,7 @@ class Server
 
 
                 // Wait for a key press
-                Console.ReadKey(true);
+                //Console.ReadKey(true);
 
 
 
@@ -256,6 +260,22 @@ class Server
             webClient.UploadString("http://localhost:8080/notify", message);
         }
     }
+
+
+
+    /// <summary>
+    /// function that sends task manager-like data the data service and from there the data 
+    /// will be tranferd to the right websocket connection - this happens only if the websocket
+    /// connection activates the TaskManagerFlag
+    /// </summary>
+    /// <param name="ipaddr"></param>
+    /// <param name="portNumber"></param>
+    /// <param name="Data"></param>
+    private static void SendAllDataToWebsocket(string ipaddr, string portNumber, string Data ) 
+    {
+
+    }
+
     private static void SendEventDataToWebSocketServer(string ipAddress, int port, string eventData)
     {
         try

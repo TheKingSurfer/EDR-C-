@@ -260,7 +260,7 @@ class Program
                 JObject jsonNotification = JObject.Parse(message);
 
                 string clientIpAddress = jsonNotification["ClientIpAddress"].ToString();
-                int clientPort = int.Parse(jsonNotification["ClientPort"].ToString());
+                string clientPort = jsonNotification["ClientPort"].ToString();
                 string eventData = jsonNotification["EventData"].ToString();
 
                 // Construct the client identifier using IP address and port number
@@ -281,6 +281,21 @@ class Program
                 foreach (var kvp in clientEventDataDict)
                 {
                     Console.WriteLine($"{kvp.Key}: {string.Join(", ", kvp.Value)}");
+                }
+
+                // Check if the client WebSocket connection exists
+                if (clientWebSocketDict.ContainsKey(clientIdentifier))
+                {
+                    var webSocket = clientWebSocketDict[clientIdentifier].Item3; // Get the WebSocket connection
+
+                    // Serialize the event data
+                    var eventDataJson = JsonConvert.SerializeObject(clientEventDataDict[clientIdentifier]);
+
+                    // Convert the event data to bytes
+                    var eventDataBuffer = Encoding.UTF8.GetBytes(eventDataJson);
+
+                    // Send the event data to the WebSocket connection
+                    await webSocket.SendAsync(new ArraySegment<byte>(eventDataBuffer), WebSocketMessageType.Text, true, CancellationToken.None);
                 }
             }
 
@@ -378,15 +393,15 @@ class Program
             
             clientWebSocketDict[clientIdentifier] = (connIp, connPort, webSocket);
 
-            
+
             if (clientEventDataDict.ContainsKey(clientIdentifier))
             {
                 var eventData = clientEventDataDict[clientIdentifier];
 
-                
+
                 var eventDataJson = JsonConvert.SerializeObject(eventData);
 
-                
+
                 var eventDataBuffer = Encoding.UTF8.GetBytes(eventDataJson);
                 webSocket.SendAsync(new ArraySegment<byte>(eventDataBuffer), WebSocketMessageType.Text, true, CancellationToken.None);
             }
