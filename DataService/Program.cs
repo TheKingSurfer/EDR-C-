@@ -120,6 +120,8 @@ class Program
         }
     }
 
+
+    //not in use
     private static void ListenForClients()
     {
         try
@@ -175,20 +177,11 @@ class Program
         using (var reader = new StreamReader(context.Request.InputStream, context.Request.ContentEncoding))
         {
             string message = reader.ReadToEnd();
-            //Console.WriteLine($"Notification received: {message}");
-
-            // Extract IP address and port number from the message
-            
-
                 // Store the IP address and port number in a list
             connectedClients.Remove(message);
             Console.WriteLine($"Client disconnected: {message}");
-
                 // Notify all connected clients about the new connection
             Task.Run(async () => await NotifyConnectedClient(connectedClients));
-            
-            
-            
         }
 
         context.Response.StatusCode = 200;
