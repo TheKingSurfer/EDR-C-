@@ -436,5 +436,41 @@ class Program
         }
     }
 
+    //PV=> Process View
+    /// <summary>
+    /// Function that indatcats to the server to start sending processes that running on a
+    /// specific client (the one we send him)
+    /// </summary>
+    /// <param name="clientIP"></param>
+    /// <param name="ClientPORT"></param>
+    private static void SendPVToServer(string clientIP , string ClientPORT) {
+        try
+        {
+            // Construct the JSON object
+            var requestData = new
+            {
+                ClientIP = clientIP,
+                ClientPort = ClientPORT,
+                SendProcessData = true // Flag to indicate sending process data
+            };
+
+            // Serialize the JSON object into a string
+            string jsonData = JsonConvert.SerializeObject(requestData);
+
+            // Send the data to the main server
+            using (var client = new WebClient())
+            {
+                client.Headers[HttpRequestHeader.ContentType] = "application/json";
+                client.UploadString("http://127.0.0.1:5000", jsonData); // Adjust the URL accordingly
+            }
+
+            Console.WriteLine("Process data request sent to the server.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error sending process data request: {ex.Message}");
+        }
+    }
+
 
 }

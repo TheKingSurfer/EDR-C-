@@ -59,11 +59,46 @@ class Server
             var endPoint = (IPEndPoint)client.Client.RemoteEndPoint;
             string ipAddress = endPoint.Address.ToString();
             int port = endPoint.Port;
+
+
+            //checks the type of the connection (PV or not)
+            if (CheckForProcessViewRequest(client))
+            {
+                Console.WriteLine("Good!!!!!!!!");
+                //TODO: activate some function that will Send the processes data to specific clients
+                continue;
+            }
+            
             Console.WriteLine($"Client Detected {clientCounter} : IP - {ipAddress}:{port}");
             clientThread.Start(client);
         }
     }
 
+
+    public static bool CheckForProcessViewRequest(object clientObj)
+    {
+        TcpClient tcpClient = (TcpClient)clientObj;
+        NetworkStream clientStream = tcpClient.GetStream();
+
+        // Using a StreamReader to read the message from the client stream
+        StreamReader reader = new StreamReader(clientStream, Encoding.UTF8);
+        Console.WriteLine("Checking type of connection");
+
+        // Read the message from the client
+        string message = reader.ReadLine();
+
+        // Check if the message contains "SendProcessData" in its data
+        if (message != null && message.Contains("SendProcessData"))
+        {
+            Console.WriteLine("Process view request received.");
+            return true; // Return true if the message contains "SendProcessData"
+        }
+        else
+        {
+            Console.WriteLine("Not a process view request.");
+            return false; // Return false if the message does not contain "SendProcessData"
+        }
+    }
 
     private void HandleClientComm(object clientObj)
     {
