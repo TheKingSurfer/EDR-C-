@@ -20,6 +20,10 @@ class Program
     //private static Dictionary<string, (List<WebSocket> sockets, string page)> clientWebSocketDict = new Dictionary<string, (List<WebSocket>, string)>();
     //private static Dictionary<(string connIp, string connPort), (string clientIp, string clientPort, WebSocket)> clientWebSocketDict = new Dictionary<(string, string), (string, string, WebSocket)>();
     private static Dictionary<string, (string connIp, string connPort, WebSocket)> clientWebSocketDict = new Dictionary<string, (string, string, WebSocket)>();
+    private static Dictionary<string, List<string>> PVDataDict = new Dictionary<string, List<string>>();    
+
+
+    
 
 
 
@@ -70,6 +74,9 @@ class Program
             {
                 //ProcessWebSocketRequest(context);
                 HandleFirstConnection(context);
+            } else if(context.Request.Url.AbsolutePath == "/collect-PV")// this is the incoming data from the server 
+            {
+
             }
             //else
             //{
@@ -77,6 +84,12 @@ class Program
             //    context.Response.Close();
             //}
         }
+    }
+
+
+    private static async void CollectPV() 
+    {
+        
     }
 
     private static async void ProcessWebSocketRequest(HttpListenerContext context)
@@ -443,7 +456,7 @@ class Program
     /// </summary>
     /// <param name="clientIP"></param>
     /// <param name="ClientPORT"></param>
-    private static void SendPVToServer(string clientIP , string ClientPORT) {
+    private static void SendPVToServer(string clientIP , string ClientPORT,bool SendPV) {
         try
         {
             // Construct the JSON object
@@ -451,7 +464,7 @@ class Program
             {
                 ClientIP = clientIP,
                 ClientPort = ClientPORT,
-                SendProcessData = true // Flag to indicate sending process data
+                SendProcessData = SendPV // Flag to indicate sending process data
             };
 
             // Serialize the JSON object into a string

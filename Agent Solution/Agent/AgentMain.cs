@@ -48,7 +48,7 @@ namespace EDR.Agent
             string jsonArray = "[" + string.Join(",", data) + "]";
 
             byte[] buffer = Encoding.UTF8.GetBytes(jsonArray + Environment.NewLine);
-            nwStream.Write(buffer, 0, buffer.Length);
+                nwStream.Write(buffer, 0, buffer.Length);
         }
 
         static void ReceiveDataFromServer(NetworkStream nwStream)

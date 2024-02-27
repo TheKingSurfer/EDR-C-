@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Runtime.CompilerServices;
@@ -21,7 +22,10 @@ class Server
     private TcpListener tcpListener;
     private Thread listenerThread;
     private static List<string> connectedClients = new List<string>();
-    private static bool TaskManagerFlag = false;
+
+    private static List<string> connectedClientsForPV = new List<string>();
+    private static bool ProcessViewFlag = false; // if its true the there will be alwayas data added to a certain dict
+    private static Dictionary<string, List<string>> PVData = new Dictionary<string, List<string>>(); 
 
 
 
@@ -62,16 +66,41 @@ class Server
 
 
             //checks the type of the connection (PV or not)
+            //maybe i dont need it and i only do will do the whole check on the handle communication
             if (CheckForProcessViewRequest(client))
             {
+                ProcessViewFlag = true;
+
                 Console.WriteLine("Good!!!!!!!!");
                 //TODO: activate some function that will Send the processes data to specific clients
+                ProcessesSendToDataServer(ipAddress, port);
                 continue;
             }
             
             Console.WriteLine($"Client Detected {clientCounter} : IP - {ipAddress}:{port}");
             clientThread.Start(client);
         }
+    }
+
+
+    //the function will sends the processes to the Data service (*with identifires for each client*) - 
+    //the function is going to called using a thread.
+    public static void ProcessesSendToDataServer(string clientIP, int clientPORT)
+    {
+        string clientIdentifier = $"{clientIP}:{clientPORT}";
+        connectedClientsForPV.Add(clientIP);// adds the client that want the data
+
+        foreach (string client in connectedClientsForPV)
+        {
+             //TODO: open thread for each client            
+        }
+
+
+
+
+
+
+
     }
 
 
@@ -104,6 +133,11 @@ class Server
     {
         TcpClient tcpClient = (TcpClient)clientObj;
         NetworkStream clientStream = tcpClient.GetStream();
+        var endPoint = (IPEndPoint)tcpClient.Client.RemoteEndPoint;
+        string ipAddress = endPoint.Address.ToString();
+        int port = endPoint.Port;
+
+        string clientIdentifier = $"{ipAddress}:{port}";
 
         // Using a StreamReader to simplify reading from the stream
         StreamReader reader = new StreamReader(clientStream, Encoding.UTF8);
@@ -128,14 +162,61 @@ class Server
                     // Process each JSON object in the array
                     foreach (var jsonObject in jsonArray)
                     {
+                        
                         CheckSpecialEvents(jsonObject, clientStream, tcpClient);
+                        if (ProcessViewFlag)
+                        {
 
-                        //foreach (var property in (JObject)jsonObject)
+                            //check if there is already previeos data of a certain client
+                            if (PVData.ContainsKey(clientIdentifier))
+                            {
+                                PVData[clientIdentifier] = new List<string>();
+
+                                
+                            }
+
+
+                            if (jsonObject.Contains("ProcessStarted"))
+                            {
+                                foreach (var property in (JObject)jsonObject)
+                                {
+                                    //add the key-pair value to the dict
+                                    PVData[clientIdentifier].Add($"{property.Key}: {property.Value}");
+                                }
+                            }
+                            else if (jsonObject.Contains("ProcessEnded"))
+                            {
+                                // Extract the process ID of the ended process
+                                int endedProcessId = 0;
+                                foreach (var property in (JObject)jsonObject)
+                                {
+                                    if (property.Key == "ProcessId")
+                                    {
+                                        // Parse and store the process ID
+                                        endedProcessId = Convert.ToInt32(property.Value);
+                                        break;
+                                    }
+                                }
+
+                                // If it's a ProcessEnded event, remove the corresponding process data
+                                if (PVData.ContainsKey(clientIdentifier))
+                                {
+                                    // Loop through the process data list and remove the process that ended
+                                    PVData[clientIdentifier].RemoveAll(item => item.Contains($"ProcessId: {endedProcessId}"));
+                                }
+                            }
+
+
+                        }
+                        //foreach(var property in (JObject)jsonObject) 
                         //{
-                        //    Console.WriteLine($"{property.Key} : {property.Value}");
-                        //}
+                        //    if(property.contains== "EventName")
+                        //    Console.WriteLine($" {property.Value}: {property.Value} \n"); 
 
-                        //Console.WriteLine("\n");
+                        //}
+                      
+
+
                     }
                 }
                 catch (JsonReaderException)
@@ -153,9 +234,7 @@ class Server
             Console.WriteLine("Client disconnected...");
 
             // Remove the disconnected client from the connected clients list
-            var endPoint = (IPEndPoint)tcpClient.Client.RemoteEndPoint;
-            string ipAddress = endPoint.Address.ToString();
-            int port = endPoint.Port;
+            
             string clientInfo = $"{ipAddress}:{port}";
             connectedClients.Remove(clientInfo);
             NotifyWebSocketServerRemoved(clientInfo);
