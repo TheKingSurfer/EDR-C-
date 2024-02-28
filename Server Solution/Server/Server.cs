@@ -25,7 +25,8 @@ class Server
 
     private static List<string> connectedClientsForPV = new List<string>();
     private static bool ProcessViewFlag = false; // if its true the there will be alwayas data added to a certain dict
-    private static Dictionary<string, List<string>> PVData = new Dictionary<string, List<string>>(); 
+    private static Dictionary<string, List<string>> PVData = new Dictionary<string, List<string>>();
+    
 
 
 
@@ -69,8 +70,7 @@ class Server
             //maybe i dont need it and i only do will do the whole check on the handle communication
             if (CheckForProcessViewRequest(client))
             {
-                ProcessViewFlag = true;
-
+               
                 Console.WriteLine("Good!!!!!!!!");
                 //TODO: activate some function that will Send the processes data to specific clients
                 ProcessesSendToDataServer(ipAddress, port);
@@ -88,7 +88,7 @@ class Server
     public static void ProcessesSendToDataServer(string clientIP, int clientPORT)
     {
         string clientIdentifier = $"{clientIP}:{clientPORT}";
-        connectedClientsForPV.Add(clientIP);// adds the client that want the data
+        connectedClientsForPV.Add(clientIdentifier);// adds the client that want the data
 
         foreach (string client in connectedClientsForPV)
         {
@@ -119,6 +119,8 @@ class Server
         // Check if the message contains "SendProcessData" in its data
         if (message != null && message.Contains("SendProcessData"))
         {
+
+            ProcessViewFlag = true;
             Console.WriteLine("Process view request received.");
             return true; // Return true if the message contains "SendProcessData"
         }

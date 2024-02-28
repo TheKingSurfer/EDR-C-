@@ -17,10 +17,9 @@ class Program
     private static List<string> connectedClients = new List<string>();
     private static List<WebSocket> webSocketConnection = new List<WebSocket>();
     private static Dictionary<string, List<string>> clientEventDataDict = new Dictionary<string, List<string>>();
-    //private static Dictionary<string, (List<WebSocket> sockets, string page)> clientWebSocketDict = new Dictionary<string, (List<WebSocket>, string)>();
-    //private static Dictionary<(string connIp, string connPort), (string clientIp, string clientPort, WebSocket)> clientWebSocketDict = new Dictionary<(string, string), (string, string, WebSocket)>();
     private static Dictionary<string, (string connIp, string connPort, WebSocket)> clientWebSocketDict = new Dictionary<string, (string, string, WebSocket)>();
-    private static Dictionary<string, List<string>> PVDataDict = new Dictionary<string, List<string>>();    
+    private static Dictionary<string, List<string>> PVDataDict = new Dictionary<string, List<string>>(); //dict that stores the data and the client identifier -> "ip:port" , (data)   
+    private static List<WebSocket> WebSocketsOfPV = new List<WebSocket>(); // => the websocket connection that requesting the pv data
 
 
     
@@ -44,7 +43,6 @@ class Program
 
         //listenerThread = new Thread(ListenForClients);
         //listenerThread.Start();
-
         while (true)
         {
             var context = await httpListener.GetContextAsync();
@@ -70,19 +68,20 @@ class Program
             {
                 ReturnConnectedClients(context);
 
-            } else if (context.Request.IsWebSocketRequest)
-            {
-                //ProcessWebSocketRequest(context);
-                HandleFirstConnection(context);
             } else if(context.Request.Url.AbsolutePath == "/collect-PV")// this is the incoming data from the server 
             {
 
+            }else if (context.Request.Url.AbsolutePath == "/view-processes-page")// when a websocket connection goes into the view processes
+            {
+                ProcessWebSocketRequest(context);
             }
-            //else
-            //{
-            //    context.Response.StatusCode = 400;
-            //    context.Response.Close();
-            //}
+            else if (context.Request.IsWebSocketRequest)
+            {
+                //ProcessWebSocketRequest(context);
+                HandleFirstConnection(context);
+            }
+
+          
         }
     }
 
@@ -403,7 +402,7 @@ class Program
 
         if (page == "ClientDetailsPage")
         {
-            
+
             clientWebSocketDict[clientIdentifier] = (connIp, connPort, webSocket);
 
 
@@ -421,9 +420,14 @@ class Program
         }
         else if (page == "MainContent")
         {
-            
+
             clientWebSocketDict.Remove(clientIdentifier);
+        } else if (page== "ViewProcessesPage") 
+        {
+            SendPVToServer(clientIp, clientPort, true);//sending the data to the server using the true flag
+            Console.WriteLine("client is in the View Processes page!!");
         }
+        
     }
     private static async void HandleFirstConnection(HttpListenerContext context)
     {
@@ -456,25 +460,29 @@ class Program
     /// </summary>
     /// <param name="clientIP"></param>
     /// <param name="ClientPORT"></param>
-    private static void SendPVToServer(string clientIP , string ClientPORT,bool SendPV) {
+    private static void SendPVToServer(string clientIP, string clientPort, bool sendPV)
+    {
         try
         {
             // Construct the JSON object
             var requestData = new
             {
                 ClientIP = clientIP,
-                ClientPort = ClientPORT,
-                SendProcessData = SendPV // Flag to indicate sending process data
+                ClientPort = clientPort,
+                SendProcessData = sendPV // Flag to indicate sending process data
             };
 
             // Serialize the JSON object into a string
             string jsonData = JsonConvert.SerializeObject(requestData);
 
-            // Send the data to the main server
-            using (var client = new WebClient())
+            // Connect to the server
+            using (TcpClient tcpClient = new TcpClient("127.0.0.1", 5000)) // Adjust the IP address and port accordingly
+            using (NetworkStream stream = tcpClient.GetStream())
+            using (StreamWriter writer = new StreamWriter(stream))
             {
-                client.Headers[HttpRequestHeader.ContentType] = "application/json";
-                client.UploadString("http://127.0.0.1:5000", jsonData); // Adjust the URL accordingly
+                // Send the JSON data to the server
+                writer.WriteLine(jsonData);
+                writer.Flush(); // Flush the writer to ensure all data is sent
             }
 
             Console.WriteLine("Process data request sent to the server.");
