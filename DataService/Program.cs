@@ -405,6 +405,11 @@ class Program
 
             clientWebSocketDict[clientIdentifier] = (connIp, connPort, webSocket);
 
+            if (WebSocketsOfPV.Contains((WebSocket)webSocket))//for some reason this if statment does not work
+            {
+                SendPVToServer(clientIp, clientPort, false);// i found out in the prints that port number of the connected client is always changes
+                WebSocketsOfPV.Remove((WebSocket)webSocket);
+            }
 
             if (clientEventDataDict.ContainsKey(clientIdentifier))
             {
@@ -426,6 +431,8 @@ class Program
         {
             SendPVToServer(clientIp, clientPort, true);//sending the data to the server using the true flag
             Console.WriteLine("client is in the View Processes page!!");
+            Console.WriteLine("WebSocket: " + webSocket);
+            WebSocketsOfPV.Add((WebSocket)webSocket);
         }
         
     }
@@ -475,6 +482,9 @@ class Program
             // Serialize the JSON object into a string
             string jsonData = JsonConvert.SerializeObject(requestData);
 
+           
+            
+
             // Connect to the server
             using (TcpClient tcpClient = new TcpClient("127.0.0.1", 5000)) // Adjust the IP address and port accordingly
             using (NetworkStream stream = tcpClient.GetStream())
@@ -486,6 +496,7 @@ class Program
             }
 
             Console.WriteLine("Process data request sent to the server.");
+            
         }
         catch (Exception ex)
         {

@@ -73,7 +73,7 @@ class Server
                
                 Console.WriteLine("Good!!!!!!!!");
                 //TODO: activate some function that will Send the processes data to specific clients
-                ProcessesSendToDataServer(ipAddress, port);
+               
                 continue;
             }
             
@@ -83,25 +83,8 @@ class Server
     }
 
 
-    //the function will sends the processes to the Data service (*with identifires for each client*) - 
-    //the function is going to called using a thread.
-    public static void ProcessesSendToDataServer(string clientIP, int clientPORT)
-    {
-        string clientIdentifier = $"{clientIP}:{clientPORT}";
-        connectedClientsForPV.Add(clientIdentifier);// adds the client that want the data
-
-        foreach (string client in connectedClientsForPV)
-        {
-             //TODO: open thread for each client            
-        }
-
-
-
-
-
-
-
-    }
+    
+   
 
 
     public static bool CheckForProcessViewRequest(object clientObj)
@@ -120,7 +103,26 @@ class Server
         if (message != null && message.Contains("SendProcessData"))
         {
 
-            ProcessViewFlag = true;
+            JObject requestData = JObject.Parse(message);
+            string clientIdentifier = $"{requestData["ClientIP"]}:{requestData["ClientPort"]}";
+
+            // Add client to the list if the flag is true
+            if ((bool)requestData["SendProcessData"])
+            {
+                connectedClientsForPV.Add(clientIdentifier);
+                ProcessViewFlag = true;
+            }
+            else
+            {
+                // Remove the client from the list if the flag is false
+                connectedClientsForPV.Remove(clientIdentifier);
+                if (connectedClientsForPV.Count() == 0)
+                {
+                    Console.WriteLine("the list is empty - changing the flag to false ");
+                    ProcessViewFlag = false;
+                }
+            }
+
             Console.WriteLine("Process view request received.");
             return true; // Return true if the message contains "SendProcessData"
         }
@@ -158,19 +160,35 @@ class Server
 
                 try
                 {
-                    // Try parsing the JSON array
+                    // Try parsing the JSON array => it works
                     JArray jsonArray = JArray.Parse(jsonData);
 
                     // Process each JSON object in the array
                     foreach (var jsonObject in jsonArray)
                     {
-                        
-                        CheckSpecialEvents(jsonObject, clientStream, tcpClient);
-                        if (ProcessViewFlag)
+                        //print when found processes that has been started
+                        JObject jObject = jsonObject as JObject;
+                        if (jObject != null)
                         {
+                            // Iterate through the properties of the JObject
+                            foreach (var property in jObject.Properties())
+                            {
+                                // Check if the property value matches "ProcessStarted"
+                                if (property.Value.ToString() == "ProcessStarted")
+                                {
+                                    Console.WriteLine("Process started found");
+                                }
+
+                                
+                            }
+                        }
+
+                        CheckSpecialEvents(jsonObject, clientStream, tcpClient);
+                        //if (ProcessViewFlag)
+                        
 
                             //check if there is already previeos data of a certain client
-                            if (PVData.ContainsKey(clientIdentifier))
+                            if (!PVData.ContainsKey(clientIdentifier))
                             {
                                 PVData[clientIdentifier] = new List<string>();
 
@@ -208,8 +226,12 @@ class Server
                                 }
                             }
 
-
+                        if (connectedClientsForPV.Contains(clientIdentifier))
+                        {
+                            //activate some function that will sendd the data to the data service server
                         }
+
+
                         //foreach(var property in (JObject)jsonObject) 
                         //{
                         //    if(property.contains== "EventName")
@@ -249,6 +271,11 @@ class Server
         }
     }
 
+    // should sends everything that is already in a big dictionary that stores all of the processes, and the function will activate a asycn task that will always update the connection
+    private static void SendPVDataOfCertainClient() 
+    {
+
+    }
 
     static void CheckSpecialEvents(JToken jsonObject, NetworkStream nwStream, TcpClient client)
     {
