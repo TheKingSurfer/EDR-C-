@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading;
 using Microsoft.Diagnostics.Tracing.AutomatedAnalysis;
 using Microsoft.Diagnostics.Tracing.Parsers.JSDumpHeap;
+using Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsWPF;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using ProcessC;
@@ -177,6 +178,7 @@ class Server
                                 // Check if the property value matches "ProcessStarted"
                                 if (property.Value.ToString() == "ProcessStarted")
                                 {
+                                    
                                     Console.WriteLine("Process started found");
                                 }
 
@@ -188,48 +190,48 @@ class Server
                         //if (ProcessViewFlag)
                         
 
-                            //check if there is already previeos data of a certain client
-                            if (!PVData.ContainsKey(clientIdentifier))
-                            {
-                                PVData[clientIdentifier] = new List<string>();
+                        //check if there is already previeos data of a certain client
+                        if (!PVData.ContainsKey(clientIdentifier))
+                        {
+                            PVData[clientIdentifier] = new List<string>();
 
                                 
-                            }
+                        }
 
 
-                            if (jsonObject.Contains("ProcessStarted"))
+                        if (jsonObject["EventName"]?.ToString() == "ProcessStarted")
+                        {
+                            foreach (var property in (JObject)jsonObject)
                             {
-                                foreach (var property in (JObject)jsonObject)
-                                {
-                                    //add the key-pair value to the dict
-                                    PVData[clientIdentifier].Add($"{property.Key}: {property.Value}");
-                                }
+                                //add the key-pair value to the dict
+                                PVData[clientIdentifier].Add($"{property.Key}: {property.Value}");
                             }
-                            else if (jsonObject.Contains("ProcessEnded"))
+                        }
+                        else if (jsonObject["EventName"]?.ToString() == "ProcessEnded")
+                        {
+                            // Extract the process ID of the ended process
+                            int endedProcessId = 0;
+                            foreach (var property in (JObject)jsonObject)
                             {
-                                // Extract the process ID of the ended process
-                                int endedProcessId = 0;
-                                foreach (var property in (JObject)jsonObject)
+                                if (property.Key == "ProcessId")
                                 {
-                                    if (property.Key == "ProcessId")
-                                    {
-                                        // Parse and store the process ID
-                                        endedProcessId = Convert.ToInt32(property.Value);
-                                        break;
-                                    }
-                                }
-
-                                // If it's a ProcessEnded event, remove the corresponding process data
-                                if (PVData.ContainsKey(clientIdentifier))
-                                {
-                                    // Loop through the process data list and remove the process that ended
-                                    PVData[clientIdentifier].RemoveAll(item => item.Contains($"ProcessId: {endedProcessId}"));
+                                    // Parse and store the process ID
+                                    endedProcessId = Convert.ToInt32(property.Value);
+                                    break;
                                 }
                             }
+
+                            // If it's a ProcessEnded event, remove the corresponding process data
+                            if (PVData.ContainsKey(clientIdentifier))
+                            {
+                                // Loop through the process data list and remove the process that ended
+                                PVData[clientIdentifier].RemoveAll(item => item.Contains($"ProcessId: {endedProcessId}"));
+                            }
+                        }
 
                         if (connectedClientsForPV.Contains(clientIdentifier))
                         {
-                            //activate some function that will sendd the data to the data service server
+                            SendPVDataOfertainClient(clientIdentifier, PVData[clientIdentifier]);
                         }
 
 
@@ -273,9 +275,32 @@ class Server
     }
 
     // should sends everything that is already in a big dictionary that stores all of the processes, and the function will activate a asycn task that will always update the connection
-    private static void SendPVDataOfCertainClient() 
+    private static void SendPVDataOfertainClient(string clientIdentifier , List<string> data) 
     {
+        try
+        {
 
+            //TODO add an if that will check if the list is empty - if empty do not send
+
+
+            // Create a dictionary with the required data
+            var dict = new Dictionary<string, List<string>>();
+            dict.Add(clientIdentifier, data);
+
+            // Serialize the dictionary to JSON format
+            string jsonData = JsonConvert.SerializeObject(dict);
+
+            // Use a WebClient to send a notification to the WebSocket server
+            using (var webClient = new WebClient())
+            {
+                webClient.Headers[HttpRequestHeader.ContentType] = "application/json"; // Set content type to JSON
+                webClient.UploadString("http://localhost:8080/collect-PV", jsonData);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error sending event data to WebSocket server: {ex.Message}");
+        }
     }
 
     static void CheckSpecialEvents(JToken jsonObject, NetworkStream nwStream, TcpClient client)
@@ -415,10 +440,7 @@ class Server
     /// <param name="ipaddr"></param>
     /// <param name="portNumber"></param>
     /// <param name="Data"></param>
-    private static void SendAllDataToWebsocket(string ipaddr, string portNumber, string Data ) 
-    {
-
-    }
+    
 
     private static void SendEventDataToWebSocketServer(string ipAddress, int port, string eventData)
     {

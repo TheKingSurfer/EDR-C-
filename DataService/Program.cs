@@ -70,7 +70,7 @@ class Program
 
             } else if(context.Request.Url.AbsolutePath == "/collect-PV")// this is the incoming data from the server 
             {
-
+                CollectPV(context);
             }else if (context.Request.Url.AbsolutePath == "/view-processes-page")// when a websocket connection goes into the view processes
             {
                 ProcessWebSocketRequest(context);
@@ -86,9 +86,18 @@ class Program
     }
 
 
-    private static async void CollectPV() 
+    private static async void CollectPV(HttpListenerContext context) 
     {
-        
+        Console.WriteLine("pv collected !");
+        using (var reader = new StreamReader(context.Request.InputStream, context.Request.ContentEncoding))
+        {
+            string message = reader.ReadToEnd();
+            Console.WriteLine(message);
+
+        }
+
+        context.Response.StatusCode = 200;
+        context.Response.Close();
     }
 
     private static async void ProcessWebSocketRequest(HttpListenerContext context)
