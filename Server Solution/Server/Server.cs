@@ -52,6 +52,14 @@ class Server
         {
             clientCounter++;
             TcpClient client = this.tcpListener.AcceptTcpClient();
+            if (CheckForProcessViewRequest(client))
+            {
+
+                Console.WriteLine("Good!!!!!!!!");
+                //TODO: activate some function that will Send the processes data to specific clients
+
+                continue;
+            }
 
             // Notify the WebSocket server when a new client is connected
 
@@ -68,14 +76,7 @@ class Server
 
             //checks the type of the connection (PV or not)
             //maybe i dont need it and i only do will do the whole check on the handle communication
-            if (CheckForProcessViewRequest(client))
-            {
-               
-                Console.WriteLine("Good!!!!!!!!");
-                //TODO: activate some function that will Send the processes data to specific clients
-               
-                continue;
-            }
+           
             
             Console.WriteLine($"Client Detected {clientCounter} : IP - {ipAddress}:{port}");
             clientThread.Start(client);
