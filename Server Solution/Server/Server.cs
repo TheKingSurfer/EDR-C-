@@ -229,7 +229,7 @@ class Server
                             }
                         }
 
-                        if (connectedClientsForPV.Contains(clientIdentifier))
+                        if (connectedClientsForPV.Contains(clientIdentifier)&& !(PVData[clientIdentifier].Count() == 0))
                         {
                             SendPVDataOfertainClient(clientIdentifier, PVData[clientIdentifier]);
                         }
