@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Net.WebSockets;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -20,7 +21,7 @@ class Program
     private static Dictionary<string, List<string>> clientEventDataDict = new Dictionary<string, List<string>>();
     private static Dictionary<string, (string connIp, string connPort, WebSocket)> clientWebSocketDict = new Dictionary<string, (string, string, WebSocket)>();
     private static Dictionary<string, List<string>> PVDataDict = new Dictionary<string, List<string>>(); //dict that stores the data and the client identifier -> "ip:port" , (data)   
-    private static List<WebSocket> WebSocketsOfPV = new List<WebSocket>(); // => the websocket connection that requesting the pv data
+    private static Dictionary<string,WebSocket> WebSocketsOfPV = new Dictionary<string, WebSocket>(); // => the websocket connection that requesting the pv data - not in use currently
 
     private static List<string> connectionsForPV = new List<string>();// => a list that contains the identifier of the websocket connection that want PV data
 
@@ -88,14 +89,42 @@ class Program
         }
     }
 
-
-    private static async void CollectPV(HttpListenerContext context) 
+    //the incoming data will be sent to the js server here:
+    private static async Task CollectPV(HttpListenerContext context) 
     {
         Console.WriteLine("pv collected !");
         using (var reader = new StreamReader(context.Request.InputStream, context.Request.ContentEncoding))
         {
             string message = reader.ReadToEnd();
+            var receivedData = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(message);
+
+            foreach (var kvp in receivedData)
+            {
+                if (PVDataDict.ContainsKey(kvp.Key))
+                {
+                    PVDataDict[kvp.Key].AddRange(kvp.Value);
+                }
+                else
+                {
+                    PVDataDict[kvp.Key] = kvp.Value;
+                }
+            }
+
+            foreach (var kvp in PVDataDict.Keys)
+            {
+                var websocket = WebSocketsOfPV[kvp];
+
+                var data = JsonConvert.SerializeObject(PVDataDict[kvp]);
+
+                var DataBuffer = Encoding.UTF8.GetBytes(data);
+
+                // Send the event data to the WebSocket connection
+                await websocket.SendAsync(new ArraySegment<byte>(DataBuffer), WebSocketMessageType.Text, true, CancellationToken.None);
+            }
+
             Console.WriteLine(message);
+
+
 
         }
 
@@ -420,7 +449,7 @@ class Program
 
         int webSocketHash = webSocket.GetHashCode();
         Console.WriteLine(webSocketHash);
-        bool alreadyExists = WebSocketsOfPV.Any(existingSocket => existingSocket == webSocket);
+       
 
         string clientIdentifier = $"{clientIp}:{clientPort}";
 
@@ -433,6 +462,7 @@ class Program
             {
                 SendPVToServer(clientIp, clientPort, false);
                 connectionsForPV.Remove(connectionIdentifier);
+                WebSocketsOfPV.Remove(clientIdentifier);
                 Console.WriteLine("PV breaked");
             }
 
@@ -467,6 +497,7 @@ class Program
             if (connIp!="" && connPort!= "" && !connectionsForPV.Contains(connectionIdentifier))
             {
                 connectionsForPV.Add(connectionIdentifier);
+                WebSocketsOfPV[clientIdentifier] = webSocket;
             }
 
             //if (!alreadyExists)
