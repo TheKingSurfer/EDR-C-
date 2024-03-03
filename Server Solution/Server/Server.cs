@@ -117,7 +117,7 @@ class Server
             else
             {
                 // Remove the client from the list if the flag is false
-                connectedClientsForPV.Remove(clientIdentifier);
+                connectedClientsForPV.RemoveAll(identifier => identifier == clientIdentifier);
                 if (connectedClientsForPV.Count() == 0)
                 {
                     Console.WriteLine("the list is empty - changing the flag to false ");

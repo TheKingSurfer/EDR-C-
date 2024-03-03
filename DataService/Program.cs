@@ -3,6 +3,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Net.WebSockets;
@@ -20,6 +21,8 @@ class Program
     private static Dictionary<string, (string connIp, string connPort, WebSocket)> clientWebSocketDict = new Dictionary<string, (string, string, WebSocket)>();
     private static Dictionary<string, List<string>> PVDataDict = new Dictionary<string, List<string>>(); //dict that stores the data and the client identifier -> "ip:port" , (data)   
     private static List<WebSocket> WebSocketsOfPV = new List<WebSocket>(); // => the websocket connection that requesting the pv data
+
+    private static List<string> connectionsForPV = new List<string>();// => a list that contains the identifier of the websocket connection that want PV data
 
 
     
@@ -108,6 +111,10 @@ class Program
         {
             HttpListenerWebSocketContext webSocketContext = await context.AcceptWebSocketAsync(subProtocol: null);
             Console.WriteLine("WebSocket connection established.");
+            string ipAddress = context.Request.RemoteEndPoint.Address.ToString();
+            int port = context.Request.RemoteEndPoint.Port;
+            //Console.WriteLine($"WebSocket2 connected from IP: {ipAddress}, Port: {port}");
+
 
             WebSocket webSocket = webSocketContext.WebSocket;
 
@@ -406,7 +413,15 @@ class Program
         string clientIp = jsonMessage["clientIp"]?.ToString();
         string clientPort = jsonMessage["clientPort"]?.ToString();
 
-        
+
+        string connectionIdentifier = $"{connIp}:{connPort}";
+
+        Console.WriteLine($"connIP: {connIp} , connPort: {connPort} , page: {page}");
+
+        int webSocketHash = webSocket.GetHashCode();
+        Console.WriteLine(webSocketHash);
+        bool alreadyExists = WebSocketsOfPV.Any(existingSocket => existingSocket == webSocket);
+
         string clientIdentifier = $"{clientIp}:{clientPort}";
 
         if (page == "ClientDetailsPage")
@@ -414,11 +429,18 @@ class Program
 
             clientWebSocketDict[clientIdentifier] = (connIp, connPort, webSocket);
 
-            if (WebSocketsOfPV.Contains((WebSocket)webSocket))//for some reason this if statment does not work
+            if (connIp != "" && connPort != "" && connectionsForPV.Contains(connectionIdentifier))
             {
-                SendPVToServer(clientIp, clientPort, false);// i found out in the prints that port number of the connected client is always changes
-                WebSocketsOfPV.Remove((WebSocket)webSocket);
+                SendPVToServer(clientIp, clientPort, false);
+                connectionsForPV.Remove(connectionIdentifier);
+                Console.WriteLine("PV breaked");
             }
+
+            //if (alreadyExists)//for some reason this if statment does not work -because its opening and closing the websocket connection so it will be from different port each time
+            //{
+            //    SendPVToServer(clientIp, clientPort, false);// i found out in the prints that port number of the connected client is always changes
+            //    WebSocketsOfPV.Remove(webSocket);
+            //}
 
             if (clientEventDataDict.ContainsKey(clientIdentifier))
             {
@@ -441,7 +463,16 @@ class Program
             SendPVToServer(clientIp, clientPort, true);//sending the data to the server using the true flag
             Console.WriteLine("client is in the View Processes page!!");
             Console.WriteLine("WebSocket: " + webSocket);
-            WebSocketsOfPV.Add((WebSocket)webSocket);
+
+            if (connIp!="" && connPort!= "" && !connectionsForPV.Contains(connectionIdentifier))
+            {
+                connectionsForPV.Add(connectionIdentifier);
+            }
+
+            //if (!alreadyExists)
+            //{
+            //    WebSocketsOfPV.Add(webSocket);
+            //}
         }
         
     }
@@ -456,6 +487,8 @@ class Program
 
             WebSocket webSocket = webSocketContext.WebSocket;
             webSocketConnection.Add(webSocket);
+           
+
 
 
 
