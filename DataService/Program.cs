@@ -97,6 +97,7 @@ class Program
         {
             string message = reader.ReadToEnd();
             var receivedData = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(message);
+            Console.WriteLine($"received data from server: {message} ");
 
             foreach (var kvp in receivedData)
             {
@@ -122,7 +123,7 @@ class Program
                 await websocket.SendAsync(new ArraySegment<byte>(DataBuffer), WebSocketMessageType.Text, true, CancellationToken.None);
             }
 
-            Console.WriteLine(message);
+            //Console.WriteLine(message);
 
 
 

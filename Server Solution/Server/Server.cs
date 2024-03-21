@@ -179,7 +179,7 @@ class Server
                                 if (property.Value.ToString() == "ProcessStarted")
                                 {
                                     
-                                    Console.WriteLine("Process started found");
+                                    //Console.WriteLine("Process started found");
                                 }
 
                                 

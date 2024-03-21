@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agent", "Agent Solution\Age
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataService", "DataService\DataService.csproj", "{E624AC0A-8B02-496F-8940-ABCF52F80C75}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirusTotalNet", "..\..\..\..\..\Downloads\VirusTotalNet-master\VirusTotalNet-master\src\VirusTotalNet\VirusTotalNet.csproj", "{A4BAD755-AFF9-40B4-9946-5F4243099EBB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirusTotalNet.Examples", "..\..\..\..\..\Downloads\VirusTotalNet-master\VirusTotalNet-master\src\VirusTotalNet.Examples\VirusTotalNet.Examples.csproj", "{B258A4BA-04C5-4FE6-B90F-0745EDE7C4EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{E624AC0A-8B02-496F-8940-ABCF52F80C75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E624AC0A-8B02-496F-8940-ABCF52F80C75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E624AC0A-8B02-496F-8940-ABCF52F80C75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4BAD755-AFF9-40B4-9946-5F4243099EBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4BAD755-AFF9-40B4-9946-5F4243099EBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4BAD755-AFF9-40B4-9946-5F4243099EBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4BAD755-AFF9-40B4-9946-5F4243099EBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B258A4BA-04C5-4FE6-B90F-0745EDE7C4EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B258A4BA-04C5-4FE6-B90F-0745EDE7C4EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B258A4BA-04C5-4FE6-B90F-0745EDE7C4EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B258A4BA-04C5-4FE6-B90F-0745EDE7C4EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
