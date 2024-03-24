@@ -88,6 +88,10 @@
       <Project>{e624ac0a-8b02-496f-8940-abcf52f80c75}</Project>
       <Name>DataService</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\VirusTotal Solution\src\VirusTotalNet\VirusTotalNet.csproj">
+      <Project>{938e5635-be99-422f-8ecf-d7a124af8bd9}</Project>
+      <Name>VirusTotalNet</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

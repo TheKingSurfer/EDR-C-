@@ -1,0 +1,22 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Version>2.2.0</Version>
+    <LangVersion>latest</LangVersion>
+    <Copyright>Copyright 2023, by Ian Qvist. All rights reserved.</Copyright>
+    <Authors>Ian Qvist</Authors>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/Genbox/VirusTotalNet/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Genbox/VirusTotalNet/</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>
