@@ -9,11 +9,15 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using Microsoft.Diagnostics.Tracing.AutomatedAnalysis;
+using Microsoft.Diagnostics.Tracing.Parsers.ClrPrivate;
 using Microsoft.Diagnostics.Tracing.Parsers.JSDumpHeap;
 using Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsWPF;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using ProcessC;
+using VirusTotalNet.Objects;
+using VirusTotalNet.ResponseCodes;
+using VirusTotalNet.Results;
 
 
 class Server
@@ -171,26 +175,25 @@ class Server
                     {
                         //print when found processes that has been started
                         JObject jObject = jsonObject as JObject;
-                        if (jObject != null)
-                        {
-                            // Iterate through the properties of the JObject
-                            foreach (var property in jObject.Properties())
-                            {
-                                // Check if the property value matches "ProcessStarted"
-                                if (property.Value.ToString() == "ProcessStarted")
-                                {
-                                    
-                                    //Console.WriteLine("Process started found");
-                                }
-
-                                
-                            }
-                        }
-
                         CheckSpecialEvents(jsonObject, clientStream, tcpClient);
+                        //if (jObject != null)
+                        //{
+                        //    // Iterate through the properties of the JObject
+                        //    foreach (var property in jObject.Properties())
+                        //    {
+                        //        // Check if the property value matches "ProcessStarted"
+                        //        if (property.Value.ToString() == "ProcessStarted")
+                        //        {
+                                    
+                        //            //Console.WriteLine("Process started found");
+                        //        }                                
+                        //    }
+                        //}
+
+                        
                         //if (ProcessViewFlag)
                         
-
+                        //NEW code snippet - more efficient
                         //check if there is already previeos data of a certain client
                         if (!PVData.ContainsKey(clientIdentifier))
                         {
@@ -199,36 +202,74 @@ class Server
                                 
                         }
 
-
+                        if (jsonObject["EventName"]?.ToString() == "********* FileIOReadWrite *********")
+                        {
+                            var fileHashCode = jsonObject["FileHashCode"]?.ToString();
+                            if (!string.IsNullOrEmpty(fileHashCode))
+                            {
+                                // TODO: call the function and use VT to check the file hash code 
+                            }
+                        }
+                        
                         if (jsonObject["EventName"]?.ToString() == "ProcessStarted")
                         {
-                            foreach (var property in (JObject)jsonObject)
+                            var jObj = (JObject)jsonObject;
+                            foreach (var property in jObj.Properties())
                             {
-                                //add the key-pair value to the dict
-                                PVData[clientIdentifier].Add($"{property.Key}: {property.Value}");
+                                PVData[clientIdentifier].Add($"{property.Name}: {property.Value}");
                             }
                         }
                         else if (jsonObject["EventName"]?.ToString() == "ProcessEnded")
                         {
-                            // Extract the process ID of the ended process
-                            int endedProcessId = 0;
-                            foreach (var property in (JObject)jsonObject)
+                            var endedProcessId = (int?)jsonObject["ProcessId"];
+                            if (endedProcessId.HasValue)
                             {
-                                if (property.Key == "ProcessId")
-                                {
-                                    // Parse and store the process ID
-                                    endedProcessId = Convert.ToInt32(property.Value);
-                                    break;
-                                }
-                            }
-
-                            // If it's a ProcessEnded event, remove the corresponding process data
-                            if (PVData.ContainsKey(clientIdentifier))
-                            {
-                                // Loop through the process data list and remove the process that ended
                                 PVData[clientIdentifier].RemoveAll(item => item.Contains($"ProcessId: {endedProcessId}"));
                             }
                         }
+
+                        ////TODO: change the amount of loops, its make the program slow
+                        //if (jsonObject["EventName"]?.ToString() == "********* FileIOReadWrite *********") 
+                        //{
+                        //    //a loop that will check FileHashCode
+                        //    foreach (var property in (JObject)jsonObject) 
+                        //    {
+                        //        if (property.Key == "FileHashCode" && property.Value != null && property.Value.ToString()!="")
+                        //        {
+                        //            //Console.WriteLine(property.Value);//=> its works.
+                        //            //TODO : call the function and use VT to check the file hash code 
+                        //        }
+                        //    }
+                        //}
+                        //else if (jsonObject["EventName"]?.ToString() == "ProcessStarted")
+                        //{
+                        //    foreach (var property in (JObject)jsonObject)
+                        //    {
+                        //        //add the key-pair value to the dict
+                        //        PVData[clientIdentifier].Add($"{property.Key}: {property.Value}");
+                        //    }
+                        //}
+                        //else if (jsonObject["EventName"]?.ToString() == "ProcessEnded")
+                        //{
+                        //    // Extract the process ID of the ended process
+                        //    int endedProcessId = 0;
+                        //    foreach (var property in (JObject)jsonObject)
+                        //    {
+                        //        if (property.Key == "ProcessId")
+                        //        {
+                        //            // Parse and store the process ID
+                        //            endedProcessId = Convert.ToInt32(property.Value);
+                        //            break;
+                        //        }
+                        //    }
+
+                        //    // If it's a ProcessEnded event, remove the corresponding process data
+                        //    if (PVData.ContainsKey(clientIdentifier))
+                        //    {
+                        //        // Loop through the process data list and remove the process that ended
+                        //        PVData[clientIdentifier].RemoveAll(item => item.Contains($"ProcessId: {endedProcessId}"));
+                        //    }
+                        //}
 
                         if (connectedClientsForPV.Contains(clientIdentifier)&& !(PVData[clientIdentifier].Count() == 0))
                         {
@@ -236,13 +277,13 @@ class Server
                         }
 
 
-                        //foreach(var property in (JObject)jsonObject) 
+                        //foreach (var property in (JObject)jsonObject)
                         //{
-                        //    if(property.contains== "EventName")
-                        //    Console.WriteLine($" {property.Value}: {property.Value} \n"); 
+
+                        //    Console.WriteLine($" {property.Key}: {property.Value} \n"); // Example of a print => HashCode: value EventName: value ProcessId: value
 
                         //}
-                      
+
 
 
                     }
@@ -274,6 +315,13 @@ class Server
             tcpClient.Close();
         }
     }
+
+    //will check the file hashcode using VT
+    public static void CheckFileHashCode()
+    {
+    }
+
+
 
     // should sends everything that is already in a big dictionary that stores all of the processes, and the function will activate a asycn task that will always update the connection
     private static void SendPVDataOfertainClient(string clientIdentifier , List<string> data) 

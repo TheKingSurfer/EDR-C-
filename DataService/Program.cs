@@ -92,12 +92,12 @@ class Program
     //the incoming data will be sent to the js server here:
     private static async Task CollectPV(HttpListenerContext context) 
     {
-        Console.WriteLine("pv collected !");
+        //Console.WriteLine("pv collected !");
         using (var reader = new StreamReader(context.Request.InputStream, context.Request.ContentEncoding))
         {
             string message = reader.ReadToEnd();
             var receivedData = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(message);
-            Console.WriteLine($"received data from server: {message} ");
+            //Console.WriteLine($"received data from server: {message} ");
 
             foreach (var kvp in receivedData)
             {
@@ -335,11 +335,11 @@ class Program
                 clientEventDataDict[clientIdentifier].Add(eventData);
 
                 // Print the updated dictionary for debugging
-                Console.WriteLine("Client Event Data Dictionary:");
-                foreach (var kvp in clientEventDataDict)
-                {
-                    Console.WriteLine($"{kvp.Key}: {string.Join(", ", kvp.Value)}");
-                }
+                //Console.WriteLine("Client Event Data Dictionary:");
+                //foreach (var kvp in clientEventDataDict)
+                //{
+                //    Console.WriteLine($"{kvp.Key}: {string.Join(", ", kvp.Value)}");
+                //}
 
                 // Check if the client WebSocket connection exists
                 if (clientWebSocketDict.ContainsKey(clientIdentifier))

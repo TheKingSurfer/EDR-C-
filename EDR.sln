@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server Solution\Server\Server.csproj", "{BFC8F3EC-D0B1-47D5-921F-D8B295ED3679}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1E52120A-BC42-4714-9D18-B4873CC6ED3C} = {1E52120A-BC42-4714-9D18-B4873CC6ED3C}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agent", "Agent Solution\Agent\Agent.csproj", "{0C63FF5A-B34D-4815-BE49-E7E22B058337}"
 EndProject

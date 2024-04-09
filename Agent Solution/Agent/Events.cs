@@ -8,6 +8,8 @@ using Microsoft.Diagnostics.Tracing.Session;
 using Microsoft.Diagnostics.Tracing.Parsers;
 using Microsoft.Diagnostics.Tracing.Parsers.Kernel;
 using Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP;
+using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 
 namespace EDR.Agent
 {
@@ -18,6 +20,8 @@ namespace EDR.Agent
         public string FileName { get; set; }
         public DateTime TimeStamp { get; set; }
         public string HashCode { get; set; }
+        
+        //public string FileHashCode { get; set; }
     }
     public class EDRProcessor
     {
@@ -150,6 +154,14 @@ namespace EDR.Agent
                 // Generate hash code for the involved values
                 eventData.HashCode = GenerateHashCode(eventData.ProcessId, eventData.FileName, eventData.TimeStamp);
 
+                //getting the cleaned fileName
+                //string sanitizedFileName = Regex.Replace(eventData.FileName, "[\\/:*?\"<>|]","");
+
+                //get the full path
+                //string AbsolutePath = Path.GetFullPath(sanitizedFileName);
+
+                //activate the function
+                //eventData.FileHashCode = CalculateFileHash(AbsolutePath);
                 // Convert the named class object to JSON
                 string jsonData = Newtonsoft.Json.JsonConvert.SerializeObject(eventData);
                 sendData?.Invoke(jsonData);
@@ -170,6 +182,33 @@ namespace EDR.Agent
             {
                 byte[] hashBytes = sha256.ComputeHash(System.Text.Encoding.UTF8.GetBytes(concatenatedString));
                 return BitConverter.ToString(hashBytes).Replace("-", "");
+            }
+        }
+
+        // a function that generate hash code for a file using SHA-256 (for VT checks)
+        private string CalculateFileHash(string filePath) 
+        {
+            try
+            {
+                using (var stream = File.OpenRead(filePath))
+                {
+                    using (var sha256 = SHA256.Create())
+                    {
+                        byte[] hashBytes = sha256.ComputeHash(stream);
+                        return BitConverter.ToString(hashBytes).Replace("-", "");
+
+                    }
+                }
+            }
+            catch (UnauthorizedAccessException UEA)
+            {
+                Console.WriteLine($"Unauthorized access to file:{UEA.Message}. Skipping..");
+                return null; 
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error Proccesing file: {ex}. Skipping..");
+                return null;
             }
         }
 
