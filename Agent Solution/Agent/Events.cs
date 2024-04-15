@@ -10,6 +10,7 @@ using Microsoft.Diagnostics.Tracing.Parsers.Kernel;
 using Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace EDR.Agent
 {
@@ -21,7 +22,9 @@ namespace EDR.Agent
         public DateTime TimeStamp { get; set; }
         public string HashCode { get; set; }
         
-        //public string FileHashCode { get; set; }
+        public string FileHashCode { get; set; }
+
+        public byte[] fileBytes { get; set; }
     }
     public class EDRProcessor
     {
@@ -139,7 +142,7 @@ namespace EDR.Agent
         }
 
 
-        private void fileIOReadWrite(FileIOReadWriteTraceData data)
+        private async void fileIOReadWrite(FileIOReadWriteTraceData data)
         {
             var eventData = new FileIOEventData
             {
@@ -153,15 +156,29 @@ namespace EDR.Agent
             {
                 // Generate hash code for the involved values
                 eventData.HashCode = GenerateHashCode(eventData.ProcessId, eventData.FileName, eventData.TimeStamp);
+                string AbsolutePath = Path.GetFullPath(eventData.FileName);
+                eventData.fileBytes = GetFileBytes(AbsolutePath);
 
+
+                //eventData.FileHashCode = await CalculateFileHashAsync(eventData.FileName);
+                //if (!string.IsNullOrEmpty(eventData.FileHashCode))
+                //{
+                //    await Console.Out.WriteLineAsync(eventData.FileHashCode);
+                //}
                 //getting the cleaned fileName
                 //string sanitizedFileName = Regex.Replace(eventData.FileName, "[\\/:*?\"<>|]","");
 
                 //get the full path
                 //string AbsolutePath = Path.GetFullPath(sanitizedFileName);
+                //string AbsolutePath = Path.GetFullPath(eventData.FileName);
 
                 //activate the function
                 //eventData.FileHashCode = CalculateFileHash(AbsolutePath);
+                //if (eventData.FileHashCode!=null )
+                //{
+                //    Console.WriteLine(eventData.FileHashCode);
+                //}
+                //Console.WriteLine(eventData.FileHashCode);
                 // Convert the named class object to JSON
                 string jsonData = Newtonsoft.Json.JsonConvert.SerializeObject(eventData);
                 sendData?.Invoke(jsonData);
@@ -170,6 +187,45 @@ namespace EDR.Agent
                 //Console.ForegroundColor = ConsoleColor.Yellow; // print in yellow
                 //Console.WriteLine($"File IO: {data.FileName} - Hash Code: {eventData.HashCode}");
                 //Console.ResetColor(); // Reset the console color
+            }
+        }
+
+        // return an array of bytes of a certain file -> a little bit faster in the protected file checks
+        public byte[] GetFileBytes(string filePath)
+        {
+            // Check if the file exists
+            if (!File.Exists(filePath))
+            {
+                //Console.WriteLine("File not found", filePath);
+            }
+            try
+            {
+                // Read all bytes from the file
+                byte[] fileBytes;
+                using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read))
+                {
+                    fileBytes = new byte[fs.Length];
+                    fs.Read(fileBytes, 0, fileBytes.Length);
+                }
+                //string base64String = Convert.ToBase64String(fileBytes);
+                //Console.WriteLine($"Base64 encoded file content: {base64String}");
+
+                return fileBytes;
+            }
+            catch (FileNotFoundException ex)
+            {
+                //Console.WriteLine($"File not found: {ex.FileName}");
+                return null;
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                //Console.WriteLine($"Unauthorized access: {ex.Message}");
+                return null;
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine($"Error: {ex.Message}");
+                return null;
             }
         }
 
@@ -190,6 +246,13 @@ namespace EDR.Agent
         {
             try
             {
+                //if (!File.Exists(filePath))
+                //{
+                //    Console.WriteLine("The file do not exist (message from hash function)");
+                //    return null;
+                //}
+
+
                 using (var stream = File.OpenRead(filePath))
                 {
                     using (var sha256 = SHA256.Create())
@@ -202,12 +265,37 @@ namespace EDR.Agent
             }
             catch (UnauthorizedAccessException UEA)
             {
-                Console.WriteLine($"Unauthorized access to file:{UEA.Message}. Skipping..");
+                //Console.WriteLine($"Unauthorized access to file:{UEA.Message}. Skipping..");
                 return null; 
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error Proccesing file: {ex}. Skipping..");
+                //Console.WriteLine($"Error Proccesing file: {ex}. Skipping..");
+                return null;
+            }
+        }
+        private async Task<string> CalculateFileHashAsync(string filePath)
+        {
+            try
+            {
+                using (var stream = File.OpenRead(filePath))
+                {
+                    using (var sha256 = SHA256.Create())
+                    {
+                        // Offload synchronous operation to a background thread
+                        byte[] hashBytes = await Task.Run(() => sha256.ComputeHash(stream));
+                        return BitConverter.ToString(hashBytes).Replace("-", "");
+                    }
+                }
+            }
+            catch (UnauthorizedAccessException UEA)
+            {
+                //Console.WriteLine($"Unauthorized access to file:{UEA.Message}. Skipping..");
+                return null;
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine($"Error Proccesing file: {ex}. Skipping..");
                 return null;
             }
         }

@@ -8,6 +8,7 @@ using System.Net.Sockets;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using Microsoft.Diagnostics.Tracing.AutomatedAnalysis;
 using Microsoft.Diagnostics.Tracing.Parsers.ClrPrivate;
 using Microsoft.Diagnostics.Tracing.Parsers.JSDumpHeap;
@@ -15,6 +16,7 @@ using Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsWPF;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using ProcessC;
+using VirusTotalNet;
 using VirusTotalNet.Objects;
 using VirusTotalNet.ResponseCodes;
 using VirusTotalNet.Results;
@@ -53,6 +55,7 @@ class Server
         this.tcpListener.Start();
         Console.WriteLine($"Server Started - Server IP{SERVER_IP} : Port {PORT_NO}");
         int clientCounter = 0;
+        CheckFileHashCode();
 
         while (true)
         {
@@ -176,22 +179,6 @@ class Server
                         //print when found processes that has been started
                         JObject jObject = jsonObject as JObject;
                         CheckSpecialEvents(jsonObject, clientStream, tcpClient);
-                        //if (jObject != null)
-                        //{
-                        //    // Iterate through the properties of the JObject
-                        //    foreach (var property in jObject.Properties())
-                        //    {
-                        //        // Check if the property value matches "ProcessStarted"
-                        //        if (property.Value.ToString() == "ProcessStarted")
-                        //        {
-                                    
-                        //            //Console.WriteLine("Process started found");
-                        //        }                                
-                        //    }
-                        //}
-
-                        
-                        //if (ProcessViewFlag)
                         
                         //NEW code snippet - more efficient
                         //check if there is already previeos data of a certain client
@@ -207,6 +194,7 @@ class Server
                             var fileHashCode = jsonObject["FileHashCode"]?.ToString();
                             if (!string.IsNullOrEmpty(fileHashCode))
                             {
+                                //Console.WriteLine( fileHashCode);
                                 // TODO: call the function and use VT to check the file hash code 
                             }
                         }
@@ -228,64 +216,10 @@ class Server
                             }
                         }
 
-                        ////TODO: change the amount of loops, its make the program slow
-                        //if (jsonObject["EventName"]?.ToString() == "********* FileIOReadWrite *********") 
-                        //{
-                        //    //a loop that will check FileHashCode
-                        //    foreach (var property in (JObject)jsonObject) 
-                        //    {
-                        //        if (property.Key == "FileHashCode" && property.Value != null && property.Value.ToString()!="")
-                        //        {
-                        //            //Console.WriteLine(property.Value);//=> its works.
-                        //            //TODO : call the function and use VT to check the file hash code 
-                        //        }
-                        //    }
-                        //}
-                        //else if (jsonObject["EventName"]?.ToString() == "ProcessStarted")
-                        //{
-                        //    foreach (var property in (JObject)jsonObject)
-                        //    {
-                        //        //add the key-pair value to the dict
-                        //        PVData[clientIdentifier].Add($"{property.Key}: {property.Value}");
-                        //    }
-                        //}
-                        //else if (jsonObject["EventName"]?.ToString() == "ProcessEnded")
-                        //{
-                        //    // Extract the process ID of the ended process
-                        //    int endedProcessId = 0;
-                        //    foreach (var property in (JObject)jsonObject)
-                        //    {
-                        //        if (property.Key == "ProcessId")
-                        //        {
-                        //            // Parse and store the process ID
-                        //            endedProcessId = Convert.ToInt32(property.Value);
-                        //            break;
-                        //        }
-                        //    }
-
-                        //    // If it's a ProcessEnded event, remove the corresponding process data
-                        //    if (PVData.ContainsKey(clientIdentifier))
-                        //    {
-                        //        // Loop through the process data list and remove the process that ended
-                        //        PVData[clientIdentifier].RemoveAll(item => item.Contains($"ProcessId: {endedProcessId}"));
-                        //    }
-                        //}
-
                         if (connectedClientsForPV.Contains(clientIdentifier)&& !(PVData[clientIdentifier].Count() == 0))
                         {
                             SendPVDataOfertainClient(clientIdentifier, PVData[clientIdentifier]);
                         }
-
-
-                        //foreach (var property in (JObject)jsonObject)
-                        //{
-
-                        //    Console.WriteLine($" {property.Key}: {property.Value} \n"); // Example of a print => HashCode: value EventName: value ProcessId: value
-
-                        //}
-
-
-
                     }
                 }
                 catch (JsonReaderException)
@@ -317,8 +251,23 @@ class Server
     }
 
     //will check the file hashcode using VT
-    public static void CheckFileHashCode()
+    public static async Task  CheckFileHashCode()
     {
+        VirusTotal virusTotal = new VirusTotal("eb8e004f4740126a984d7db424e9aad0fe368a13a50d995ac2c00bbe5e3675a2");
+
+        //Use HTTPS instead of HTTP
+        virusTotal.UseTLS = true;
+
+        //Create the EICAR test virus. See http://www.eicar.org/86-0-Intended-use.html
+        byte[] eicar = Encoding.ASCII.GetBytes(@"X5O!P%@AP[4\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*");
+
+        //Check if the file has been scanned before.
+        FileReport fileReport = await virusTotal.GetFileReportAsync(eicar);
+
+        bool hasFileBeenScannedBefore = fileReport.ResponseCode == FileReportResponseCode.Present;
+
+        Console.WriteLine("File has been scanned before: " + (hasFileBeenScannedBefore ? "Yes" : "No"));
+        await Console.Out.WriteLineAsync($"file Report: {fileReport.ToString()}");
     }
 
 
@@ -364,7 +313,17 @@ class Server
             {
                 foreach (var property in (JObject)jsonObject)
                 {
-                    Console.WriteLine($"{property.Key} : {property.Value}");
+                    //for bytes
+                    if (property.Key == "fileBytes")
+                    {
+                        string base64EncodedString = property.Value.ToString();
+                        byte[]bytes= Convert.FromBase64String(base64EncodedString);
+                        Console.WriteLine($"{property.Key} : {string.Join("",bytes)}");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"{property.Key} : {property.Value}");
+                    }
                     eventDataString += $"{property.Key}: {property.Value}\n";
                     //extracting the process id 
                     if (property.Key == "ProcessId")
