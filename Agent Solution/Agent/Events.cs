@@ -11,6 +11,9 @@ using Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Diagnostics.PerformanceData;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace EDR.Agent
 {
@@ -30,7 +33,7 @@ namespace EDR.Agent
     {
         public readonly TraceEventSession kernelSession;
         private Action<string> sendData;
-
+        private readonly Dictionary<string, byte[]> executableBytesDictionary;
 
         //static void Main(string[] args)
         //{
@@ -62,6 +65,7 @@ namespace EDR.Agent
             Console.CancelKeyPress += delegate (object sender, ConsoleCancelEventArgs e) { kernelSession.Dispose(); };
 
             sendData = sendDataCallback;
+            executableBytesDictionary = new Dictionary<string, byte[]>();
         }
 
         public void StartMonitoring()
@@ -157,7 +161,47 @@ namespace EDR.Agent
                 // Generate hash code for the involved values
                 eventData.HashCode = GenerateHashCode(eventData.ProcessId, eventData.FileName, eventData.TimeStamp);
                 string AbsolutePath = Path.GetFullPath(eventData.FileName);
-                eventData.fileBytes = GetFileBytes(AbsolutePath);
+                //eventData.fileBytes = GetFileBytes(AbsolutePath); => gets the bytes of the file that get accessed
+
+
+
+
+                //Works = > return the full path of the executables
+                string executableFileName;
+                try
+                {
+                    Process process = Process.GetProcessById(data.ProcessID);
+                    executableFileName = process.MainModule.FileName;
+                }
+                catch ( ArgumentException )
+                {
+                    executableFileName = Process.GetCurrentProcess().MainModule.FileName;
+                }catch (System.ComponentModel.Win32Exception) 
+                {
+                    executableFileName = Process.GetCurrentProcess().MainModule.FileName;
+                }
+
+
+                byte[] fileBytes = null;
+                if (!executableBytesDictionary.ContainsKey(executableFileName))
+                {
+                    fileBytes = GetFileBytes(executableFileName);
+                    if (fileBytes != null)
+                        executableBytesDictionary[executableFileName] = fileBytes;
+                    eventData.fileBytes = fileBytes;
+                }
+                else
+                {
+                    fileBytes = executableBytesDictionary[executableFileName];
+                }
+
+
+
+                eventData.fileBytes = fileBytes;
+                //gets the bytes of the executable that runs the process
+
+                //if (eventData.fileBytes!=null)
+                    //Console.WriteLine($"bytes:\n {string.Join("", eventData.fileBytes)}");
 
 
                 //eventData.FileHashCode = await CalculateFileHashAsync(eventData.FileName);
@@ -193,11 +237,11 @@ namespace EDR.Agent
         // return an array of bytes of a certain file -> a little bit faster in the protected file checks
         public byte[] GetFileBytes(string filePath)
         {
-            // Check if the file exists
-            if (!File.Exists(filePath))
-            {
-                //Console.WriteLine("File not found", filePath);
-            }
+            //// Check if the file exists
+            //if (!File.Exists(filePath))
+            //{
+            //    //Console.WriteLine("File not found", filePath);
+            //}
             try
             {
                 // Read all bytes from the file
@@ -209,6 +253,7 @@ namespace EDR.Agent
                 }
                 //string base64String = Convert.ToBase64String(fileBytes);
                 //Console.WriteLine($"Base64 encoded file content: {base64String}");
+                //Console.WriteLine($"bytes:\n {string.Join("", fileBytes)}");
 
                 return fileBytes;
             }

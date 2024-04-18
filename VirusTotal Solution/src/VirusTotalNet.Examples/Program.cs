@@ -67,14 +67,14 @@ internal class Program
         Console.WriteLine();
     }
 
-    private static void PrintScan(ScanResult scanResult)
+    public static void PrintScan(ScanResult scanResult)
     {
         Console.WriteLine("Scan ID: " + scanResult.ScanId);
         Console.WriteLine("Message: " + scanResult.VerboseMsg);
         Console.WriteLine();
     }
 
-    private static void PrintScan(FileReport fileReport)
+    public static void PrintScan(FileReport fileReport)
     {
         Console.WriteLine("Scan ID: " + fileReport.ScanId);
         Console.WriteLine("Message: " + fileReport.VerboseMsg);

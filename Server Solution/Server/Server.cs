@@ -22,6 +22,7 @@ using VirusTotalNet.ResponseCodes;
 using VirusTotalNet.Results;
 
 
+
 class Server
 {
     const int PORT_NO = 5000; // Port number for the server
@@ -55,7 +56,7 @@ class Server
         this.tcpListener.Start();
         Console.WriteLine($"Server Started - Server IP{SERVER_IP} : Port {PORT_NO}");
         int clientCounter = 0;
-        CheckFileHashCode();
+        
 
         while (true)
         {
@@ -251,23 +252,25 @@ class Server
     }
 
     //will check the file hashcode using VT
-    public static async Task  CheckFileHashCode()
+    public static async Task CheckFileHashCode(byte[]bytes )
     {
         VirusTotal virusTotal = new VirusTotal("eb8e004f4740126a984d7db424e9aad0fe368a13a50d995ac2c00bbe5e3675a2");
 
         //Use HTTPS instead of HTTP
         virusTotal.UseTLS = true;
 
-        //Create the EICAR test virus. See http://www.eicar.org/86-0-Intended-use.html
-        byte[] eicar = Encoding.ASCII.GetBytes(@"X5O!P%@AP[4\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*");
+        
+        //byte[] eicar = Encoding.ASCII.GetBytes(@"X5O!P%@AP[4\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*");
+        //Console.WriteLine($"eicar bytes : {string.Join(" ",eicar)}"); => prints out  89 98 123 and so forth
 
         //Check if the file has been scanned before.
-        FileReport fileReport = await virusTotal.GetFileReportAsync(eicar);
+        FileReport fileReport = await virusTotal.GetFileReportAsync(bytes);
 
         bool hasFileBeenScannedBefore = fileReport.ResponseCode == FileReportResponseCode.Present;
 
         Console.WriteLine("File has been scanned before: " + (hasFileBeenScannedBefore ? "Yes" : "No"));
-        await Console.Out.WriteLineAsync($"file Report: {fileReport.ToString()}");
+        PrintScan(fileReport);
+       
     }
 
 
@@ -318,7 +321,9 @@ class Server
                     {
                         string base64EncodedString = property.Value.ToString();
                         byte[]bytes= Convert.FromBase64String(base64EncodedString);
-                        Console.WriteLine($"{property.Key} : {string.Join("",bytes)}");
+                        //Console.WriteLine($"{property.Key} : {string.Join("",bytes)}");
+                        //CheckFileHashCode(bytes);
+
                     }
                     else
                     {
@@ -371,6 +376,22 @@ class Server
         }
     }
 
+
+    public static void PrintScan(FileReport fileReport)
+    {
+        Console.WriteLine("Scan ID: " + fileReport.ScanId);
+        Console.WriteLine("Message: " + fileReport.VerboseMsg);
+
+        if (fileReport.ResponseCode == FileReportResponseCode.Present)
+        {
+            foreach (KeyValuePair<string, ScanEngine> scan in fileReport.Scans)
+            {
+                Console.WriteLine("{0,-25} Detected: {1}", scan.Key, scan.Value.Detected);
+            }
+        }
+
+        Console.WriteLine();
+    }
 
 
     static void PrintProcessState(int processId)
