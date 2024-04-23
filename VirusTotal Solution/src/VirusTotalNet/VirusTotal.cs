@@ -883,11 +883,15 @@ public class VirusTotal : IDisposable
         OnHTTPRequestSending?.Invoke(request);
 
         HttpResponseMessage response = await _client.SendAsync(request).ConfigureAwait(false);
-
+        
         OnHTTPResponseReceived?.Invoke(response);
 
         if (response.StatusCode == HttpStatusCode.NoContent)
-            throw new RateLimitException("You have reached the 4 requests pr. min. limit of VirusTotal");
+        {
+            //throw new RateLimitException("You have reached the 4 requests pr. min. limit of VirusTotal");
+            Console.WriteLine("You have reached the 4 requests pr. min. limit of VirusTotal");
+            return null;
+        }
 
         if (response.StatusCode == HttpStatusCode.Forbidden)
             throw new AccessDeniedException($"You don't have access to this service at '{url}'. Make sure you have a working API key and the required access.");

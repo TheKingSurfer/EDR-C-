@@ -160,7 +160,11 @@ namespace EDR.Agent
             {
                 // Generate hash code for the involved values
                 eventData.HashCode = GenerateHashCode(eventData.ProcessId, eventData.FileName, eventData.TimeStamp);
-                string AbsolutePath = Path.GetFullPath(eventData.FileName);
+                try
+                {
+
+                    string AbsolutePath = Path.GetFullPath(eventData.FileName);
+                }catch (Exception ex) { Console.WriteLine($" path have bad format - {ex}"); }
                 //eventData.fileBytes = GetFileBytes(AbsolutePath); => gets the bytes of the file that get accessed
 
 
@@ -185,7 +189,7 @@ namespace EDR.Agent
                 byte[] fileBytes = null;
                 if (!executableBytesDictionary.ContainsKey(executableFileName))
                 {
-                    fileBytes = GetFileBytes(executableFileName);
+                    fileBytes = GetFileBytes2(executableFileName);
                     if (fileBytes != null)
                         executableBytesDictionary[executableFileName] = fileBytes;
                     eventData.fileBytes = fileBytes;
@@ -194,54 +198,23 @@ namespace EDR.Agent
                 {
                     fileBytes = executableBytesDictionary[executableFileName];
                 }
-
+                
 
 
                 eventData.fileBytes = fileBytes;
-                //gets the bytes of the executable that runs the process
 
-                //if (eventData.fileBytes!=null)
-                    //Console.WriteLine($"bytes:\n {string.Join("", eventData.fileBytes)}");
-
-
-                //eventData.FileHashCode = await CalculateFileHashAsync(eventData.FileName);
-                //if (!string.IsNullOrEmpty(eventData.FileHashCode))
-                //{
-                //    await Console.Out.WriteLineAsync(eventData.FileHashCode);
-                //}
-                //getting the cleaned fileName
-                //string sanitizedFileName = Regex.Replace(eventData.FileName, "[\\/:*?\"<>|]","");
-
-                //get the full path
-                //string AbsolutePath = Path.GetFullPath(sanitizedFileName);
-                //string AbsolutePath = Path.GetFullPath(eventData.FileName);
-
-                //activate the function
-                //eventData.FileHashCode = CalculateFileHash(AbsolutePath);
-                //if (eventData.FileHashCode!=null )
-                //{
-                //    Console.WriteLine(eventData.FileHashCode);
-                //}
-                //Console.WriteLine(eventData.FileHashCode);
-                // Convert the named class object to JSON
+                //Console.WriteLine($"File Bytes using function2 : {string.Join("", fileBytes)}");
                 string jsonData = Newtonsoft.Json.JsonConvert.SerializeObject(eventData);
                 sendData?.Invoke(jsonData);
 
-                // Print the event details with colored console output
-                //Console.ForegroundColor = ConsoleColor.Yellow; // print in yellow
-                //Console.WriteLine($"File IO: {data.FileName} - Hash Code: {eventData.HashCode}");
-                //Console.ResetColor(); // Reset the console color
+                
             }
         }
 
         // return an array of bytes of a certain file -> a little bit faster in the protected file checks
         public byte[] GetFileBytes(string filePath)
         {
-            //// Check if the file exists
-            //if (!File.Exists(filePath))
-            //{
-            //    //Console.WriteLine("File not found", filePath);
-            //}
+           
             try
             {
                 // Read all bytes from the file
@@ -272,6 +245,33 @@ namespace EDR.Agent
                 //Console.WriteLine($"Error: {ex.Message}");
                 return null;
             }
+        }
+
+        //faster function
+        public byte[] GetFileBytes2(string filePath)
+        {
+            try
+            {
+                // Read all bytes from the file
+                return File.ReadAllBytes(filePath);
+            }
+            catch (FileNotFoundException ex)
+            {
+                // Handle file not found exception
+                // Console.WriteLine($"File not found: {ex.FileName}");
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                // Handle unauthorized access exception
+                // Console.WriteLine($"Unauthorized access: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                // Handle other exceptions
+                // Console.WriteLine($"Error: {ex.Message}");
+            }
+
+            return null; // Return null in case of errors
         }
 
         // Helper method to generate SHA-256 hash code

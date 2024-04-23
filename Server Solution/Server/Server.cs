@@ -4,12 +4,14 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Net.Sockets;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Diagnostics.Tracing.AutomatedAnalysis;
+using Microsoft.Diagnostics.Tracing.Parsers.Clr;
 using Microsoft.Diagnostics.Tracing.Parsers.ClrPrivate;
 using Microsoft.Diagnostics.Tracing.Parsers.JSDumpHeap;
 using Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsWPF;
@@ -35,7 +37,9 @@ class Server
     private static List<string> connectedClientsForPV = new List<string>();
     private static bool ProcessViewFlag = false; // if its true the there will be alwayas data added to a certain dict
     private static Dictionary<string, List<string>> PVData = new Dictionary<string, List<string>>();
-    
+    private static Dictionary<byte[] , string> VTChecked = new Dictionary<byte[] , string>(); // => will host byte array with a string that will store the detection from the vt
+
+
 
 
 
@@ -185,9 +189,7 @@ class Server
                         //check if there is already previeos data of a certain client
                         if (!PVData.ContainsKey(clientIdentifier))
                         {
-                            PVData[clientIdentifier] = new List<string>();
-
-                                
+                            PVData[clientIdentifier] = new List<string>();   
                         }
 
                         if (jsonObject["EventName"]?.ToString() == "********* FileIOReadWrite *********")
@@ -198,9 +200,7 @@ class Server
                                 //Console.WriteLine( fileHashCode);
                                 // TODO: call the function and use VT to check the file hash code 
                             }
-                        }
-                        
-                        if (jsonObject["EventName"]?.ToString() == "ProcessStarted")
+                        }else if (jsonObject["EventName"]?.ToString() == "ProcessStarted")
                         {
                             var jObj = (JObject)jsonObject;
                             foreach (var property in jObj.Properties())
@@ -252,7 +252,7 @@ class Server
     }
 
     //will check the file hashcode using VT
-    public static async Task CheckFileHashCode(byte[]bytes )
+    public static  async Task<string> CheckFileHashCode(byte[]bytes )
     {
         VirusTotal virusTotal = new VirusTotal("eb8e004f4740126a984d7db424e9aad0fe368a13a50d995ac2c00bbe5e3675a2");
 
@@ -269,7 +269,9 @@ class Server
         bool hasFileBeenScannedBefore = fileReport.ResponseCode == FileReportResponseCode.Present;
 
         Console.WriteLine("File has been scanned before: " + (hasFileBeenScannedBefore ? "Yes" : "No"));
-        PrintScan(fileReport);
+        string fileRep = ScanReturn(fileReport);
+        //Console.WriteLine(fileRep);
+        return fileRep;
        
     }
 
@@ -304,7 +306,7 @@ class Server
         }
     }
 
-    static void CheckSpecialEvents(JToken jsonObject, NetworkStream nwStream, TcpClient client)
+    static async void CheckSpecialEvents(JToken jsonObject, NetworkStream nwStream, TcpClient client)
     {
         // Check if the object has a "FileName" property
         if (jsonObject["FileName"] != null)
@@ -321,6 +323,14 @@ class Server
                     {
                         string base64EncodedString = property.Value.ToString();
                         byte[]bytes= Convert.FromBase64String(base64EncodedString);
+                        if (!VTChecked.ContainsKey(bytes))
+                        {
+                            string pairedValue = await CheckFileHashCode(bytes);
+                            VTChecked.Add(bytes, pairedValue);
+                        }
+                        
+                        
+
                         //Console.WriteLine($"{property.Key} : {string.Join("",bytes)}");
                         //CheckFileHashCode(bytes);
 
@@ -391,6 +401,21 @@ class Server
         }
 
         Console.WriteLine();
+    }
+    public static string ScanReturn(FileReport fileReport)
+    {
+
+        string message = "";
+
+        if (fileReport.ResponseCode == FileReportResponseCode.Present)
+        {
+            foreach (KeyValuePair<string, ScanEngine> scan in fileReport.Scans)
+            {
+                message += $"{scan.Key} Detected: {scan.Value.Detected}" + "\n";
+            }
+        }
+        return message;
+        
     }
 
 
