@@ -14,6 +14,8 @@ using System.Threading.Tasks;
 using System.Diagnostics.PerformanceData;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Linq;
+using Microsoft.Diagnostics.Tracing.Parsers.ClrPrivate;
 
 namespace EDR.Agent
 {
@@ -25,7 +27,7 @@ namespace EDR.Agent
         public DateTime TimeStamp { get; set; }
         public string HashCode { get; set; }
         
-        public string FileHashCode { get; set; }
+        public string ExecutableHashCode { get; set; }
 
         public byte[] fileBytes { get; set; }
     }
@@ -34,23 +36,11 @@ namespace EDR.Agent
         public readonly TraceEventSession kernelSession;
         private Action<string> sendData;
         private readonly Dictionary<string, byte[]> executableBytesDictionary;
+        private string[] protectedFiles = { "Desktop.txt" };
+        private Dictionary<string, string> executableHashDictionary = new Dictionary<string, string>();
+        private string [] protectedFolderNames =new string[0];
 
-        //static void Main(string[] args)
-        //{
-        //    EDRProcessor edrProcessor = new EDRProcessor();
-
-        //    // Start monitoring
-        //    edrProcessor.StartMonitoring();
-
-        //    // ... Do other work ...
-
-        //    // Stop monitoring
-        //    edrProcessor.StopMonitoring();
-
-        //    // Monitor event log
-        //    edrProcessor.MonitorEventLog("Security", new[] { 4663, 4656, 4670 });
-        //}
-
+       
         public EDRProcessor(Action<string> sendDataCallback)
         {
 
@@ -159,49 +149,66 @@ namespace EDR.Agent
             if (!string.IsNullOrEmpty(eventData.FileName))
             {
                 // Generate hash code for the involved values
-                eventData.HashCode = GenerateHashCode(eventData.ProcessId, eventData.FileName, eventData.TimeStamp);
+                //eventData.HashCode = GenerateHashCode(eventData.ProcessId, eventData.FileName, eventData.TimeStamp);
                 try
                 {
-
                     string AbsolutePath = Path.GetFullPath(eventData.FileName);
                 }catch (Exception ex) { Console.WriteLine($" path have bad format - {ex}"); }
-                //eventData.fileBytes = GetFileBytes(AbsolutePath); => gets the bytes of the file that get accessed
-
-
 
 
                 //Works = > return the full path of the executables
-                string executableFileName;
+                string executableFilePath;
                 try
                 {
                     Process process = Process.GetProcessById(data.ProcessID);
-                    executableFileName = process.MainModule.FileName;
+                    executableFilePath = process.MainModule.FileName;
                 }
                 catch ( ArgumentException )
                 {
-                    executableFileName = Process.GetCurrentProcess().MainModule.FileName;
+                    executableFilePath = Process.GetCurrentProcess().MainModule.FileName;
                 }catch (System.ComponentModel.Win32Exception) 
                 {
-                    executableFileName = Process.GetCurrentProcess().MainModule.FileName;
+                    executableFilePath = Process.GetCurrentProcess().MainModule.FileName;
                 }
 
-
+                string executableHashCode = null;
                 byte[] fileBytes = null;
-                if (!executableBytesDictionary.ContainsKey(executableFileName))
-                {
-                    fileBytes = GetFileBytes2(executableFileName);
-                    if (fileBytes != null)
-                        executableBytesDictionary[executableFileName] = fileBytes;
-                    eventData.fileBytes = fileBytes;
+                string lastName = eventData.FileName.Split('\\').Last();
+                if (protectedFiles.Contains(lastName)) {
+                    //Bytes
+                    if (!executableBytesDictionary.ContainsKey(executableFilePath))
+                    {
+                        fileBytes = GetFileBytes2(executableFilePath);
+                        if (fileBytes != null)
+                            executableBytesDictionary[executableFilePath] = fileBytes;
+                        eventData.fileBytes = fileBytes;
+                    }
+                    else
+                    {
+                        fileBytes = executableBytesDictionary[executableFilePath];
+                    }
+
+                    //HashCode
+                    if (!executableHashDictionary.ContainsKey(executableFilePath))
+                    {
+
+                        executableHashCode = CalculateFileHash(executableFilePath);
+                        if (executableHashCode != null)
+                        {
+                            executableHashDictionary[executableFilePath] = executableHashCode;
+                        }
+
+                    }
+                    else 
+                    {
+                        executableHashCode= executableHashDictionary[executableFilePath];
+                    }
+
                 }
-                else
-                {
-                    fileBytes = executableBytesDictionary[executableFileName];
-                }
-                
 
 
                 eventData.fileBytes = fileBytes;
+                eventData.ExecutableHashCode = executableHashCode;
 
                 //Console.WriteLine($"File Bytes using function2 : {string.Join("", fileBytes)}");
                 string jsonData = Newtonsoft.Json.JsonConvert.SerializeObject(eventData);

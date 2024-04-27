@@ -38,12 +38,10 @@ class Server
     private static bool ProcessViewFlag = false; // if its true the there will be alwayas data added to a certain dict
     private static Dictionary<string, List<string>> PVData = new Dictionary<string, List<string>>();
     private static Dictionary<byte[] , string> VTChecked = new Dictionary<byte[] , string>(); // => will host byte array with a string that will store the detection from the vt
-
-
-
-
-
     private static string[] protectedFiles = { "Desktop.txt" };// this array will be set by the user - protected files
+    private static Dictionary<IPEndPoint, string[]> protectedFilesToAgent = new Dictionary<IPEndPoint, string[]>();
+  
+
 
     // Flag to indicate whether communication should be paused
     private static bool pauseCommunication = false;
@@ -66,12 +64,11 @@ class Server
         {
             clientCounter++;
             TcpClient client = this.tcpListener.AcceptTcpClient();
+
+
             if (CheckForProcessViewRequest(client))
             {
-
                 Console.WriteLine("Good!!!!!!!!");
-                //TODO: activate some function that will Send the processes data to specific clients
-
                 continue;
             }
 
@@ -86,6 +83,17 @@ class Server
             var endPoint = (IPEndPoint)client.Client.RemoteEndPoint;
             string ipAddress = endPoint.Address.ToString();
             int port = endPoint.Port;
+            //if (!protectedFilesToAgent.ContainsKey(endPoint))
+            //{
+            //    protectedFilesToAgent.Add(endPoint, new string[0]);
+
+            //}
+
+            ////temporary
+            //if(!protectedFilesToAgent[endPoint].Contains("Desktop.txt"))
+            //{
+            //    protectedFilesToAgent[endPoint].Append("Desktop");
+            //}
 
 
             //checks the type of the connection (PV or not)
@@ -338,8 +346,9 @@ class Server
                     else
                     {
                         Console.WriteLine($"{property.Key} : {property.Value}");
+                        eventDataString +=$"{property.Key} : {property.Value}\n";
                     }
-                    eventDataString += $"{property.Key}: {property.Value}\n";
+                    
                     //extracting the process id 
                     if (property.Key == "ProcessId")
                     {
