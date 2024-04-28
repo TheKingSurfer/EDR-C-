@@ -50,58 +50,13 @@ namespace EDR.Agent
                 Console.ReadKey();
                 return;
             }
-
             protectedFolderPath.Add(@"C:\Test");
-            //TODO: check if there is any collision between subdirectories
-            //creating File watcher for each directory
-            foreach (string directory in protectedFolderPath)
-            { 
-                var watcher = new FileSystemWatcher(directory);
-                watcher.NotifyFilter = NotifyFilters.Attributes
-                                  | NotifyFilters.CreationTime
-                                  | NotifyFilters.DirectoryName
-                                  | NotifyFilters.FileName
-                                  | NotifyFilters.Security;
-                watcher.Changed += OnChanged;
-                watcher.Created += OnCreated;
-                watcher.Deleted += OnDeleted;
-                watcher.Renamed += OnRenamed;
-                watcher.IncludeSubdirectories = true;
-                watcher.EnableRaisingEvents = true;
-            }
-
-
 
             kernelSession = new TraceEventSession(KernelTraceEventParser.KernelSessionName);
             Console.CancelKeyPress += delegate (object sender, ConsoleCancelEventArgs e) { kernelSession.Dispose(); };
 
             sendData = sendDataCallback;
             executableBytesDictionary = new Dictionary<string, byte[]>();
-        }
-
-        private static void OnChanged(object sender, FileSystemEventArgs e)
-        {
-            if (e.ChangeType != WatcherChangeTypes.Changed)
-            {
-                return;
-            }
-            Console.WriteLine($"Changed: {e.FullPath}");
-        }
-
-        private static void OnCreated(object sender, FileSystemEventArgs e)
-        {
-            string value = $"Created: {e.FullPath}";
-            Console.WriteLine(value);
-        }
-
-        private static void OnDeleted(object sender, FileSystemEventArgs e) =>
-            Console.WriteLine($"Deleted: {e.FullPath}");
-
-        private static void OnRenamed(object sender, RenamedEventArgs e)
-        {
-            Console.WriteLine($"Renamed:");
-            Console.WriteLine($"    Old: {e.OldFullPath}");
-            Console.WriteLine($"    New: {e.FullPath}");
         }
 
         public void StartMonitoring()
@@ -220,19 +175,8 @@ namespace EDR.Agent
                 string executableHashCode = null;
                 byte[] fileBytes = null;
                 string lastName = eventData.FileName.Split('\\').Last();
-                if (protectedFiles.Contains(lastName)) {
-                    //Bytes
-                    if (!executableBytesDictionary.ContainsKey(executableFilePath))
-                    {
-                        fileBytes = GetFileBytes2(executableFilePath);
-                        if (fileBytes != null)
-                            executableBytesDictionary[executableFilePath] = fileBytes;
-                        eventData.fileBytes = fileBytes;
-                    }
-                    else
-                    {
-                        fileBytes = executableBytesDictionary[executableFilePath];
-                    }
+                if (protectedFiles.Contains(lastName) || protectedFolderPath.Any(path => eventData.FileName.StartsWith(path))) {
+                    
 
                     //HashCode
                     if (!executableHashDictionary.ContainsKey(executableFilePath))
