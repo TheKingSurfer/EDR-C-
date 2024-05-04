@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Net.Sockets;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -37,9 +38,11 @@ class Server
     private static List<string> connectedClientsForPV = new List<string>();
     private static bool ProcessViewFlag = false; // if its true the there will be alwayas data added to a certain dict
     private static Dictionary<string, List<string>> PVData = new Dictionary<string, List<string>>();
-    private static Dictionary<byte[] , string> VTChecked = new Dictionary<byte[] , string>(); // => will host byte array with a string that will store the detection from the vt
+    private static Dictionary<byte[] , string> VTCheckedBytes = new Dictionary<byte[] , string>(); // => will host byte array with a string that will store the detection from the vt
     private static string[] protectedFiles = { "Desktop.txt" };// this array will be set by the user - protected files
     private static Dictionary<IPEndPoint, string[]> protectedFilesToAgent = new Dictionary<IPEndPoint, string[]>();
+    private static Dictionary<string,string>VTCheckedHash = new Dictionary<string,string>();// => will host the hash code of a file and the string of the check itself from the vt
+
   
 
 
@@ -53,12 +56,18 @@ class Server
         this.listenerThread.Start();
     }
 
+    /// <summary>
+    /// Initializes a TCP listener and starts listening for client connections. Handles incoming client connections and starts a thread to handle communication with each client.
+    /// </summary>
     private void ListenForClients()
     {
         this.tcpListener.Start();
         Console.WriteLine($"Server Started - Server IP{SERVER_IP} : Port {PORT_NO}");
         int clientCounter = 0;
-        
+
+        //string answer  = await CheckFileHashCode("275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f");
+        //await Console.Out.WriteLineAsync(answer); - > works but ListenForClients has to be async
+
 
         while (true)
         {
@@ -106,10 +115,15 @@ class Server
     }
 
 
-    
-   
 
 
+
+
+    /// <summary>
+    /// Checks if a client request is for process view. If so, adds or removes the client from the list of clients interested in process view data.
+    /// </summary>
+    /// <param name="clientObj">The client object representing the TCP connection.</param>
+    /// <returns>True if the message contains a request for process view data; otherwise, false.</returns>
     public static bool CheckForProcessViewRequest(object clientObj)
     {
         TcpClient tcpClient = (TcpClient)clientObj;
@@ -156,6 +170,14 @@ class Server
         }
     }
 
+
+
+    /// <summary>
+    /// Handles communication with a client over TCP/IP. Parses incoming JSON data, processes it, and manages a list of events for each client. 
+    /// Also checks for special events such as file I/O read/write operations and processes started or ended. Maintains a list of client-specific data and sends it if requested by connected clients.
+    /// </summary>
+    /// <param name="clientObj">The client object representing the TCP connection.</param>
+
     private void HandleClientComm(object clientObj)
     {
         TcpClient tcpClient = (TcpClient)clientObj;
@@ -165,7 +187,7 @@ class Server
         int port = endPoint.Port;
 
         string clientIdentifier = $"{ipAddress}:{port}";
-
+        
         // Using a StreamReader to simplify reading from the stream
         StreamReader reader = new StreamReader(clientStream, Encoding.UTF8);
 
@@ -202,10 +224,9 @@ class Server
 
                         if (jsonObject["EventName"]?.ToString() == "********* FileIOReadWrite *********")
                         {
-                            var fileHashCode = jsonObject["FileHashCode"]?.ToString();
-                            if (!string.IsNullOrEmpty(fileHashCode))
+                            var executableHashCode = jsonObject["ExecutableHashCode"]?.ToString();
+                            if (!string.IsNullOrEmpty(executableHashCode))
                             {
-                                //Console.WriteLine( fileHashCode);
                                 // TODO: call the function and use VT to check the file hash code 
                             }
                         }else if (jsonObject["EventName"]?.ToString() == "ProcessStarted")
@@ -259,8 +280,32 @@ class Server
         }
     }
 
-    //will check the file hashcode using VT
-    public static  async Task<string> CheckFileHashCode(byte[]bytes )
+    /// <summary>
+    /// Checks the hash code of a file using VirusTotal API.
+    /// </summary>
+    /// <param name="HashCode">The hash code of the file to check.</param>
+    /// <returns>A task representing the asynchronous operation, returning the scan results.</returns>
+
+    public static async Task<string> CheckFileHashCode(string HashCode)
+    {
+        VirusTotal virusTotal = new VirusTotal("eb8e004f4740126a984d7db424e9aad0fe368a13a50d995ac2c00bbe5e3675a2");
+        virusTotal.UseTLS = true;
+
+        FileReport fileReport = await virusTotal.GetFileReportAsync(HashCode);
+        bool hasFileBeenScannedBefore = fileReport.ResponseCode == FileReportResponseCode.Present;
+        Console.WriteLine("File has been scanned before (Using Hash): " + (hasFileBeenScannedBefore ? "Yes" : "No"));
+        string fileRep = ScanReturn(fileReport);
+        //Console.WriteLine(fileRep);
+        return fileRep;
+
+    }
+
+    /// <summary>
+    /// Checks the bytes of a file using VirusTotal API.
+    /// </summary>
+    /// <param name="bytes">The byte array representing the file contents.</param>
+    /// <returns>A task representing the asynchronous operation, returning the scan results.</returns>
+    public static  async Task<string> CheckFileBytes(byte[]bytes )
     {
         VirusTotal virusTotal = new VirusTotal("eb8e004f4740126a984d7db424e9aad0fe368a13a50d995ac2c00bbe5e3675a2");
 
@@ -271,7 +316,9 @@ class Server
         //byte[] eicar = Encoding.ASCII.GetBytes(@"X5O!P%@AP[4\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*");
         //Console.WriteLine($"eicar bytes : {string.Join(" ",eicar)}"); => prints out  89 98 123 and so forth
 
-        //Check if the file has been scanned before.
+        //Check if the file has been scanned before - using its bytes.
+        //FileReport fileReport = await virusTotal.GetFileReportAsync(bytes);
+
         FileReport fileReport = await virusTotal.GetFileReportAsync(bytes);
 
         bool hasFileBeenScannedBefore = fileReport.ResponseCode == FileReportResponseCode.Present;
@@ -284,6 +331,11 @@ class Server
     }
 
 
+    /// <summary>
+    /// Sends process view data for a specific client to the WebSocket server.
+    /// </summary>
+    /// <param name="clientIdentifier">The identifier for the client.</param>
+    /// <param name="data">The process view data to send.</param>
 
     // should sends everything that is already in a big dictionary that stores all of the processes, and the function will activate a asycn task that will always update the connection
     private static void SendPVDataOfertainClient(string clientIdentifier , List<string> data) 
@@ -314,6 +366,12 @@ class Server
         }
     }
 
+    /// <summary>
+    /// Checks for special events such as protected files or suspicious activities and takes appropriate actions.
+    /// </summary>
+    /// <param name="jsonObject">The JSON object containing event data.</param>
+    /// <param name="nwStream">The network stream associated with the client connection.</param>
+    /// <param name="client">The TCP client object representing the connection.</param>
     static async void CheckSpecialEvents(JToken jsonObject, NetworkStream nwStream, TcpClient client)
     {
         // Check if the object has a "FileName" property
@@ -326,15 +384,34 @@ class Server
             {
                 foreach (var property in (JObject)jsonObject)
                 {
+                    //For Hash
+                    if (property.Key == "ExecutableHashCode")
+                    {
+                        string HashCode = property.Value.ToString();
+
+                        //i can solve this using the lock function.
+                        if (!VTCheckedHash.ContainsKey(HashCode))
+                        {
+                            string pairedValue = await CheckFileHashCode(HashCode);
+                            if (VTCheckedHash.ContainsKey(HashCode)==false)
+                            {
+                                VTCheckedHash.Add(HashCode, pairedValue);
+                            }
+                        }
+                    }
+                    else 
+                    { 
+                    }
+
                     //for bytes
                     if (property.Key == "fileBytes")
                     {
                         string base64EncodedString = property.Value.ToString();
                         byte[]bytes= Convert.FromBase64String(base64EncodedString);
-                        if (!VTChecked.ContainsKey(bytes))
+                        if (!VTCheckedBytes.ContainsKey(bytes))
                         {
-                            string pairedValue = await CheckFileHashCode(bytes);
-                            VTChecked.Add(bytes, pairedValue);
+                            //string pairedValue = await CheckFileHashCode(bytes);
+                            //VTCheckedBytes.Add(bytes, pairedValue);
                         }
                         
                         
@@ -395,7 +472,10 @@ class Server
         }
     }
 
-
+    /// <summary>
+    /// Prints the scan results of a file report from VirusTotal.
+    /// </summary>
+    /// <param name="fileReport">The file report containing the scan results.</param>
     public static void PrintScan(FileReport fileReport)
     {
         Console.WriteLine("Scan ID: " + fileReport.ScanId);
@@ -411,6 +491,12 @@ class Server
 
         Console.WriteLine();
     }
+
+    /// <summary>
+    /// Returns the scan results of a file report from VirusTotal as a string.
+    /// </summary>
+    /// <param name="fileReport">The file report containing the scan results.</param>
+    /// <returns>The scan results as a formatted string.</returns>
     public static string ScanReturn(FileReport fileReport)
     {
 
@@ -426,8 +512,10 @@ class Server
         return message;
         
     }
-
-
+    /// <summary>
+    /// Prints the state of a process identified by its process ID.
+    /// </summary>
+    /// <param name="processId">The process ID of the process to print state for.</param>
     static void PrintProcessState(int processId)
     {
         try
@@ -449,6 +537,11 @@ class Server
         //Microsoft.Diagnostics.Tracing.AutomatedAnalysis.Process process = Microsoft.Diagnostics.Tracing.AutomatedAnalysis.Process. ;
         //Console.WriteLine($"process path : {process.}");
     }
+    /// <summary>
+    /// Checks if all threads of a process are suspended.
+    /// </summary>
+    /// <param name="process">The process to check threads for.</param>
+    /// <returns>True if all threads are suspended; otherwise, false.</returns>
     static bool AreAllThreadsSuspended(System.Diagnostics.Process process)
     {
         foreach (ProcessThread thread in process.Threads)
@@ -461,7 +554,10 @@ class Server
         return true;
     }
 
-
+    /// <summary>
+    /// Notifies the WebSocket server about a client disconnection.
+    /// </summary>
+    /// <param name="message">The message containing client information.</param>
     private static void NotifyWebSocketServerRemoved(string message)
     {
         
@@ -474,7 +570,10 @@ class Server
         }
     }
 
-
+    /// <summary>
+    /// Notifies the WebSocket server about a client connection.
+    /// </summary>
+    /// <param name="client">The TCP client object representing the connected client.</param>
     private static void NotifyWebSocketServer(TcpClient client)
     {
         // Get the client's IP address and port number
@@ -503,8 +602,6 @@ class Server
     /// <param name="ipaddr"></param>
     /// <param name="portNumber"></param>
     /// <param name="Data"></param>
-    
-
     private static void SendEventDataToWebSocketServer(string ipAddress, int port, string eventData)
     {
         try

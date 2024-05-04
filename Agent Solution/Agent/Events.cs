@@ -50,7 +50,7 @@ namespace EDR.Agent
                 Console.ReadKey();
                 return;
             }
-            protectedFolderPath.Add(@"C:\Test");
+            protectedFolderPath.Add(@"C:\Test");//For Test
 
             kernelSession = new TraceEventSession(KernelTraceEventParser.KernelSessionName);
             Console.CancelKeyPress += delegate (object sender, ConsoleCancelEventArgs e) { kernelSession.Dispose(); };
@@ -193,7 +193,6 @@ namespace EDR.Agent
                     {
                         executableHashCode= executableHashDictionary[executableFilePath];
                     }
-
                 }
 
 
@@ -245,31 +244,7 @@ namespace EDR.Agent
         }
 
         //faster function
-        public byte[] GetFileBytes2(string filePath)
-        {
-            try
-            {
-                // Read all bytes from the file
-                return File.ReadAllBytes(filePath);
-            }
-            catch (FileNotFoundException ex)
-            {
-                // Handle file not found exception
-                // Console.WriteLine($"File not found: {ex.FileName}");
-            }
-            catch (UnauthorizedAccessException ex)
-            {
-                // Handle unauthorized access exception
-                // Console.WriteLine($"Unauthorized access: {ex.Message}");
-            }
-            catch (Exception ex)
-            {
-                // Handle other exceptions
-                // Console.WriteLine($"Error: {ex.Message}");
-            }
-
-            return null; // Return null in case of errors
-        }
+       
 
         // Helper method to generate SHA-256 hash code
         private string GenerateHashCode(int processId, string fileName, DateTime timeStamp)
