@@ -34,18 +34,17 @@ class Server
     private TcpListener tcpListener;
     private Thread listenerThread;
     private static List<string> connectedClients = new List<string>();
-
     private static List<string> connectedClientsForPV = new List<string>();
-    private static bool ProcessViewFlag = false; // if its true the there will be alwayas data added to a certain dict
+    // if its true the there will be alwayas data added to a certain dict
+    private static bool ProcessViewFlag = false; 
     private static Dictionary<string, List<string>> PVData = new Dictionary<string, List<string>>();
-    private static Dictionary<byte[] , string> VTCheckedBytes = new Dictionary<byte[] , string>(); // => will host byte array with a string that will store the detection from the vt
-    private static string[] protectedFiles = { "Desktop.txt" };// this array will be set by the user - protected files
+    // host byte array with a string that stores the detection from the vt
+    private static Dictionary<byte[] , string> VTCheckedBytes = new Dictionary<byte[] , string>(); 
+    // this array is the defualt configuration of the server- protected files
+    private static string[] protectedFiles = { "Desktop.txt" };
     private static Dictionary<IPEndPoint, string[]> protectedFilesToAgent = new Dictionary<IPEndPoint, string[]>();
-    private static Dictionary<string,string>VTCheckedHash = new Dictionary<string,string>();// => will host the hash code of a file and the string of the check itself from the vt
-
-  
-
-
+    // hosts the hash code of a file and the string of the check itself from the vt
+    private static Dictionary<string,string>VTCheckedHash = new Dictionary<string,string>();
     // Flag to indicate whether communication should be paused
     private static bool pauseCommunication = false;
 
@@ -57,7 +56,8 @@ class Server
     }
 
     /// <summary>
-    /// Initializes a TCP listener and starts listening for client connections. Handles incoming client connections and starts a thread to handle communication with each client.
+    /// Initializes a TCP listener and starts listening for client connections. Handles incoming client connections and starts a thread to handle 
+    /// communication with each client.
     /// </summary>
     private void ListenForClients()
     {
@@ -114,11 +114,6 @@ class Server
         }
     }
 
-
-
-
-
-
     /// <summary>
     /// Checks if a client request is for process view. If so, adds or removes the client from the list of clients interested in process view data.
     /// </summary>
@@ -170,11 +165,10 @@ class Server
         }
     }
 
-
-
     /// <summary>
     /// Handles communication with a client over TCP/IP. Parses incoming JSON data, processes it, and manages a list of events for each client. 
-    /// Also checks for special events such as file I/O read/write operations and processes started or ended. Maintains a list of client-specific data and sends it if requested by connected clients.
+    /// Also checks for special events such as file I/O read/write operations and processes started or ended. Maintains a list of client-specific
+    /// data and sends it if requested by connected clients.
     /// </summary>
     /// <param name="clientObj">The client object representing the TCP connection.</param>
 
@@ -330,14 +324,14 @@ class Server
        
     }
 
-
     /// <summary>
     /// Sends process view data for a specific client to the WebSocket server.
     /// </summary>
     /// <param name="clientIdentifier">The identifier for the client.</param>
     /// <param name="data">The process view data to send.</param>
 
-    // should sends everything that is already in a big dictionary that stores all of the processes, and the function will activate a asycn task that will always update the connection
+    // should sends everything that is already in a big dictionary that stores all of the processes, and the
+    // function will activate a asycn task that will always update the connection
     private static void SendPVDataOfertainClient(string clientIdentifier , List<string> data) 
     {
         try
@@ -592,8 +586,6 @@ class Server
         }
     }
 
-
-
     /// <summary>
     /// function that sends task manager-like data the data service and from there the data 
     /// will be tranferd to the right websocket connection - this happens only if the websocket
@@ -629,9 +621,6 @@ class Server
             Console.WriteLine($"Error sending event data to WebSocket server: {ex.Message}");
         }
     }
-
-
-
 
     static void Main(string[] args)
     {

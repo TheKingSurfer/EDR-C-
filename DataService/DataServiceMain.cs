@@ -17,13 +17,17 @@ class Program
     private static HttpListener httpListener;
     private static Thread listenerThread;
     private static List<string> connectedClients = new List<string>();
-    private static List<WebSocket> webSocketConnection = new List<WebSocket>();
+    private static List<WebSocket> webSocketConnection = new List<WebSocket>();//_> a list of the websocket connections
+    //a dictionary that map event data to each according to the right client
     private static Dictionary<string, List<string>> clientEventDataDict = new Dictionary<string, List<string>>();
+    //a dictionary that stores data in the following format "ip:portnumber":("IP","Port", Websocket Connection)
     private static Dictionary<string, (string connIp, string connPort, WebSocket)> clientWebSocketDict = new Dictionary<string, (string, string, WebSocket)>();
-    private static Dictionary<string, List<string>> PVDataDict = new Dictionary<string, List<string>>(); //dict that stores the data and the client identifier -> "ip:port" , (data)   
-    private static Dictionary<string,WebSocket> WebSocketsOfPV = new Dictionary<string, WebSocket>(); // => the websocket connection that requesting the pv data - not in use currently
-
-    private static List<string> connectionsForPV = new List<string>();// => a list that contains the identifier of the websocket connection that want PV data
+    //dict that stores the data and the client identifier -> "ip:port" , (data)   
+    private static Dictionary<string, List<string>> PVDataDict = new Dictionary<string, List<string>>(); 
+    //  the websocket connection that requesting the pv data 
+    private static Dictionary<string,WebSocket> WebSocketsOfPV = new Dictionary<string, WebSocket>();
+    // a list that contains the identifier of the websocket connection that want PV data
+    private static List<string> connectionsForPV = new List<string>();
 
 
     
@@ -31,12 +35,20 @@ class Program
 
 
 
-    // Inside the HandleHandshakeMessage method:
+   
 
 
 
 
 
+    /// <summary>
+    /// Main entry point of the program that starts an HTTP listener to handle various requests.
+    /// </summary>
+    /// <returns>A task representing the asynchronous operation.</returns>
+    /// <remarks>
+    /// The method initializes an HTTP listener, starts it, and listens for incoming requests.
+    /// Depending on the request path, it delegates the handling to specific methods.
+    /// </remarks>
     static async Task Main()
     {
         httpListener = new HttpListener();
@@ -90,6 +102,11 @@ class Program
     }
 
     //the incoming data will be sent to the js server here:
+    /// <summary>
+    /// Collects and processes data received from an HTTP listener context.
+    /// </summary>
+    /// <param name="context">The HTTP listener context containing the data.</param>
+    /// <returns>A task representing the asynchronous operation.</returns>
     private static async Task CollectPV(HttpListenerContext context) 
     {
         //Console.WriteLine("pv collected !");
@@ -133,6 +150,13 @@ class Program
         context.Response.Close();
     }
 
+    /// <summary>
+    /// Processes a WebSocket request from an HTTP listener context.
+    /// </summary>
+    /// <param name="context">The HTTP listener context.</param>
+    /// <remarks>
+    /// This method accepts a WebSocket connection, handles incoming messages, and manages the WebSocket connection state.
+    /// </remarks>
     private static async void ProcessWebSocketRequest(HttpListenerContext context)
     {
         
@@ -178,41 +202,11 @@ class Program
         }
     }
 
-
-    //not in use
-    private static void ListenForClients()
-    {
-        try
-        {
-            while (true)
-            {
-                var context = httpListener.GetContext();
-                if (context.Request.Url.AbsolutePath == "/notify")
-                {
-                    HandleNotification(context);
-                } else if(context.Request.Url.AbsolutePath == "/notify-remove")
-                {
-                    HandleNotifyRemoveNotification(context);
-                }
-                else if (context.Request.Url.AbsolutePath == "/connected-clients")
-                {
-                    ReturnConnectedClients(context);
-                }
-                else if (context.Request.Url.AbsolutePath == "/event-notification")
-                {
-                    
-                    ProcessWebSocketRequest(context);
-                }
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error in ListenForClients: {ex.Message}");
-          
-        }
-    }
-
-
+    /// <summary>
+    /// Notifies connected clients with the provided list of client information.
+    /// </summary>
+    /// <param name="connectedClients">The list of connected clients to notify.</param>
+    /// <returns>A task representing the asynchronous operation.</returns>
     private static async Task NotifyConnectedClient(List<string> connectedClients)
     {
         string clientInfo = JsonConvert.SerializeObject(connectedClients);
@@ -227,9 +221,14 @@ class Program
         }
     }
 
-
-
-
+    /// <summary>
+    /// Handles the notification to remove a client.
+    /// </summary>
+    /// <param name="context">The HttpListenerContext object representing the HTTP request and response.</param>
+    /// <remarks>
+    /// This method reads the message from the request input stream, removes the client from the connected clients list,
+    /// prints a message to the console indicating the client disconnection, and then notifies the remaining connected clients.
+    /// </remarks>
     private static void HandleNotifyRemoveNotification(HttpListenerContext context)
     {
         using (var reader = new StreamReader(context.Request.InputStream, context.Request.ContentEncoding))
@@ -246,41 +245,55 @@ class Program
         context.Response.Close();
     }
 
-
+    /// <summary>
+    /// Handles a notification received through an HTTP listener context.
+    /// </summary>
+    /// <param name="context">The HTTP listener context containing the notification.</param>
+    /// <remarks>
+    /// The notification message should be in the format 'IPAddress:Port'.
+    /// If the message is valid, the client information is extracted, added to the list of connected clients,
+    /// and a notification is sent to the connected client asynchronously.
+    /// </remarks>
     private static void HandleNotification(HttpListenerContext context)
-{
-    using (var reader = new StreamReader(context.Request.InputStream, context.Request.ContentEncoding))
     {
-        string message = reader.ReadToEnd();
-        //Console.WriteLine($"Notification received: {message}");
-
-        // Extract IP address and port number from the message
-        string[] parts = message.Split(':');
-        if (parts.Length == 2)
+        using (var reader = new StreamReader(context.Request.InputStream, context.Request.ContentEncoding))
         {
-            string ipAddress = parts[0];
-            string port = parts[1];
+            string message = reader.ReadToEnd();
+            //Console.WriteLine($"Notification received: {message}");
 
-            // Store the IP address and port number in a list
-            string clientInfo = $"{ipAddress}:{port}";
-            connectedClients.Add(clientInfo);
-            Console.WriteLine($"Client connected: {clientInfo}");
+            // Extract IP address and port number from the message
+            string[] parts = message.Split(':');
+            if (parts.Length == 2)
+            {
+                string ipAddress = parts[0];
+                string port = parts[1];
 
-            // Notify all connected clients about the new connection
-            Task.Run(async () => await NotifyConnectedClient(connectedClients));
+                // Store the IP address and port number in a list
+                string clientInfo = $"{ipAddress}:{port}";
+                connectedClients.Add(clientInfo);
+                Console.WriteLine($"Client connected: {clientInfo}");
+
+                // Notify all connected clients about the new connection
+                Task.Run(async () => await NotifyConnectedClient(connectedClients));
+            }
+            else
+            {
+                Console.WriteLine("Invalid notification format. Expected 'IPAddress:Port'.");
+            }
         }
-        else
-        {
-            Console.WriteLine("Invalid notification format. Expected 'IPAddress:Port'.");
-        }
+
+        context.Response.StatusCode = 200;
+        context.Response.Close();
     }
 
-    context.Response.StatusCode = 200;
-    context.Response.Close();
-}
-
-
-
+    /// <summary>
+    /// Returns the list of connected clients as a JSON string in the HTTP response.
+    /// </summary>
+    /// <param name="context">The HTTP listener context.</param>
+    /// <remarks>
+    /// This method sets the necessary CORS headers for allowing cross-origin requests.
+    /// It serializes the list of connected clients into a JSON string and writes it to the response stream.
+    /// </remarks>
     private static void ReturnConnectedClients(HttpListenerContext context)
     {
         // Enable CORS by adding the appropriate headers
@@ -298,11 +311,11 @@ class Program
         context.Response.Close();
     }
 
-
-
-
-
-
+    /// <summary>
+    /// Handles the notification of client details received through an HTTP listener context.
+    /// </summary>
+    /// <param name="context">The HTTP listener context containing the request and response.</param>
+    /// <returns>A task representing the asynchronous operation.</returns>
     private static async Task ClientsDetailsNotification(HttpListenerContext context)
     {
         try
@@ -370,9 +383,11 @@ class Program
         }
     }
 
-
-
-
+    /// <summary>
+    /// Returns client events based on the provided IP address and port.
+    /// </summary>
+    /// <param name="context">The HttpListenerContext object representing the HTTP request and response.</param>
+    /// <returns>A Task representing the asynchronous operation.</returns>
     private static async Task ReturnClientEvents(HttpListenerContext context)
     {
         // Extract IP address and port number from query parameters
@@ -398,6 +413,15 @@ class Program
         context.Response.Close();
     }
 
+    /// <summary>
+    /// Cleans up an IP address by extracting the IP and port information.
+    /// </summary>
+    /// <param name="ipAddress">The IP address to clean up.</param>
+    /// <returns>The cleaned up IP address with port information.</returns>
+    /// <remarks>
+    /// This method extracts the IP address and port from the input string. If the IP address is IPv6 loopback,
+    /// it returns "localhost" along with the port. Otherwise, it returns the cleaned IP address with the port.
+    /// </remarks>
     private static string CleanUpIpAddress(string ipAddress)
     {
         
@@ -420,6 +444,11 @@ class Program
         return ipAddress;
     }
 
+    /// <summary>
+    /// Extracts the port number from an IP address string.
+    /// </summary>
+    /// <param name="ipAddress">The IP address string containing the port number.</param>
+    /// <returns>The port number extracted from the IP address string, or an empty string if not found.</returns>
     private static string GetPortFromIpAddress(string ipAddress)
     {
         // Extract the port number from the format [::1]:63614
@@ -433,7 +462,15 @@ class Program
         return string.Empty;
     }
 
-
+    /// <summary>
+    /// Handles a handshake message received by a WebSocket.
+    /// </summary>
+    /// <param name="webSocket">The WebSocket instance.</param>
+    /// <param name="message">The handshake message in JSON format.</param>
+    /// <remarks>
+    /// This method parses the JSON message to extract relevant information such as page, connection IP, connection port,
+    /// client IP, and client port. It then processes the message based on the page type.
+    /// </remarks>
     private static void HandleHandshakeMessage(WebSocket webSocket, string message)
     {
         JObject jsonMessage = JObject.Parse(message);
@@ -508,6 +545,15 @@ class Program
         }
         
     }
+
+    /// <summary>
+    /// Handles the first connection request by accepting a WebSocket connection.
+    /// </summary>
+    /// <param name="context">The HttpListenerContext representing the connection request.</param>
+    /// <remarks>
+    /// This method accepts a WebSocket connection request and adds the WebSocket to the list of active connections.
+    /// If an exception occurs during the connection establishment, an error response is sent back.
+    /// </remarks>
     private static async void HandleFirstConnection(HttpListenerContext context)
     {
 

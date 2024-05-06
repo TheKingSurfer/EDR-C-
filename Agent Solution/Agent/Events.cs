@@ -17,30 +17,47 @@ using System.Runtime.CompilerServices;
 using System.Linq;
 using Microsoft.Diagnostics.Tracing.Parsers.ClrPrivate;
 
+
 namespace EDR.Agent
 {
     public class FileIOEventData
     {
+        // Represents the name of the event.
         public string EventName { get; set; }
+
+        // Represents the process ID associated with the event.
         public int ProcessId { get; set; }
+
+        // Represents the name of the file associated with the event.
         public string FileName { get; set; }
+
+        // Represents the timestamp when the event occurred.
         public DateTime TimeStamp { get; set; }
+
+        // Represents the hash code associated with the file.
         public string HashCode { get; set; }
-        
+
+        // Represents the hash code associated specifically with executable files.
         public string ExecutableHashCode { get; set; }
 
+        // Represents the bytes of the file.
         public byte[] fileBytes { get; set; }
+
     }
     public class EDRProcessor
     {
-        public readonly TraceEventSession kernelSession;
-        private Action<string> sendData;
-        private readonly Dictionary<string, byte[]> executableBytesDictionary;
-        private string[] protectedFiles = { "Desktop.txt" };
-        private Dictionary<string, string> executableHashDictionary = new Dictionary<string, string>();
-        private List <string>protectedFolderPath = new List<string>();
+        public readonly TraceEventSession kernelSession;//->Represents a TraceEventSession for kernel events.
+        private Action<string> sendData;//=>Action delegate used to send data.
+        private readonly Dictionary<string, byte[]> executableBytesDictionary;//=> Dictionary to store byte arrays representing executable files, with file names as keys.
+        private string[] protectedFiles = { "Desktop.txt" };//=>Array of file names representing protected files.
+        private Dictionary<string, string> executableHashDictionary = new Dictionary<string, string>();//=>Dictionary to store hashes of executable files, with file names as keys.
+        private List<string> protectedFolderPath = new List<string>();//->List of folder paths representing protected folders.
 
-       
+
+        /// <summary>
+        /// Initializes a new instance of the EDRProcessor class with the specified callback action.
+        /// </summary>
+        /// <param name="sendDataCallback">The callback action to send processed data.</param>
         public EDRProcessor(Action<string> sendDataCallback)
         {
 
@@ -59,6 +76,9 @@ namespace EDR.Agent
             executableBytesDictionary = new Dictionary<string, byte[]>();
         }
 
+        /// <summary>
+        /// Starts monitoring system events related to file I/O, process, and image loading.
+        /// </summary>
         public void StartMonitoring()
         {
             
@@ -96,11 +116,19 @@ namespace EDR.Agent
             //sendData?.Invoke("Monitoring started");
         }
 
+        /// <summary>
+        /// Stops monitoring system events.
+        /// </summary>
         public void StopMonitoring()
         {
             kernelSession.Dispose();
             //sendData?.Invoke("Monitoring stopped");
         }
+
+        /// <summary>
+        /// Handles the trace event by filtering file I/O events and processing them if they match specific criteria.
+        /// </summary>
+        /// <param name="traceEvent">The trace event to handle.</param>
         static void HandleEvent(TraceEvent traceEvent)
         {
             // Filter the events by file name or file object
@@ -118,7 +146,10 @@ namespace EDR.Agent
         }
 
 
-
+        /// <summary>
+        /// Handles the event when a DLL is loaded into a process.
+        /// </summary>
+        /// <param name="data">The event data for image loading.</param>
         private void dllLoaded(ImageLoadTraceData data)
         {
             var eventData = new
@@ -136,7 +167,11 @@ namespace EDR.Agent
             //CheckProcessPermissions(data.ProcessID);
         }
 
-
+        /// <summary>
+        /// Handles file I/O read and write events, processes the event data, calculates hash codes for involved files,
+        /// and sends processed data to the specified callback action asynchronously.
+        /// </summary>
+        /// <param name="data">The event data for file I/O read or write operation.</param>
         private async void fileIOReadWrite(FileIOReadWriteTraceData data)
         {
             var eventData = new FileIOEventData
@@ -207,7 +242,11 @@ namespace EDR.Agent
             }
         }
 
-        // return an array of bytes of a certain file -> a little bit faster in the protected file checks
+        /// <summary>
+        /// Retrieves the bytes of a file located at the specified path.
+        /// </summary>
+        /// <param name="filePath">The path of the file to retrieve bytes from.</param>
+        /// <returns>The byte array representing the contents of the file.</returns>
         public byte[] GetFileBytes(string filePath)
         {
            
@@ -243,22 +282,11 @@ namespace EDR.Agent
             }
         }
 
-        //faster function
-       
-
-        // Helper method to generate SHA-256 hash code
-        private string GenerateHashCode(int processId, string fileName, DateTime timeStamp)
-        {
-            string concatenatedString = $"{processId}-{fileName}-{timeStamp}";
-
-            using (var sha256 = System.Security.Cryptography.SHA256.Create())
-            {
-                byte[] hashBytes = sha256.ComputeHash(System.Text.Encoding.UTF8.GetBytes(concatenatedString));
-                return BitConverter.ToString(hashBytes).Replace("-", "");
-            }
-        }
-
-        // a function that generate hash code for a file using SHA-256 (for VT checks)
+        /// <summary>
+        /// Calculates the SHA-256 hash code for a given file.
+        /// </summary>
+        /// <param name="filePath">The path of the file to calculate the hash code for.</param>
+        /// <returns>The SHA-256 hash code of the file.</returns>
         private string CalculateFileHash(string filePath) 
         {
             try
@@ -291,34 +319,11 @@ namespace EDR.Agent
                 return null;
             }
         }
-        private async Task<string> CalculateFileHashAsync(string filePath)
-        {
-            try
-            {
-                using (var stream = File.OpenRead(filePath))
-                {
-                    using (var sha256 = SHA256.Create())
-                    {
-                        // Offload synchronous operation to a background thread
-                        byte[] hashBytes = await Task.Run(() => sha256.ComputeHash(stream));
-                        return BitConverter.ToString(hashBytes).Replace("-", "");
-                    }
-                }
-            }
-            catch (UnauthorizedAccessException UEA)
-            {
-                //Console.WriteLine($"Unauthorized access to file:{UEA.Message}. Skipping..");
-                return null;
-            }
-            catch (Exception ex)
-            {
-                //Console.WriteLine($"Error Proccesing file: {ex}. Skipping..");
-                return null;
-            }
-        }
 
-
-
+        /// <summary>
+        /// Handles the event when a process starts.
+        /// </summary>
+        /// <param name="data">The event data for process start.</param>
 
         private void processStarted(ProcessTraceData data)
         {
@@ -333,6 +338,10 @@ namespace EDR.Agent
             sendData?.Invoke(jsonData);
         }
 
+        /// <summary>
+        /// Handles the event when a process ends.
+        /// </summary>
+        /// <param name="data">The event data for process end.</param>
         private void processEnded(ProcessTraceData data)
         {
             var eventData = new
@@ -345,6 +354,10 @@ namespace EDR.Agent
             sendData?.Invoke(jsonData);
         }
 
+        /// <summary>
+        /// Checks permissions for a given process.
+        /// </summary>
+        /// <param name="processId">The ID of the process to check permissions for.</param>
         private void CheckProcessPermissions(int processId)
         {
             try

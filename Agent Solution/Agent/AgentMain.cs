@@ -10,6 +10,13 @@ namespace EDR.Agent
         const int PORT_NO = 5000; // Port number for the server
         const string SERVER_IP = "127.0.0.1"; // IP address for the server
 
+        /// <summary>
+        /// Entry point of the application that establishes a connection to a server via TCP, 
+        /// sets up data processing and communication threads,
+        /// and manages the monitoring and execution of commands.
+        /// </summary>
+        /// <param name="args">Command-line arguments.</param>
+        
         static void Main(string[] args)
         {
             TcpClient client = new TcpClient();
@@ -42,6 +49,9 @@ namespace EDR.Agent
             client.Close();
         }
 
+        /// <summary>Sends data to the server through a network stream.</summary>
+        /// <param name="nwStream">The network stream used for communication.</param>
+        /// <param name="data">The data to be sent to the server.</param>
         static void SendDataToServer(NetworkStream nwStream, string data)
         {
             // Create a JSON array from the provided data
@@ -51,6 +61,10 @@ namespace EDR.Agent
                 nwStream.Write(buffer, 0, buffer.Length);
         }
 
+        /// <summary>Receives data from the server via a network stream.</summary>
+        /// <param name="nwStream">The network stream used for communication.</param>
+        /// <remarks>This method reads data from the network stream in chunks of 1024 bytes,
+        /// decodes the bytes to UTF-8 encoded string, and displays the received data on the console.</remarks>
         static void ReceiveDataFromServer(NetworkStream nwStream)
         {
             try
@@ -76,7 +90,11 @@ namespace EDR.Agent
         {
             
         }
-
+        /// <summary>
+        /// Starts a new thread with the specified name and function.
+        /// </summary>
+        /// <param name="threadName">The name of the thread.</param>
+        /// <param name="threadFunction">The function to be executed in the thread.</param>
         static void StartThread(string threadName, Action threadFunction)
         {
             Console.ForegroundColor = ConsoleColor.Green;

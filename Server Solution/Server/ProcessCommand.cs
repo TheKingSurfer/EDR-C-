@@ -11,12 +11,20 @@ namespace ProcessC
         public string Command { get; set; } 
         public int ProcessId { get; set; }
 
+        /// <summary>Initializes a new instance of the ProcessCommand class.</summary>
+        /// <param name="command">The command to be executed.</param>
+        /// <param name="processId">The ID of the process associated with the command.</param>
         public ProcessCommand(string command, int processId) 
         {
             Command = command;
             ProcessId = processId;
         }
 
+        /// <summary>
+        /// Sends a command to an agent through a network stream.
+        /// </summary>
+        /// <param name="nwStream">The network stream used for communication.</param>
+        /// <param name="command">The command to be sent to the agent.</param>
         public static void SendCommandToAgent(NetworkStream nwStream, ProcessCommand command)
         {
             // Convert the command to JSON
@@ -29,6 +37,11 @@ namespace ProcessC
             SendDataToAgent(nwStream, jsonArray);
         }
 
+        /// <summary>
+        /// Sends data to the agent through the specified network stream.
+        /// </summary>
+        /// <param name="nwStream">The network stream used for communication.</param>
+        /// <param name="data">The data to be sent to the agent.</param>
         private static void SendDataToAgent(NetworkStream nwStream, string data)
         {
             byte[] buffer = Encoding.UTF8.GetBytes(data + Environment.NewLine);
