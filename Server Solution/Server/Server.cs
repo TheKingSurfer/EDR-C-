@@ -207,7 +207,7 @@ class Server
                     {
                         //print when found processes that has been started
                         JObject jObject = jsonObject as JObject;
-                        CheckSpecialEvents(jsonObject, clientStream, tcpClient);
+                        //CheckSpecialEvents(jsonObject, clientStream, tcpClient);
                         
                         //NEW code snippet - more efficient
                         //check if there is already previeos data of a certain client
@@ -222,6 +222,7 @@ class Server
                             if (!string.IsNullOrEmpty(executableHashCode))
                             {
                                 // TODO: call the function and use VT to check the file hash code 
+                                SpecialEvents(jsonObject, clientStream, tcpClient);
                             }
                         }else if (jsonObject["EventName"]?.ToString() == "ProcessStarted")
                         {
@@ -357,6 +358,111 @@ class Server
         catch (Exception ex)
         {
             Console.WriteLine($"Error sending event data to WebSocket server: {ex.Message}");
+        }
+    }
+
+    /// <summary>
+    /// Checks for special events such as protected files or suspicious activities and takes appropriate actions.
+    /// </summary>
+    /// <param name="jsonObject">The JSON object containing event data.</param>
+    /// <param name="nwStream">The network stream associated with the client connection.</param>
+    /// <param name="client">The TCP client object representing the connection.</param>
+    static async void SpecialEvents(JToken jsonObject, NetworkStream nwStream, TcpClient client)
+    {
+        // Check if the object has a "FileName" property
+        if (jsonObject["FileName"] != null)
+        {
+            string fileName = jsonObject["FileName"].ToString();
+            int ProcessId = 0;
+            string eventDataString = "";
+           
+            foreach (var property in (JObject)jsonObject)
+            {
+                //For Hash
+                if (property.Key == "ExecutableHashCode")
+                {
+                    string HashCode = property.Value.ToString();
+
+                    //i can solve this using the lock function.
+                    if (!VTCheckedHash.ContainsKey(HashCode))
+                    {
+                        string pairedValue = await CheckFileHashCode(HashCode);
+                        if (VTCheckedHash.ContainsKey(HashCode) == false)
+                        {
+                            VTCheckedHash.Add(HashCode, pairedValue);
+                        }
+                    }
+                }
+                else
+                {
+                }
+
+                //for bytes
+                if (property.Key == "fileBytes")
+                {
+                    string base64EncodedString = property.Value.ToString();
+                    byte[] bytes = Convert.FromBase64String(base64EncodedString);
+                    if (!VTCheckedBytes.ContainsKey(bytes))
+                    {
+                        //string pairedValue = await CheckFileHashCode(bytes);
+                        //VTCheckedBytes.Add(bytes, pairedValue);
+                    }
+
+
+
+                    //Console.WriteLine($"{property.Key} : {string.Join("",bytes)}");
+                    //CheckFileHashCode(bytes);
+
+                }
+                else
+                {
+                    Console.WriteLine($"{property.Key} : {property.Value}");
+                    eventDataString += $"{property.Key} : {property.Value}\n";
+                }
+
+                //extracting the process id 
+                if (property.Key == "ProcessId")
+                {
+                    try
+                    {
+                        //parsing the value in the json
+                        ProcessId = int.Parse(jsonObject["ProcessId"].ToString());
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+                }
+                
+                var endPoint = (IPEndPoint)client.Client.RemoteEndPoint;
+                string ipAddress = endPoint.Address.ToString();
+                int port = endPoint.Port;
+                SendEventDataToWebSocketServer(ipAddress, port, eventDataString);
+                pauseCommunication = true;
+
+                Console.WriteLine("**************************************");
+                Console.WriteLine("Protected file found! Sending command to agent...");
+                //Console.WriteLine("Press any key to resume process");
+                PrintProcessState(ProcessId);
+
+                // Send a command to suspend the process
+                var command = new ProcessCommand("SuspendProcess", ProcessId);
+                ProcessCommand.SendCommandToAgent(nwStream, command);
+                Console.WriteLine($"* suspicious process is currently suspended *");
+
+
+                // Wait for a key press
+                //Console.ReadKey(true);
+
+
+
+
+                Console.WriteLine("*suspicious process is resumed*");
+                // Send a command to resume the process
+                command = new ProcessCommand("ResumeProcess", ProcessId); // You need to get the actual processId
+                ProcessCommand.SendCommandToAgent(nwStream, command);
+                pauseCommunication = true;
+            }
         }
     }
 

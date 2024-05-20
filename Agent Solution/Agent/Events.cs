@@ -69,6 +69,7 @@ namespace EDR.Agent
             }
             protectedFolderPath.Add(@"C:\Test");//For Test
 
+
             kernelSession = new TraceEventSession(KernelTraceEventParser.KernelSessionName);
             Console.CancelKeyPress += delegate (object sender, ConsoleCancelEventArgs e) { kernelSession.Dispose(); };
 
