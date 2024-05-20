@@ -2,25 +2,34 @@ import subprocess
 import platform
 import signal
 import sys
-import os 
-import pathlib
-
+import os
 
 # Global variables to store subprocesses
 server_process = None
 data_service_process = None
 agent_process = None
 
+# Helper function to find the base path
+def get_base_path():
+    if hasattr(sys, '_MEIPASS'):
+        return sys._MEIPASS
+    return os.path.dirname(os.path.abspath(__file__))
+
 def build_and_run_project(solution_path):
     global server_process, data_service_process, agent_process
-    current_file_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # Get the base path
+    base_path = get_base_path()
+    print(f"Base path: {base_path}")
     
     # Change the working directory to the directory of the current Python file
-    os.chdir(current_file_dir)
+    os.chdir(base_path)
+    print(f"Changed working directory to: {base_path}")
     
     # Build the solution using msbuild
     msbuild_path = r'c:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\MSBuild.exe'
     build_command = [msbuild_path, solution_path]
+    print(f"Build command: {' '.join(build_command)}")
     build_process = subprocess.Popen(build_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     build_output, build_error = build_process.communicate()
 
@@ -28,9 +37,9 @@ def build_and_run_project(solution_path):
         print("Build successful.")
         
         # Paths to each executable
-        agent_exe_path = r"Agent Solution\Agent\bin\Debug\Agent.exe"
-        server_exe_path = r"Server Solution\Server\bin\Debug\Server.exe"
-        data_service_exe_path = r"DataService\bin\Debug\DataService.exe"
+        agent_exe_path = os.path.join(base_path, "Agent Solution", "Agent", "bin", "Debug", "Agent.exe")
+        server_exe_path = os.path.join(base_path, "Server Solution", "Server", "bin", "Debug", "Server.exe")
+        data_service_exe_path = os.path.join(base_path, "DataService", "bin", "Debug", "DataService.exe")
         
         # Function to open each executable in a separate command prompt window
         def open_in_command_prompt(executable_path):
@@ -53,7 +62,8 @@ def build_and_run_project(solution_path):
         signal.signal(signal.SIGTERM, signal_handler)
     else:
         print("Build failed.")
-        print(build_error.decode('utf-8'))
+        print("Build output:\n", build_output.decode('utf-8'))
+        print("Build error:\n", build_error.decode('utf-8'))
 
 def signal_handler(sig, frame):
     global server_process, data_service_process, agent_process
@@ -68,5 +78,7 @@ def signal_handler(sig, frame):
     sys.exit(0)
 
 if __name__ == "__main__":
-    solution_path = r"C:\Users\Owner\Desktop\EDR\EDR project\Merged\EDR\EDR.sln"
+    base_path = get_base_path()
+    solution_path = os.path.join(base_path, "EDR.sln")
+    print(f"Solution path: {solution_path}")
     build_and_run_project(solution_path)

@@ -67,6 +67,964 @@
    'C:\\Users\\Owner\\Desktop\\EDR\\EDR '
    'project\\Merged\\EDR\\DotnetProjectLunch.py',
    'PYSOURCE'),
+  ('Agent Solution\\Agent\\bin\\Debug\\Agent.exe',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\Agent.exe',
+   'BINARY'),
+  ('Agent Solution\\Agent\\bin\\Debug\\Aqua.Newtonsoft.Json.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\Aqua.Newtonsoft.Json.dll',
+   'BINARY'),
+  ('Agent Solution\\Agent\\bin\\Debug\\Aqua.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\Aqua.dll',
+   'BINARY'),
+  ('Agent Solution\\Agent\\bin\\Debug\\Dia2Lib.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\Dia2Lib.dll',
+   'BINARY'),
+  ('Agent Solution\\Agent\\bin\\Debug\\Microsoft.Bcl.AsyncInterfaces.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\Microsoft.Bcl.AsyncInterfaces.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\bin\\Debug\\Microsoft.Diagnostics.FastSerialization.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\Microsoft.Diagnostics.FastSerialization.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\bin\\Debug\\Microsoft.Diagnostics.Tracing.TraceEvent.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\Microsoft.Diagnostics.Tracing.TraceEvent.dll',
+   'BINARY'),
+  ('Agent Solution\\Agent\\bin\\Debug\\Microsoft.Win32.Registry.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\Microsoft.Win32.Registry.dll',
+   'BINARY'),
+  ('Agent Solution\\Agent\\bin\\Debug\\Newtonsoft.Json.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\Newtonsoft.Json.dll',
+   'BINARY'),
+  ('Agent Solution\\Agent\\bin\\Debug\\Remote.Linq.Newtonsoft.Json.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\Remote.Linq.Newtonsoft.Json.dll',
+   'BINARY'),
+  ('Agent Solution\\Agent\\bin\\Debug\\Remote.Linq.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\Remote.Linq.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\bin\\Debug\\System.Runtime.CompilerServices.Unsafe.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\System.Runtime.CompilerServices.Unsafe.dll',
+   'BINARY'),
+  ('Agent Solution\\Agent\\bin\\Debug\\System.Security.AccessControl.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\System.Security.AccessControl.dll',
+   'BINARY'),
+  ('Agent Solution\\Agent\\bin\\Debug\\System.Security.Principal.Windows.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\System.Security.Principal.Windows.dll',
+   'BINARY'),
+  ('Agent Solution\\Agent\\bin\\Debug\\System.Threading.Tasks.Extensions.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\System.Threading.Tasks.Extensions.dll',
+   'BINARY'),
+  ('Agent Solution\\Agent\\bin\\Debug\\TraceReloggerLib.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\TraceReloggerLib.dll',
+   'BINARY'),
+  ('Agent Solution\\Agent\\bin\\Debug\\amd64\\KernelTraceControl.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\amd64\\KernelTraceControl.dll',
+   'BINARY'),
+  ('Agent Solution\\Agent\\bin\\Debug\\amd64\\msdia140.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\amd64\\msdia140.dll',
+   'BINARY'),
+  ('Agent Solution\\Agent\\obj\\Debug\\Agent.exe',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\obj\\Debug\\Agent.exe',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\build\\native\\amd64\\KernelTraceControl.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\build\\native\\amd64\\KernelTraceControl.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\build\\native\\amd64\\msdia140.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\build\\native\\amd64\\msdia140.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\build\\native\\arm64\\KernelTraceControl.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\build\\native\\arm64\\KernelTraceControl.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\build\\native\\arm64\\msdia140.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\build\\native\\arm64\\msdia140.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\build\\native\\x86\\KernelTraceControl.Win61.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\build\\native\\x86\\KernelTraceControl.Win61.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\build\\native\\x86\\KernelTraceControl.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\build\\native\\x86\\KernelTraceControl.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\build\\native\\x86\\msdia140.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\build\\native\\x86\\msdia140.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\lib\\netstandard2.0\\Dia2Lib.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\lib\\netstandard2.0\\Dia2Lib.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\lib\\netstandard2.0\\Microsoft.Diagnostics.FastSerialization.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\lib\\netstandard2.0\\Microsoft.Diagnostics.FastSerialization.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\lib\\netstandard2.0\\Microsoft.Diagnostics.Tracing.TraceEvent.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\lib\\netstandard2.0\\Microsoft.Diagnostics.Tracing.TraceEvent.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\lib\\netstandard2.0\\TraceReloggerLib.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\lib\\netstandard2.0\\TraceReloggerLib.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\lib\\net461\\Microsoft.Win32.Registry.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\lib\\net461\\Microsoft.Win32.Registry.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\lib\\net46\\Microsoft.Win32.Registry.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\lib\\net46\\Microsoft.Win32.Registry.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\lib\\netstandard1.3\\Microsoft.Win32.Registry.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\lib\\netstandard1.3\\Microsoft.Win32.Registry.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\lib\\netstandard2.0\\Microsoft.Win32.Registry.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\lib\\netstandard2.0\\Microsoft.Win32.Registry.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\net461\\Microsoft.Win32.Registry.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\net461\\Microsoft.Win32.Registry.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\net46\\Microsoft.Win32.Registry.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\net46\\Microsoft.Win32.Registry.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\netstandard1.3\\Microsoft.Win32.Registry.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\netstandard1.3\\Microsoft.Win32.Registry.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\netstandard2.0\\Microsoft.Win32.Registry.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\netstandard2.0\\Microsoft.Win32.Registry.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\runtimes\\win\\lib\\net461\\Microsoft.Win32.Registry.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\runtimes\\win\\lib\\net461\\Microsoft.Win32.Registry.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\runtimes\\win\\lib\\net46\\Microsoft.Win32.Registry.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\runtimes\\win\\lib\\net46\\Microsoft.Win32.Registry.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\runtimes\\win\\lib\\netstandard1.3\\Microsoft.Win32.Registry.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\runtimes\\win\\lib\\netstandard1.3\\Microsoft.Win32.Registry.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\runtimes\\win\\lib\\netstandard2.0\\Microsoft.Win32.Registry.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\runtimes\\win\\lib\\netstandard2.0\\Microsoft.Win32.Registry.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\net20\\Newtonsoft.Json.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\net20\\Newtonsoft.Json.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\net35\\Newtonsoft.Json.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\net35\\Newtonsoft.Json.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\net40\\Newtonsoft.Json.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\net40\\Newtonsoft.Json.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\net45\\Newtonsoft.Json.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\net45\\Newtonsoft.Json.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\net6.0\\Newtonsoft.Json.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\net6.0\\Newtonsoft.Json.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\netstandard1.0\\Newtonsoft.Json.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\netstandard1.0\\Newtonsoft.Json.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\netstandard1.3\\Newtonsoft.Json.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\netstandard1.3\\Newtonsoft.Json.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\netstandard2.0\\Newtonsoft.Json.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\netstandard2.0\\Newtonsoft.Json.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\lib\\net461\\System.Runtime.CompilerServices.Unsafe.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\lib\\net461\\System.Runtime.CompilerServices.Unsafe.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\lib\\net6.0\\System.Runtime.CompilerServices.Unsafe.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\lib\\net6.0\\System.Runtime.CompilerServices.Unsafe.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\lib\\netcoreapp3.1\\System.Runtime.CompilerServices.Unsafe.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\lib\\netcoreapp3.1\\System.Runtime.CompilerServices.Unsafe.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\lib\\netstandard2.0\\System.Runtime.CompilerServices.Unsafe.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\lib\\netstandard2.0\\System.Runtime.CompilerServices.Unsafe.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\lib\\net461\\System.Security.AccessControl.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\lib\\net461\\System.Security.AccessControl.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\lib\\net6.0\\System.Security.AccessControl.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\lib\\net6.0\\System.Security.AccessControl.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\lib\\netstandard2.0\\System.Security.AccessControl.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\lib\\netstandard2.0\\System.Security.AccessControl.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\runtimes\\win\\lib\\net461\\System.Security.AccessControl.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\runtimes\\win\\lib\\net461\\System.Security.AccessControl.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\runtimes\\win\\lib\\net6.0\\System.Security.AccessControl.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\runtimes\\win\\lib\\net6.0\\System.Security.AccessControl.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\runtimes\\win\\lib\\netstandard2.0\\System.Security.AccessControl.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\runtimes\\win\\lib\\netstandard2.0\\System.Security.AccessControl.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\lib\\net461\\System.Security.Principal.Windows.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\lib\\net461\\System.Security.Principal.Windows.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\lib\\net46\\System.Security.Principal.Windows.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\lib\\net46\\System.Security.Principal.Windows.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\lib\\netstandard1.3\\System.Security.Principal.Windows.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\lib\\netstandard1.3\\System.Security.Principal.Windows.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\lib\\netstandard2.0\\System.Security.Principal.Windows.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\lib\\netstandard2.0\\System.Security.Principal.Windows.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\net461\\System.Security.Principal.Windows.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\net461\\System.Security.Principal.Windows.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\net46\\System.Security.Principal.Windows.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\net46\\System.Security.Principal.Windows.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netcoreapp3.0\\System.Security.Principal.Windows.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netcoreapp3.0\\System.Security.Principal.Windows.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netstandard1.3\\System.Security.Principal.Windows.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netstandard1.3\\System.Security.Principal.Windows.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netstandard2.0\\System.Security.Principal.Windows.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netstandard2.0\\System.Security.Principal.Windows.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\runtimes\\unix\\lib\\netcoreapp2.0\\System.Security.Principal.Windows.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\runtimes\\unix\\lib\\netcoreapp2.0\\System.Security.Principal.Windows.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\runtimes\\unix\\lib\\netcoreapp2.1\\System.Security.Principal.Windows.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\runtimes\\unix\\lib\\netcoreapp2.1\\System.Security.Principal.Windows.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\runtimes\\win\\lib\\net461\\System.Security.Principal.Windows.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\runtimes\\win\\lib\\net461\\System.Security.Principal.Windows.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\runtimes\\win\\lib\\net46\\System.Security.Principal.Windows.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\runtimes\\win\\lib\\net46\\System.Security.Principal.Windows.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\runtimes\\win\\lib\\netcoreapp2.0\\System.Security.Principal.Windows.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\runtimes\\win\\lib\\netcoreapp2.0\\System.Security.Principal.Windows.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\runtimes\\win\\lib\\netcoreapp2.1\\System.Security.Principal.Windows.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\runtimes\\win\\lib\\netcoreapp2.1\\System.Security.Principal.Windows.dll',
+   'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\runtimes\\win\\lib\\netstandard1.3\\System.Security.Principal.Windows.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\runtimes\\win\\lib\\netstandard1.3\\System.Security.Principal.Windows.dll',
+   'BINARY'),
+  ('DataService\\bin\\Debug\\DataService.exe',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR '
+   'project\\Merged\\EDR\\DataService\\bin\\Debug\\DataService.exe',
+   'BINARY'),
+  ('DataService\\bin\\Debug\\Newtonsoft.Json.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR '
+   'project\\Merged\\EDR\\DataService\\bin\\Debug\\Newtonsoft.Json.dll',
+   'BINARY'),
+  ('DataService\\obj\\Debug\\DataService.exe',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR '
+   'project\\Merged\\EDR\\DataService\\obj\\Debug\\DataService.exe',
+   'BINARY'),
+  ('Server Solution\\Server\\bin\\Debug\\DataService.exe',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\DataService.exe',
+   'BINARY'),
+  ('Server Solution\\Server\\bin\\Debug\\Dia2Lib.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\Dia2Lib.dll',
+   'BINARY'),
+  ('Server '
+   'Solution\\Server\\bin\\Debug\\Microsoft.Diagnostics.FastSerialization.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\Microsoft.Diagnostics.FastSerialization.dll',
+   'BINARY'),
+  ('Server '
+   'Solution\\Server\\bin\\Debug\\Microsoft.Diagnostics.Tracing.TraceEvent.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\Microsoft.Diagnostics.Tracing.TraceEvent.dll',
+   'BINARY'),
+  ('Server Solution\\Server\\bin\\Debug\\Microsoft.Win32.Registry.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\Microsoft.Win32.Registry.dll',
+   'BINARY'),
+  ('Server Solution\\Server\\bin\\Debug\\Newtonsoft.Json.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\Newtonsoft.Json.dll',
+   'BINARY'),
+  ('Server Solution\\Server\\bin\\Debug\\Server.exe',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\Server.exe',
+   'BINARY'),
+  ('Server '
+   'Solution\\Server\\bin\\Debug\\System.Runtime.CompilerServices.Unsafe.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\System.Runtime.CompilerServices.Unsafe.dll',
+   'BINARY'),
+  ('Server Solution\\Server\\bin\\Debug\\System.Security.AccessControl.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\System.Security.AccessControl.dll',
+   'BINARY'),
+  ('Server Solution\\Server\\bin\\Debug\\System.Security.Principal.Windows.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\System.Security.Principal.Windows.dll',
+   'BINARY'),
+  ('Server Solution\\Server\\bin\\Debug\\TraceReloggerLib.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\TraceReloggerLib.dll',
+   'BINARY'),
+  ('Server Solution\\Server\\bin\\Debug\\VirusTotalNet.Examples.exe',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\VirusTotalNet.Examples.exe',
+   'BINARY'),
+  ('Server Solution\\Server\\bin\\Debug\\VirusTotalNet.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\VirusTotalNet.dll',
+   'BINARY'),
+  ('Server Solution\\Server\\bin\\Debug\\amd64\\KernelTraceControl.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\amd64\\KernelTraceControl.dll',
+   'BINARY'),
+  ('Server Solution\\Server\\bin\\Debug\\amd64\\msdia140.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\amd64\\msdia140.dll',
+   'BINARY'),
+  ('Server Solution\\Server\\bin\\Debug\\arm64\\KernelTraceControl.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\arm64\\KernelTraceControl.dll',
+   'BINARY'),
+  ('Server Solution\\Server\\bin\\Debug\\arm64\\msdia140.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\arm64\\msdia140.dll',
+   'BINARY'),
+  ('Server Solution\\Server\\bin\\Debug\\x86\\KernelTraceControl.Win61.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\x86\\KernelTraceControl.Win61.dll',
+   'BINARY'),
+  ('Server Solution\\Server\\bin\\Debug\\x86\\KernelTraceControl.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\x86\\KernelTraceControl.dll',
+   'BINARY'),
+  ('Server Solution\\Server\\bin\\Debug\\x86\\msdia140.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\x86\\msdia140.dll',
+   'BINARY'),
+  ('Server Solution\\Server\\obj\\Debug\\Server.exe',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\obj\\Debug\\Server.exe',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\bin\\Debug\\net7.0\\Newtonsoft.Json.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\bin\\Debug\\net7.0\\Newtonsoft.Json.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\bin\\Debug\\net7.0\\VirusTotalNet.Examples.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\bin\\Debug\\net7.0\\VirusTotalNet.Examples.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\bin\\Debug\\net7.0\\VirusTotalNet.Examples.exe',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\bin\\Debug\\net7.0\\VirusTotalNet.Examples.exe',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\bin\\Debug\\net7.0\\VirusTotalNet.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\bin\\Debug\\net7.0\\VirusTotalNet.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\VirusTotalNet.Examples.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\VirusTotalNet.Examples.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\apphost.exe',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\apphost.exe',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\ref\\VirusTotalNet.Examples.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\ref\\VirusTotalNet.Examples.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\refint\\VirusTotalNet.Examples.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\refint\\VirusTotalNet.Examples.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\Microsoft.TestPlatform.CommunicationUtilities.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\Microsoft.TestPlatform.CommunicationUtilities.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\Microsoft.TestPlatform.CoreUtilities.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\Microsoft.TestPlatform.CoreUtilities.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\Microsoft.TestPlatform.CrossPlatEngine.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\Microsoft.TestPlatform.CrossPlatEngine.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\Microsoft.TestPlatform.PlatformAbstractions.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\Microsoft.TestPlatform.PlatformAbstractions.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\Microsoft.TestPlatform.Utilities.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\Microsoft.TestPlatform.Utilities.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\Microsoft.VisualStudio.CodeCoverage.Shim.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\Microsoft.VisualStudio.CodeCoverage.Shim.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\Microsoft.VisualStudio.TestPlatform.Common.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\Microsoft.VisualStudio.TestPlatform.Common.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\Newtonsoft.Json.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\Newtonsoft.Json.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\NuGet.Frameworks.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\NuGet.Frameworks.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\VirusTotalNet.Tests.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\VirusTotalNet.Tests.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\VirusTotalNet.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\VirusTotalNet.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\cs\\Microsoft.TestPlatform.CommunicationUtilities.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\cs\\Microsoft.TestPlatform.CommunicationUtilities.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\cs\\Microsoft.TestPlatform.CoreUtilities.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\cs\\Microsoft.TestPlatform.CoreUtilities.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\cs\\Microsoft.TestPlatform.CrossPlatEngine.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\cs\\Microsoft.TestPlatform.CrossPlatEngine.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\cs\\Microsoft.VisualStudio.TestPlatform.Common.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\cs\\Microsoft.VisualStudio.TestPlatform.Common.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\cs\\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\cs\\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\de\\Microsoft.TestPlatform.CommunicationUtilities.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\de\\Microsoft.TestPlatform.CommunicationUtilities.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\de\\Microsoft.TestPlatform.CoreUtilities.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\de\\Microsoft.TestPlatform.CoreUtilities.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\de\\Microsoft.TestPlatform.CrossPlatEngine.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\de\\Microsoft.TestPlatform.CrossPlatEngine.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\de\\Microsoft.VisualStudio.TestPlatform.Common.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\de\\Microsoft.VisualStudio.TestPlatform.Common.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\de\\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\de\\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\es\\Microsoft.TestPlatform.CommunicationUtilities.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\es\\Microsoft.TestPlatform.CommunicationUtilities.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\es\\Microsoft.TestPlatform.CoreUtilities.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\es\\Microsoft.TestPlatform.CoreUtilities.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\es\\Microsoft.TestPlatform.CrossPlatEngine.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\es\\Microsoft.TestPlatform.CrossPlatEngine.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\es\\Microsoft.VisualStudio.TestPlatform.Common.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\es\\Microsoft.VisualStudio.TestPlatform.Common.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\es\\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\es\\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\fr\\Microsoft.TestPlatform.CommunicationUtilities.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\fr\\Microsoft.TestPlatform.CommunicationUtilities.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\fr\\Microsoft.TestPlatform.CoreUtilities.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\fr\\Microsoft.TestPlatform.CoreUtilities.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\fr\\Microsoft.TestPlatform.CrossPlatEngine.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\fr\\Microsoft.TestPlatform.CrossPlatEngine.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\fr\\Microsoft.VisualStudio.TestPlatform.Common.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\fr\\Microsoft.VisualStudio.TestPlatform.Common.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\fr\\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\fr\\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\it\\Microsoft.TestPlatform.CommunicationUtilities.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\it\\Microsoft.TestPlatform.CommunicationUtilities.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\it\\Microsoft.TestPlatform.CoreUtilities.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\it\\Microsoft.TestPlatform.CoreUtilities.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\it\\Microsoft.TestPlatform.CrossPlatEngine.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\it\\Microsoft.TestPlatform.CrossPlatEngine.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\it\\Microsoft.VisualStudio.TestPlatform.Common.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\it\\Microsoft.VisualStudio.TestPlatform.Common.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\it\\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\it\\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ja\\Microsoft.TestPlatform.CommunicationUtilities.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ja\\Microsoft.TestPlatform.CommunicationUtilities.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ja\\Microsoft.TestPlatform.CoreUtilities.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ja\\Microsoft.TestPlatform.CoreUtilities.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ja\\Microsoft.TestPlatform.CrossPlatEngine.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ja\\Microsoft.TestPlatform.CrossPlatEngine.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ja\\Microsoft.VisualStudio.TestPlatform.Common.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ja\\Microsoft.VisualStudio.TestPlatform.Common.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ja\\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ja\\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ko\\Microsoft.TestPlatform.CommunicationUtilities.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ko\\Microsoft.TestPlatform.CommunicationUtilities.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ko\\Microsoft.TestPlatform.CoreUtilities.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ko\\Microsoft.TestPlatform.CoreUtilities.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ko\\Microsoft.TestPlatform.CrossPlatEngine.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ko\\Microsoft.TestPlatform.CrossPlatEngine.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ko\\Microsoft.VisualStudio.TestPlatform.Common.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ko\\Microsoft.VisualStudio.TestPlatform.Common.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ko\\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ko\\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\pl\\Microsoft.TestPlatform.CommunicationUtilities.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\pl\\Microsoft.TestPlatform.CommunicationUtilities.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\pl\\Microsoft.TestPlatform.CoreUtilities.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\pl\\Microsoft.TestPlatform.CoreUtilities.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\pl\\Microsoft.TestPlatform.CrossPlatEngine.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\pl\\Microsoft.TestPlatform.CrossPlatEngine.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\pl\\Microsoft.VisualStudio.TestPlatform.Common.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\pl\\Microsoft.VisualStudio.TestPlatform.Common.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\pl\\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\pl\\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\pt-BR\\Microsoft.TestPlatform.CommunicationUtilities.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\pt-BR\\Microsoft.TestPlatform.CommunicationUtilities.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\pt-BR\\Microsoft.TestPlatform.CoreUtilities.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\pt-BR\\Microsoft.TestPlatform.CoreUtilities.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\pt-BR\\Microsoft.TestPlatform.CrossPlatEngine.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\pt-BR\\Microsoft.TestPlatform.CrossPlatEngine.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\pt-BR\\Microsoft.VisualStudio.TestPlatform.Common.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\pt-BR\\Microsoft.VisualStudio.TestPlatform.Common.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\pt-BR\\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\pt-BR\\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ru\\Microsoft.TestPlatform.CommunicationUtilities.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ru\\Microsoft.TestPlatform.CommunicationUtilities.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ru\\Microsoft.TestPlatform.CoreUtilities.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ru\\Microsoft.TestPlatform.CoreUtilities.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ru\\Microsoft.TestPlatform.CrossPlatEngine.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ru\\Microsoft.TestPlatform.CrossPlatEngine.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ru\\Microsoft.VisualStudio.TestPlatform.Common.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ru\\Microsoft.VisualStudio.TestPlatform.Common.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ru\\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\ru\\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\testhost.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\testhost.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\testhost.exe',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\testhost.exe',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\tr\\Microsoft.TestPlatform.CommunicationUtilities.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\tr\\Microsoft.TestPlatform.CommunicationUtilities.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\tr\\Microsoft.TestPlatform.CoreUtilities.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\tr\\Microsoft.TestPlatform.CoreUtilities.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\tr\\Microsoft.TestPlatform.CrossPlatEngine.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\tr\\Microsoft.TestPlatform.CrossPlatEngine.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\tr\\Microsoft.VisualStudio.TestPlatform.Common.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\tr\\Microsoft.VisualStudio.TestPlatform.Common.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\tr\\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\tr\\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\xunit.abstractions.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\xunit.abstractions.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\xunit.assert.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\xunit.assert.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\xunit.core.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\xunit.core.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\xunit.execution.dotnet.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\xunit.execution.dotnet.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\xunit.runner.reporters.netcoreapp10.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\xunit.runner.reporters.netcoreapp10.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\xunit.runner.utility.netcoreapp10.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\xunit.runner.utility.netcoreapp10.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\xunit.runner.visualstudio.dotnetcore.testadapter.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\xunit.runner.visualstudio.dotnetcore.testadapter.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\zh-Hans\\Microsoft.TestPlatform.CommunicationUtilities.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\zh-Hans\\Microsoft.TestPlatform.CommunicationUtilities.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\zh-Hans\\Microsoft.TestPlatform.CoreUtilities.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\zh-Hans\\Microsoft.TestPlatform.CoreUtilities.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\zh-Hans\\Microsoft.TestPlatform.CrossPlatEngine.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\zh-Hans\\Microsoft.TestPlatform.CrossPlatEngine.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\zh-Hans\\Microsoft.VisualStudio.TestPlatform.Common.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\zh-Hans\\Microsoft.VisualStudio.TestPlatform.Common.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\zh-Hans\\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\zh-Hans\\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\zh-Hant\\Microsoft.TestPlatform.CommunicationUtilities.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\zh-Hant\\Microsoft.TestPlatform.CommunicationUtilities.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\zh-Hant\\Microsoft.TestPlatform.CoreUtilities.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\zh-Hant\\Microsoft.TestPlatform.CoreUtilities.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\zh-Hant\\Microsoft.TestPlatform.CrossPlatEngine.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\zh-Hant\\Microsoft.TestPlatform.CrossPlatEngine.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\zh-Hant\\Microsoft.VisualStudio.TestPlatform.Common.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\zh-Hant\\Microsoft.VisualStudio.TestPlatform.Common.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\zh-Hant\\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\zh-Hant\\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\VirusTotalNet.Tests.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\VirusTotalNet.Tests.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\ref\\VirusTotalNet.Tests.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\ref\\VirusTotalNet.Tests.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\refint\\VirusTotalNet.Tests.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\refint\\VirusTotalNet.Tests.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\bin\\Debug\\netstandard2.0\\VirusTotalNet.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\bin\\Debug\\netstandard2.0\\VirusTotalNet.dll',
+   'BINARY'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.0\\VirusTotalNet.dll',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.0\\VirusTotalNet.dll',
+   'BINARY'),
   ('python312.dll',
    'C:\\Users\\Owner\\AppData\\Local\\Programs\\Python\\Python312\\python312.dll',
    'BINARY'),
@@ -94,44 +1052,104 @@
   ('_wmi.pyd',
    'C:\\Users\\Owner\\AppData\\Local\\Programs\\Python\\Python312\\DLLs\\_wmi.pyd',
    'EXTENSION'),
-  ('api-ms-win-crt-environment-l1-1-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-crt-environment-l1-1-0.dll',
+  ('api-ms-win-core-profile-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-profile-l1-1-0.dll',
    'BINARY'),
-  ('api-ms-win-crt-heap-l1-1-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-crt-heap-l1-1-0.dll',
+  ('api-ms-win-crt-private-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-crt-private-l1-1-0.dll',
    'BINARY'),
-  ('api-ms-win-crt-convert-l1-1-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-crt-convert-l1-1-0.dll',
+  ('api-ms-win-core-debug-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-debug-l1-1-0.dll',
    'BINARY'),
-  ('api-ms-win-crt-runtime-l1-1-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-crt-runtime-l1-1-0.dll',
+  ('api-ms-win-core-timezone-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-timezone-l1-1-0.dll',
    'BINARY'),
-  ('api-ms-win-crt-conio-l1-1-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-crt-conio-l1-1-0.dll',
+  ('api-ms-win-core-localization-l1-2-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-localization-l1-2-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-synch-l1-2-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-synch-l1-2-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-errorhandling-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-errorhandling-l1-1-0.dll',
    'BINARY'),
   ('api-ms-win-crt-string-l1-1-0.dll',
    'C:\\Users\\Owner\\anaconda3\\api-ms-win-crt-string-l1-1-0.dll',
    'BINARY'),
-  ('api-ms-win-crt-filesystem-l1-1-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-crt-filesystem-l1-1-0.dll',
+  ('api-ms-win-core-interlocked-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-interlocked-l1-1-0.dll',
    'BINARY'),
-  ('api-ms-win-crt-process-l1-1-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-crt-process-l1-1-0.dll',
+  ('api-ms-win-core-sysinfo-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-sysinfo-l1-1-0.dll',
    'BINARY'),
-  ('api-ms-win-crt-stdio-l1-1-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-crt-stdio-l1-1-0.dll',
+  ('api-ms-win-core-processthreads-l1-1-1.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-processthreads-l1-1-1.dll',
    'BINARY'),
-  ('VCRUNTIME140.dll',
-   'C:\\Users\\Owner\\AppData\\Local\\Programs\\Python\\Python312\\VCRUNTIME140.dll',
+  ('api-ms-win-crt-runtime-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-crt-runtime-l1-1-0.dll',
    'BINARY'),
-  ('api-ms-win-crt-math-l1-1-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-crt-math-l1-1-0.dll',
+  ('api-ms-win-core-handle-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-handle-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-string-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-string-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-file-l1-2-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-file-l1-2-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-file-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-file-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-processenvironment-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-processenvironment-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-heap-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-heap-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-memory-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-memory-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-processthreads-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-processthreads-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-libraryloader-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-libraryloader-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-synch-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-synch-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-time-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-crt-time-l1-1-0.dll',
    'BINARY'),
   ('api-ms-win-crt-locale-l1-1-0.dll',
    'C:\\Users\\Owner\\anaconda3\\api-ms-win-crt-locale-l1-1-0.dll',
    'BINARY'),
-  ('api-ms-win-crt-time-l1-1-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-crt-time-l1-1-0.dll',
+  ('api-ms-win-crt-heap-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-crt-heap-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-math-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-crt-math-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-stdio-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-crt-stdio-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-convert-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-crt-convert-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-filesystem-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-crt-filesystem-l1-1-0.dll',
+   'BINARY'),
+  ('VCRUNTIME140.dll',
+   'C:\\Users\\Owner\\AppData\\Local\\Programs\\Python\\Python312\\VCRUNTIME140.dll',
+   'BINARY'),
+  ('api-ms-win-crt-environment-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-crt-environment-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-conio-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-crt-conio-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-process-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-crt-process-l1-1-0.dll',
    'BINARY'),
   ('libcrypto-3.dll',
    'C:\\Users\\Owner\\AppData\\Local\\Programs\\Python\\Python312\\DLLs\\libcrypto-3.dll',
@@ -140,81 +1158,1555 @@
   ('api-ms-win-crt-utility-l1-1-0.dll',
    'C:\\Users\\Owner\\anaconda3\\api-ms-win-crt-utility-l1-1-0.dll',
    'BINARY'),
-  ('api-ms-win-core-file-l1-2-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-file-l1-2-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-rtlsupport-l1-1-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-rtlsupport-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-timezone-l1-1-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-timezone-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-libraryloader-l1-1-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-libraryloader-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-processthreads-l1-1-1.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-processthreads-l1-1-1.dll',
-   'BINARY'),
-  ('api-ms-win-core-interlocked-l1-1-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-interlocked-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-processthreads-l1-1-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-processthreads-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-debug-l1-1-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-debug-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-file-l1-1-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-file-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-synch-l1-2-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-synch-l1-2-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-datetime-l1-1-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-datetime-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-heap-l1-1-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-heap-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-profile-l1-1-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-profile-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-processenvironment-l1-1-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-processenvironment-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-string-l1-1-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-string-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-synch-l1-1-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-synch-l1-1-0.dll',
-   'BINARY'),
   ('api-ms-win-core-util-l1-1-0.dll',
    'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-util-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-memory-l1-1-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-memory-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-errorhandling-l1-1-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-errorhandling-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-console-l1-1-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-console-l1-1-0.dll',
    'BINARY'),
   ('api-ms-win-core-file-l2-1-0.dll',
    'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-file-l2-1-0.dll',
    'BINARY'),
-  ('api-ms-win-core-handle-l1-1-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-handle-l1-1-0.dll',
+  ('api-ms-win-core-console-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-console-l1-1-0.dll',
    'BINARY'),
   ('api-ms-win-core-namedpipe-l1-1-0.dll',
    'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-namedpipe-l1-1-0.dll',
    'BINARY'),
-  ('api-ms-win-core-localization-l1-2-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-localization-l1-2-0.dll',
+  ('api-ms-win-core-datetime-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-datetime-l1-1-0.dll',
    'BINARY'),
-  ('api-ms-win-core-sysinfo-l1-1-0.dll',
-   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-sysinfo-l1-1-0.dll',
+  ('api-ms-win-core-rtlsupport-l1-1-0.dll',
+   'C:\\Users\\Owner\\anaconda3\\api-ms-win-core-rtlsupport-l1-1-0.dll',
    'BINARY'),
+  ('Agent '
+   'Solution\\Agent\\.vs\\Agent\\FileContentIndex\\65383098-1285-472c-8f1a-c9ad72e36006.vsidx',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\.vs\\Agent\\FileContentIndex\\65383098-1285-472c-8f1a-c9ad72e36006.vsidx',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\.vs\\Agent\\FileContentIndex\\6acd5d09-5405-4446-aa6c-15d8cc1c2968.vsidx',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\.vs\\Agent\\FileContentIndex\\6acd5d09-5405-4446-aa6c-15d8cc1c2968.vsidx',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\.vs\\Agent\\FileContentIndex\\d1106d30-0a76-4124-b4dd-755e61d7dc44.vsidx',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\.vs\\Agent\\FileContentIndex\\d1106d30-0a76-4124-b4dd-755e61d7dc44.vsidx',
+   'DATA'),
+  ('Agent Solution\\Agent\\.vs\\Agent\\v17\\.suo',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\.vs\\Agent\\v17\\.suo',
+   'DATA'),
+  ('Agent Solution\\Agent\\Agent.csproj',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\Agent.csproj',
+   'DATA'),
+  ('Agent Solution\\Agent\\Agent.sln',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\Agent.sln',
+   'DATA'),
+  ('Agent Solution\\Agent\\AgentMain.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\AgentMain.cs',
+   'DATA'),
+  ('Agent Solution\\Agent\\App.config',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\App.config',
+   'DATA'),
+  ('Agent Solution\\Agent\\ClassDiagram1.cd',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\ClassDiagram1.cd',
+   'DATA'),
+  ('Agent Solution\\Agent\\Events.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\Events.cs',
+   'DATA'),
+  ('Agent Solution\\Agent\\Properties\\AssemblyInfo.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\Properties\\AssemblyInfo.cs',
+   'DATA'),
+  ('Agent Solution\\Agent\\SpecialSecurityEvents.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\SpecialSecurityEvents.cs',
+   'DATA'),
+  ('Agent Solution\\Agent\\bin\\Debug\\Agent.exe.config',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\Agent.exe.config',
+   'DATA'),
+  ('Agent Solution\\Agent\\bin\\Debug\\Agent.pdb',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\Agent.pdb',
+   'DATA'),
+  ('Agent Solution\\Agent\\bin\\Debug\\Aqua.Newtonsoft.Json.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\Aqua.Newtonsoft.Json.xml',
+   'DATA'),
+  ('Agent Solution\\Agent\\bin\\Debug\\Aqua.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\Aqua.xml',
+   'DATA'),
+  ('Agent Solution\\Agent\\bin\\Debug\\Microsoft.Bcl.AsyncInterfaces.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\Microsoft.Bcl.AsyncInterfaces.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\bin\\Debug\\Microsoft.Diagnostics.FastSerialization.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\Microsoft.Diagnostics.FastSerialization.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\bin\\Debug\\Microsoft.Diagnostics.Tracing.TraceEvent.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\Microsoft.Diagnostics.Tracing.TraceEvent.xml',
+   'DATA'),
+  ('Agent Solution\\Agent\\bin\\Debug\\Microsoft.Win32.Registry.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\Microsoft.Win32.Registry.xml',
+   'DATA'),
+  ('Agent Solution\\Agent\\bin\\Debug\\Newtonsoft.Json.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\Newtonsoft.Json.xml',
+   'DATA'),
+  ('Agent Solution\\Agent\\bin\\Debug\\Remote.Linq.Newtonsoft.Json.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\Remote.Linq.Newtonsoft.Json.xml',
+   'DATA'),
+  ('Agent Solution\\Agent\\bin\\Debug\\Remote.Linq.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\Remote.Linq.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\bin\\Debug\\System.Runtime.CompilerServices.Unsafe.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\System.Runtime.CompilerServices.Unsafe.xml',
+   'DATA'),
+  ('Agent Solution\\Agent\\bin\\Debug\\System.Security.AccessControl.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\System.Security.AccessControl.xml',
+   'DATA'),
+  ('Agent Solution\\Agent\\bin\\Debug\\System.Security.Principal.Windows.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\System.Security.Principal.Windows.xml',
+   'DATA'),
+  ('Agent Solution\\Agent\\bin\\Debug\\System.Threading.Tasks.Extensions.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\bin\\Debug\\System.Threading.Tasks.Extensions.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\obj\\Debug\\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\obj\\Debug\\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs',
+   'DATA'),
+  ('Agent Solution\\Agent\\obj\\Debug\\Agent.csproj.AssemblyReference.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\obj\\Debug\\Agent.csproj.AssemblyReference.cache',
+   'DATA'),
+  ('Agent Solution\\Agent\\obj\\Debug\\Agent.csproj.CopyComplete',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\obj\\Debug\\Agent.csproj.CopyComplete',
+   'DATA'),
+  ('Agent Solution\\Agent\\obj\\Debug\\Agent.csproj.CoreCompileInputs.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\obj\\Debug\\Agent.csproj.CoreCompileInputs.cache',
+   'DATA'),
+  ('Agent Solution\\Agent\\obj\\Debug\\Agent.csproj.FileListAbsolute.txt',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\obj\\Debug\\Agent.csproj.FileListAbsolute.txt',
+   'DATA'),
+  ('Agent Solution\\Agent\\obj\\Debug\\Agent.pdb',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\obj\\Debug\\Agent.pdb',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\obj\\Debug\\DesignTimeResolveAssemblyReferencesInput.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\obj\\Debug\\DesignTimeResolveAssemblyReferencesInput.cache',
+   'DATA'),
+  ('Agent Solution\\Agent\\packages.config',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages.config',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\.signature.p7s',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\.signature.p7s',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7.nupkg',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7.nupkg',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\buildTransitive\\Microsoft.Diagnostics.Tracing.TraceEvent.props',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\buildTransitive\\Microsoft.Diagnostics.Tracing.TraceEvent.props',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\build\\Microsoft.Diagnostics.Tracing.TraceEvent.props',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\build\\Microsoft.Diagnostics.Tracing.TraceEvent.props',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\lib\\netstandard2.0\\Microsoft.Diagnostics.FastSerialization.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\lib\\netstandard2.0\\Microsoft.Diagnostics.FastSerialization.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\lib\\netstandard2.0\\Microsoft.Diagnostics.Tracing.TraceEvent.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Diagnostics.Tracing.TraceEvent.3.1.7\\lib\\netstandard2.0\\Microsoft.Diagnostics.Tracing.TraceEvent.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\.signature.p7s',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\.signature.p7s',
+   'DATA'),
+  ('Agent Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\Icon.png',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\Icon.png',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\LICENSE.TXT',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\LICENSE.TXT',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\Microsoft.Win32.Registry.5.0.0.nupkg',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\Microsoft.Win32.Registry.5.0.0.nupkg',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\THIRD-PARTY-NOTICES.TXT',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\THIRD-PARTY-NOTICES.TXT',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\lib\\net461\\Microsoft.Win32.Registry.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\lib\\net461\\Microsoft.Win32.Registry.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\lib\\netstandard2.0\\Microsoft.Win32.Registry.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\lib\\netstandard2.0\\Microsoft.Win32.Registry.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\net461\\Microsoft.Win32.Registry.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\net461\\Microsoft.Win32.Registry.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\netstandard1.3\\Microsoft.Win32.Registry.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\netstandard1.3\\Microsoft.Win32.Registry.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\netstandard1.3\\de\\Microsoft.Win32.Registry.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\netstandard1.3\\de\\Microsoft.Win32.Registry.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\netstandard1.3\\es\\Microsoft.Win32.Registry.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\netstandard1.3\\es\\Microsoft.Win32.Registry.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\netstandard1.3\\fr\\Microsoft.Win32.Registry.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\netstandard1.3\\fr\\Microsoft.Win32.Registry.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\netstandard1.3\\it\\Microsoft.Win32.Registry.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\netstandard1.3\\it\\Microsoft.Win32.Registry.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\netstandard1.3\\ja\\Microsoft.Win32.Registry.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\netstandard1.3\\ja\\Microsoft.Win32.Registry.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\netstandard1.3\\ko\\Microsoft.Win32.Registry.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\netstandard1.3\\ko\\Microsoft.Win32.Registry.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\netstandard1.3\\ru\\Microsoft.Win32.Registry.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\netstandard1.3\\ru\\Microsoft.Win32.Registry.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\netstandard1.3\\zh-hans\\Microsoft.Win32.Registry.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\netstandard1.3\\zh-hans\\Microsoft.Win32.Registry.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\netstandard1.3\\zh-hant\\Microsoft.Win32.Registry.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\netstandard1.3\\zh-hant\\Microsoft.Win32.Registry.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\netstandard2.0\\Microsoft.Win32.Registry.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\ref\\netstandard2.0\\Microsoft.Win32.Registry.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\runtimes\\win\\lib\\net461\\Microsoft.Win32.Registry.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\runtimes\\win\\lib\\net461\\Microsoft.Win32.Registry.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\runtimes\\win\\lib\\netstandard2.0\\Microsoft.Win32.Registry.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\runtimes\\win\\lib\\netstandard2.0\\Microsoft.Win32.Registry.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\useSharedDesignerContext.txt',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\useSharedDesignerContext.txt',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\version.txt',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Microsoft.Win32.Registry.5.0.0\\version.txt',
+   'DATA'),
+  ('Agent Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\.signature.p7s',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\.signature.p7s',
+   'DATA'),
+  ('Agent Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\LICENSE.md',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\LICENSE.md',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\Newtonsoft.Json.13.0.3.nupkg',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\Newtonsoft.Json.13.0.3.nupkg',
+   'DATA'),
+  ('Agent Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\README.md',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\README.md',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\net20\\Newtonsoft.Json.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\net20\\Newtonsoft.Json.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\net35\\Newtonsoft.Json.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\net35\\Newtonsoft.Json.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\net40\\Newtonsoft.Json.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\net40\\Newtonsoft.Json.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\net45\\Newtonsoft.Json.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\net45\\Newtonsoft.Json.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\net6.0\\Newtonsoft.Json.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\net6.0\\Newtonsoft.Json.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\netstandard1.0\\Newtonsoft.Json.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\netstandard1.0\\Newtonsoft.Json.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\netstandard1.3\\Newtonsoft.Json.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\netstandard1.3\\Newtonsoft.Json.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\netstandard2.0\\Newtonsoft.Json.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\lib\\netstandard2.0\\Newtonsoft.Json.xml',
+   'DATA'),
+  ('Agent Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\packageIcon.png',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\Newtonsoft.Json.13.0.3\\packageIcon.png',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\.signature.p7s',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\.signature.p7s',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\Icon.png',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\Icon.png',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\LICENSE.TXT',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\LICENSE.TXT',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\System.Runtime.CompilerServices.Unsafe.6.0.0.nupkg',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\System.Runtime.CompilerServices.Unsafe.6.0.0.nupkg',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\THIRD-PARTY-NOTICES.TXT',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\THIRD-PARTY-NOTICES.TXT',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\buildTransitive\\netcoreapp2.0\\System.Runtime.CompilerServices.Unsafe.targets',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\buildTransitive\\netcoreapp2.0\\System.Runtime.CompilerServices.Unsafe.targets',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\buildTransitive\\netcoreapp3.1\\_._',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\buildTransitive\\netcoreapp3.1\\_._',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\lib\\net461\\System.Runtime.CompilerServices.Unsafe.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\lib\\net461\\System.Runtime.CompilerServices.Unsafe.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\lib\\net6.0\\System.Runtime.CompilerServices.Unsafe.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\lib\\net6.0\\System.Runtime.CompilerServices.Unsafe.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\lib\\netcoreapp3.1\\System.Runtime.CompilerServices.Unsafe.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\lib\\netcoreapp3.1\\System.Runtime.CompilerServices.Unsafe.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\lib\\netstandard2.0\\System.Runtime.CompilerServices.Unsafe.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\lib\\netstandard2.0\\System.Runtime.CompilerServices.Unsafe.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\useSharedDesignerContext.txt',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Runtime.CompilerServices.Unsafe.6.0.0\\useSharedDesignerContext.txt',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\.signature.p7s',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\.signature.p7s',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\Icon.png',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\Icon.png',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\LICENSE.TXT',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\LICENSE.TXT',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\System.Security.AccessControl.6.0.0.nupkg',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\System.Security.AccessControl.6.0.0.nupkg',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\THIRD-PARTY-NOTICES.TXT',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\THIRD-PARTY-NOTICES.TXT',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\buildTransitive\\netcoreapp2.0\\System.Security.AccessControl.targets',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\buildTransitive\\netcoreapp2.0\\System.Security.AccessControl.targets',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\buildTransitive\\netcoreapp3.1\\_._',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\buildTransitive\\netcoreapp3.1\\_._',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\lib\\net461\\System.Security.AccessControl.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\lib\\net461\\System.Security.AccessControl.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\lib\\net6.0\\System.Security.AccessControl.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\lib\\net6.0\\System.Security.AccessControl.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\lib\\netstandard2.0\\System.Security.AccessControl.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\lib\\netstandard2.0\\System.Security.AccessControl.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\runtimes\\win\\lib\\net461\\System.Security.AccessControl.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\runtimes\\win\\lib\\net461\\System.Security.AccessControl.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\runtimes\\win\\lib\\net6.0\\System.Security.AccessControl.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\runtimes\\win\\lib\\net6.0\\System.Security.AccessControl.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\runtimes\\win\\lib\\netstandard2.0\\System.Security.AccessControl.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\runtimes\\win\\lib\\netstandard2.0\\System.Security.AccessControl.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\useSharedDesignerContext.txt',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.AccessControl.6.0.0\\useSharedDesignerContext.txt',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\.signature.p7s',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\.signature.p7s',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\Icon.png',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\Icon.png',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\LICENSE.TXT',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\LICENSE.TXT',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\System.Security.Principal.Windows.5.0.0.nupkg',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\System.Security.Principal.Windows.5.0.0.nupkg',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\THIRD-PARTY-NOTICES.TXT',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\THIRD-PARTY-NOTICES.TXT',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\lib\\net461\\System.Security.Principal.Windows.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\lib\\net461\\System.Security.Principal.Windows.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\lib\\netstandard2.0\\System.Security.Principal.Windows.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\lib\\netstandard2.0\\System.Security.Principal.Windows.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\lib\\uap10.0.16299\\_._',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\lib\\uap10.0.16299\\_._',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\net461\\System.Security.Principal.Windows.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\net461\\System.Security.Principal.Windows.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netcoreapp3.0\\System.Security.Principal.Windows.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netcoreapp3.0\\System.Security.Principal.Windows.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netstandard1.3\\System.Security.Principal.Windows.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netstandard1.3\\System.Security.Principal.Windows.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netstandard1.3\\de\\System.Security.Principal.Windows.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netstandard1.3\\de\\System.Security.Principal.Windows.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netstandard1.3\\es\\System.Security.Principal.Windows.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netstandard1.3\\es\\System.Security.Principal.Windows.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netstandard1.3\\fr\\System.Security.Principal.Windows.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netstandard1.3\\fr\\System.Security.Principal.Windows.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netstandard1.3\\it\\System.Security.Principal.Windows.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netstandard1.3\\it\\System.Security.Principal.Windows.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netstandard1.3\\ja\\System.Security.Principal.Windows.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netstandard1.3\\ja\\System.Security.Principal.Windows.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netstandard1.3\\ko\\System.Security.Principal.Windows.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netstandard1.3\\ko\\System.Security.Principal.Windows.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netstandard1.3\\ru\\System.Security.Principal.Windows.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netstandard1.3\\ru\\System.Security.Principal.Windows.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netstandard1.3\\zh-hans\\System.Security.Principal.Windows.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netstandard1.3\\zh-hans\\System.Security.Principal.Windows.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netstandard1.3\\zh-hant\\System.Security.Principal.Windows.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netstandard1.3\\zh-hant\\System.Security.Principal.Windows.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netstandard2.0\\System.Security.Principal.Windows.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\netstandard2.0\\System.Security.Principal.Windows.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\uap10.0.16299\\_._',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\ref\\uap10.0.16299\\_._',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\runtimes\\unix\\lib\\netcoreapp2.0\\System.Security.Principal.Windows.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\runtimes\\unix\\lib\\netcoreapp2.0\\System.Security.Principal.Windows.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\runtimes\\unix\\lib\\netcoreapp2.1\\System.Security.Principal.Windows.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\runtimes\\unix\\lib\\netcoreapp2.1\\System.Security.Principal.Windows.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\runtimes\\win\\lib\\net461\\System.Security.Principal.Windows.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\runtimes\\win\\lib\\net461\\System.Security.Principal.Windows.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\runtimes\\win\\lib\\netcoreapp2.0\\System.Security.Principal.Windows.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\runtimes\\win\\lib\\netcoreapp2.0\\System.Security.Principal.Windows.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\runtimes\\win\\lib\\netcoreapp2.1\\System.Security.Principal.Windows.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\runtimes\\win\\lib\\netcoreapp2.1\\System.Security.Principal.Windows.xml',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\runtimes\\win\\lib\\uap10.0.16299\\_._',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\runtimes\\win\\lib\\uap10.0.16299\\_._',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\useSharedDesignerContext.txt',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\useSharedDesignerContext.txt',
+   'DATA'),
+  ('Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\version.txt',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Agent '
+   'Solution\\Agent\\packages\\System.Security.Principal.Windows.5.0.0\\version.txt',
+   'DATA'),
+  ('DataService\\App.config',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR '
+   'project\\Merged\\EDR\\DataService\\App.config',
+   'DATA'),
+  ('DataService\\ClassDiagram1.cd',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR '
+   'project\\Merged\\EDR\\DataService\\ClassDiagram1.cd',
+   'DATA'),
+  ('DataService\\DataService.csproj',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR '
+   'project\\Merged\\EDR\\DataService\\DataService.csproj',
+   'DATA'),
+  ('DataService\\DataServiceMain.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR '
+   'project\\Merged\\EDR\\DataService\\DataServiceMain.cs',
+   'DATA'),
+  ('DataService\\ProcessView.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR '
+   'project\\Merged\\EDR\\DataService\\ProcessView.cs',
+   'DATA'),
+  ('DataService\\Properties\\AssemblyInfo.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR '
+   'project\\Merged\\EDR\\DataService\\Properties\\AssemblyInfo.cs',
+   'DATA'),
+  ('DataService\\bin\\Debug\\DataService.exe.config',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR '
+   'project\\Merged\\EDR\\DataService\\bin\\Debug\\DataService.exe.config',
+   'DATA'),
+  ('DataService\\bin\\Debug\\DataService.pdb',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR '
+   'project\\Merged\\EDR\\DataService\\bin\\Debug\\DataService.pdb',
+   'DATA'),
+  ('DataService\\bin\\Debug\\Newtonsoft.Json.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR '
+   'project\\Merged\\EDR\\DataService\\bin\\Debug\\Newtonsoft.Json.xml',
+   'DATA'),
+  ('DataService\\obj\\Debug\\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR '
+   'project\\Merged\\EDR\\DataService\\obj\\Debug\\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs',
+   'DATA'),
+  ('DataService\\obj\\Debug\\DataService.csproj.AssemblyReference.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR '
+   'project\\Merged\\EDR\\DataService\\obj\\Debug\\DataService.csproj.AssemblyReference.cache',
+   'DATA'),
+  ('DataService\\obj\\Debug\\DataService.csproj.CopyComplete',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR '
+   'project\\Merged\\EDR\\DataService\\obj\\Debug\\DataService.csproj.CopyComplete',
+   'DATA'),
+  ('DataService\\obj\\Debug\\DataService.csproj.CoreCompileInputs.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR '
+   'project\\Merged\\EDR\\DataService\\obj\\Debug\\DataService.csproj.CoreCompileInputs.cache',
+   'DATA'),
+  ('DataService\\obj\\Debug\\DataService.csproj.FileListAbsolute.txt',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR '
+   'project\\Merged\\EDR\\DataService\\obj\\Debug\\DataService.csproj.FileListAbsolute.txt',
+   'DATA'),
+  ('DataService\\obj\\Debug\\DataService.pdb',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR '
+   'project\\Merged\\EDR\\DataService\\obj\\Debug\\DataService.pdb',
+   'DATA'),
+  ('DataService\\obj\\Debug\\DesignTimeResolveAssemblyReferences.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR '
+   'project\\Merged\\EDR\\DataService\\obj\\Debug\\DesignTimeResolveAssemblyReferences.cache',
+   'DATA'),
+  ('DataService\\obj\\Debug\\DesignTimeResolveAssemblyReferencesInput.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR '
+   'project\\Merged\\EDR\\DataService\\obj\\Debug\\DesignTimeResolveAssemblyReferencesInput.cache',
+   'DATA'),
+  ('DataService\\packages.config',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR '
+   'project\\Merged\\EDR\\DataService\\packages.config',
+   'DATA'),
+  ('EDR.sln',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\EDR.sln',
+   'DATA'),
+  ('Server '
+   'Solution\\Server\\.vs\\Server\\FileContentIndex\\21d1051b-6409-4847-998d-b31fae888e72.vsidx',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\.vs\\Server\\FileContentIndex\\21d1051b-6409-4847-998d-b31fae888e72.vsidx',
+   'DATA'),
+  ('Server '
+   'Solution\\Server\\.vs\\Server\\FileContentIndex\\6897a375-4a17-4906-b1b3-a7baf368edda.vsidx',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\.vs\\Server\\FileContentIndex\\6897a375-4a17-4906-b1b3-a7baf368edda.vsidx',
+   'DATA'),
+  ('Server Solution\\Server\\.vs\\Server\\v17\\.suo',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\.vs\\Server\\v17\\.suo',
+   'DATA'),
+  ('Server Solution\\Server\\App.config',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\App.config',
+   'DATA'),
+  ('Server Solution\\Server\\ProcessCommand.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\ProcessCommand.cs',
+   'DATA'),
+  ('Server Solution\\Server\\Properties\\AssemblyInfo.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\Properties\\AssemblyInfo.cs',
+   'DATA'),
+  ('Server Solution\\Server\\Server.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\Server.cs',
+   'DATA'),
+  ('Server Solution\\Server\\Server.csproj',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\Server.csproj',
+   'DATA'),
+  ('Server Solution\\Server\\Server.sln',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\Server.sln',
+   'DATA'),
+  ('Server Solution\\Server\\bin\\Debug\\DataService.exe.config',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\DataService.exe.config',
+   'DATA'),
+  ('Server Solution\\Server\\bin\\Debug\\DataService.pdb',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\DataService.pdb',
+   'DATA'),
+  ('Server '
+   'Solution\\Server\\bin\\Debug\\Microsoft.Diagnostics.FastSerialization.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\Microsoft.Diagnostics.FastSerialization.xml',
+   'DATA'),
+  ('Server '
+   'Solution\\Server\\bin\\Debug\\Microsoft.Diagnostics.Tracing.TraceEvent.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\Microsoft.Diagnostics.Tracing.TraceEvent.xml',
+   'DATA'),
+  ('Server Solution\\Server\\bin\\Debug\\Microsoft.Win32.Registry.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\Microsoft.Win32.Registry.xml',
+   'DATA'),
+  ('Server Solution\\Server\\bin\\Debug\\Newtonsoft.Json.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\Newtonsoft.Json.xml',
+   'DATA'),
+  ('Server Solution\\Server\\bin\\Debug\\Server.exe.config',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\Server.exe.config',
+   'DATA'),
+  ('Server Solution\\Server\\bin\\Debug\\Server.pdb',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\Server.pdb',
+   'DATA'),
+  ('Server '
+   'Solution\\Server\\bin\\Debug\\System.Runtime.CompilerServices.Unsafe.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\System.Runtime.CompilerServices.Unsafe.xml',
+   'DATA'),
+  ('Server Solution\\Server\\bin\\Debug\\System.Security.AccessControl.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\System.Security.AccessControl.xml',
+   'DATA'),
+  ('Server Solution\\Server\\bin\\Debug\\System.Security.Principal.Windows.xml',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\System.Security.Principal.Windows.xml',
+   'DATA'),
+  ('Server Solution\\Server\\bin\\Debug\\VirusTotalNet.Examples.deps.json',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\VirusTotalNet.Examples.deps.json',
+   'DATA'),
+  ('Server '
+   'Solution\\Server\\bin\\Debug\\VirusTotalNet.Examples.runtimeconfig.json',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\VirusTotalNet.Examples.runtimeconfig.json',
+   'DATA'),
+  ('Server Solution\\Server\\bin\\Debug\\VirusTotalNet.pdb',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\bin\\Debug\\VirusTotalNet.pdb',
+   'DATA'),
+  ('Server '
+   'Solution\\Server\\obj\\Debug\\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\obj\\Debug\\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs',
+   'DATA'),
+  ('Server '
+   'Solution\\Server\\obj\\Debug\\DesignTimeResolveAssemblyReferences.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\obj\\Debug\\DesignTimeResolveAssemblyReferences.cache',
+   'DATA'),
+  ('Server '
+   'Solution\\Server\\obj\\Debug\\DesignTimeResolveAssemblyReferencesInput.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\obj\\Debug\\DesignTimeResolveAssemblyReferencesInput.cache',
+   'DATA'),
+  ('Server Solution\\Server\\obj\\Debug\\Server.csproj.AssemblyReference.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\obj\\Debug\\Server.csproj.AssemblyReference.cache',
+   'DATA'),
+  ('Server Solution\\Server\\obj\\Debug\\Server.csproj.CopyComplete',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\obj\\Debug\\Server.csproj.CopyComplete',
+   'DATA'),
+  ('Server Solution\\Server\\obj\\Debug\\Server.csproj.CoreCompileInputs.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\obj\\Debug\\Server.csproj.CoreCompileInputs.cache',
+   'DATA'),
+  ('Server Solution\\Server\\obj\\Debug\\Server.csproj.FileListAbsolute.txt',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\obj\\Debug\\Server.csproj.FileListAbsolute.txt',
+   'DATA'),
+  ('Server Solution\\Server\\obj\\Debug\\Server.pdb',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\obj\\Debug\\Server.pdb',
+   'DATA'),
+  ('Server Solution\\Server\\packages.config',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\Server '
+   'Solution\\Server\\packages.config',
+   'DATA'),
+  ('VirusTotal Solution\\.gitattributes',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\.gitattributes',
+   'DATA'),
+  ('VirusTotal Solution\\.gitignore',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\.gitignore',
+   'DATA'),
+  ('VirusTotal Solution\\LICENSE.txt',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\LICENSE.txt',
+   'DATA'),
+  ('VirusTotal Solution\\Properties.targets',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\Properties.targets',
+   'DATA'),
+  ('VirusTotal Solution\\README.md',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\README.md',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\.vs\\ProjectEvaluation\\virustotalnet.metadata.v7.bin',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\.vs\\ProjectEvaluation\\virustotalnet.metadata.v7.bin',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\.vs\\ProjectEvaluation\\virustotalnet.projects.v7.bin',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\.vs\\ProjectEvaluation\\virustotalnet.projects.v7.bin',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\.vs\\VirusTotalNet\\DesignTimeBuild\\.dtbcache.v2',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\.vs\\VirusTotalNet\\DesignTimeBuild\\.dtbcache.v2',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\.vs\\VirusTotalNet\\FileContentIndex\\9f42be73-01f3-487c-9cea-f8e648a6883e.vsidx',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\.vs\\VirusTotalNet\\FileContentIndex\\9f42be73-01f3-487c-9cea-f8e648a6883e.vsidx',
+   'DATA'),
+  ('VirusTotal Solution\\src\\.vs\\VirusTotalNet\\v17\\.futdcache.v2',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\.vs\\VirusTotalNet\\v17\\.futdcache.v2',
+   'DATA'),
+  ('VirusTotal Solution\\src\\.vs\\VirusTotalNet\\v17\\.suo',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\.vs\\VirusTotalNet\\v17\\.suo',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\.vs\\VirusTotalNet\\v17\\TestStore\\0\\000.testlog',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\.vs\\VirusTotalNet\\v17\\TestStore\\0\\000.testlog',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\.vs\\VirusTotalNet\\v17\\TestStore\\0\\testlog.manifest',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\.vs\\VirusTotalNet\\v17\\TestStore\\0\\testlog.manifest',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet.Examples\\Program.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\Program.cs',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\VirusTotalNet.Examples.csproj',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\VirusTotalNet.Examples.csproj',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\bin\\Debug\\net7.0\\VirusTotalNet.Examples.deps.json',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\bin\\Debug\\net7.0\\VirusTotalNet.Examples.deps.json',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\bin\\Debug\\net7.0\\VirusTotalNet.Examples.pdb',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\bin\\Debug\\net7.0\\VirusTotalNet.Examples.pdb',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\bin\\Debug\\net7.0\\VirusTotalNet.Examples.runtimeconfig.json',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\bin\\Debug\\net7.0\\VirusTotalNet.Examples.runtimeconfig.json',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\bin\\Debug\\net7.0\\VirusTotalNet.pdb',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\bin\\Debug\\net7.0\\VirusTotalNet.pdb',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\.NETCoreApp,Version=v7.0.AssemblyAttributes.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\.NETCoreApp,Version=v7.0.AssemblyAttributes.cs',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\VirusTotalNet.Examples.AssemblyInfo.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\VirusTotalNet.Examples.AssemblyInfo.cs',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\VirusTotalNet.Examples.AssemblyInfoInputs.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\VirusTotalNet.Examples.AssemblyInfoInputs.cache',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\VirusTotalNet.Examples.GeneratedMSBuildEditorConfig.editorconfig',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\VirusTotalNet.Examples.GeneratedMSBuildEditorConfig.editorconfig',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\VirusTotalNet.Examples.assets.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\VirusTotalNet.Examples.assets.cache',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\VirusTotalNet.Examples.csproj.AssemblyReference.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\VirusTotalNet.Examples.csproj.AssemblyReference.cache',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\VirusTotalNet.Examples.csproj.BuildWithSkipAnalyzers',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\VirusTotalNet.Examples.csproj.BuildWithSkipAnalyzers',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\VirusTotalNet.Examples.csproj.CopyComplete',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\VirusTotalNet.Examples.csproj.CopyComplete',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\VirusTotalNet.Examples.csproj.CoreCompileInputs.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\VirusTotalNet.Examples.csproj.CoreCompileInputs.cache',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\VirusTotalNet.Examples.csproj.FileListAbsolute.txt',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\VirusTotalNet.Examples.csproj.FileListAbsolute.txt',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\VirusTotalNet.Examples.genruntimeconfig.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\VirusTotalNet.Examples.genruntimeconfig.cache',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\VirusTotalNet.Examples.pdb',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\VirusTotalNet.Examples.pdb',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\VirusTotalNet.Examples.sourcelink.json',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\Debug\\net7.0\\VirusTotalNet.Examples.sourcelink.json',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\VirusTotalNet.Examples.csproj.nuget.dgspec.json',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\VirusTotalNet.Examples.csproj.nuget.dgspec.json',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\VirusTotalNet.Examples.csproj.nuget.g.props',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\VirusTotalNet.Examples.csproj.nuget.g.props',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\VirusTotalNet.Examples.csproj.nuget.g.targets',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\VirusTotalNet.Examples.csproj.nuget.g.targets',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet.Examples\\obj\\project.assets.json',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\project.assets.json',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet.Examples\\obj\\project.nuget.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Examples\\obj\\project.nuget.cache',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet.Tests\\CommentTests.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\CommentTests.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet.Tests\\DateTimeParserTests.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\DateTimeParserTests.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet.Tests\\DomainReportTests.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\DomainReportTests.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet.Tests\\FileReportTests.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\FileReportTests.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet.Tests\\FileRescanTests.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\FileRescanTests.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet.Tests\\FileScanTests.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\FileScanTests.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet.Tests\\GeneralTests.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\GeneralTests.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet.Tests\\IPReportTests.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\IPReportTests.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet.Tests\\Properties\\AssemblyInfo.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\Properties\\AssemblyInfo.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet.Tests\\ResourceHelperTests.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\ResourceHelperTests.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet.Tests\\TestDataTests.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\TestDataTests.cs',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\TestInternals\\FailingContractResolver.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\TestInternals\\FailingContractResolver.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet.Tests\\TestInternals\\TestBase.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\TestInternals\\TestBase.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet.Tests\\TestInternals\\TestData.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\TestInternals\\TestData.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet.Tests\\UrlReportTests.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\UrlReportTests.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet.Tests\\UrlScanTests.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\UrlScanTests.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet.Tests\\VirusTotalNet.Tests.csproj',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\VirusTotalNet.Tests.csproj',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\VirusTotalNet.Tests.deps.json',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\VirusTotalNet.Tests.deps.json',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\VirusTotalNet.Tests.pdb',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\VirusTotalNet.Tests.pdb',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\VirusTotalNet.Tests.runtimeconfig.json',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\VirusTotalNet.Tests.runtimeconfig.json',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\VirusTotalNet.pdb',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\bin\\Debug\\net7.0\\VirusTotalNet.pdb',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\.NETCoreApp,Version=v7.0.AssemblyAttributes.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\.NETCoreApp,Version=v7.0.AssemblyAttributes.cs',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\VirusTotalNet.Tests.AssemblyInfo.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\VirusTotalNet.Tests.AssemblyInfo.cs',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\VirusTotalNet.Tests.AssemblyInfoInputs.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\VirusTotalNet.Tests.AssemblyInfoInputs.cache',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\VirusTotalNet.Tests.GeneratedMSBuildEditorConfig.editorconfig',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\VirusTotalNet.Tests.GeneratedMSBuildEditorConfig.editorconfig',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\VirusTotalNet.Tests.assets.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\VirusTotalNet.Tests.assets.cache',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\VirusTotalNet.Tests.csproj.AssemblyReference.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\VirusTotalNet.Tests.csproj.AssemblyReference.cache',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\VirusTotalNet.Tests.csproj.BuildWithSkipAnalyzers',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\VirusTotalNet.Tests.csproj.BuildWithSkipAnalyzers',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\VirusTotalNet.Tests.csproj.CopyComplete',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\VirusTotalNet.Tests.csproj.CopyComplete',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\VirusTotalNet.Tests.csproj.CoreCompileInputs.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\VirusTotalNet.Tests.csproj.CoreCompileInputs.cache',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\VirusTotalNet.Tests.csproj.FileListAbsolute.txt',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\VirusTotalNet.Tests.csproj.FileListAbsolute.txt',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\VirusTotalNet.Tests.genruntimeconfig.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\VirusTotalNet.Tests.genruntimeconfig.cache',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\VirusTotalNet.Tests.pdb',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\VirusTotalNet.Tests.pdb',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\VirusTotalNet.Tests.sourcelink.json',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\Debug\\net7.0\\VirusTotalNet.Tests.sourcelink.json',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\VirusTotalNet.Tests.csproj.nuget.dgspec.json',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\VirusTotalNet.Tests.csproj.nuget.dgspec.json',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\VirusTotalNet.Tests.csproj.nuget.g.props',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\VirusTotalNet.Tests.csproj.nuget.g.props',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\VirusTotalNet.Tests.csproj.nuget.g.targets',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\VirusTotalNet.Tests.csproj.nuget.g.targets',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet.Tests\\obj\\project.assets.json',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\project.assets.json',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet.Tests\\obj\\project.nuget.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.Tests\\obj\\project.nuget.cache',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet.sln',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet.sln',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\Enums\\ResourceType.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Enums\\ResourceType.cs',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Exceptions\\AccessDeniedException.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Exceptions\\AccessDeniedException.cs',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Exceptions\\InvalidDateTimeException.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Exceptions\\InvalidDateTimeException.cs',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Exceptions\\InvalidResourceException.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Exceptions\\InvalidResourceException.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\Exceptions\\RateLimitException.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Exceptions\\RateLimitException.cs',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Exceptions\\ResourceLimitException.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Exceptions\\ResourceLimitException.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\Exceptions\\SizeLimitException.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Exceptions\\SizeLimitException.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\Helpers\\HashHelper.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Helpers\\HashHelper.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\Helpers\\ResourcesHelper.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Helpers\\ResourcesHelper.cs',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Internal\\DateTimeParsers\\UnixTimeConverter.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Internal\\DateTimeParsers\\UnixTimeConverter.cs',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Internal\\DateTimeParsers\\YearMonthDayConverter.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Internal\\DateTimeParsers\\YearMonthDayConverter.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\Internal\\Helpers\\EnumHelper.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Internal\\Helpers\\EnumHelper.cs',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Internal\\Objects\\LargeFileUpload.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Internal\\Objects\\LargeFileUpload.cs',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Internal\\Other\\CustomURLEncodedContent.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Internal\\Other\\CustomURLEncodedContent.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\Objects\\DetectedUrl.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Objects\\DetectedUrl.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\Objects\\DomainResolution.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Objects\\DomainResolution.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\Objects\\IPResolution.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Objects\\IPResolution.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\Objects\\Sample.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Objects\\Sample.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\Objects\\SampleWithDate.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Objects\\SampleWithDate.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\Objects\\ScanEngine.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Objects\\ScanEngine.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\Objects\\UrlScanEngine.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Objects\\UrlScanEngine.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\Objects\\UserComment.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Objects\\UserComment.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\Objects\\WebutationInfo.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Objects\\WebutationInfo.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\Objects\\WotInfo.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Objects\\WotInfo.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\Properties\\AssemblyInfo.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Properties\\AssemblyInfo.cs',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\ResponseCodes\\CommentResponseCode.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\ResponseCodes\\CommentResponseCode.cs',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\ResponseCodes\\DomainResponseCode.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\ResponseCodes\\DomainResponseCode.cs',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\ResponseCodes\\FileReportResponseCode.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\ResponseCodes\\FileReportResponseCode.cs',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\ResponseCodes\\IPReportResponseCode.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\ResponseCodes\\IPReportResponseCode.cs',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\ResponseCodes\\RescanResponseCode.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\ResponseCodes\\RescanResponseCode.cs',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\ResponseCodes\\ScanFileResponseCode.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\ResponseCodes\\ScanFileResponseCode.cs',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\ResponseCodes\\UrlReportResponseCode.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\ResponseCodes\\UrlReportResponseCode.cs',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\ResponseCodes\\UrlScanResponseCode.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\ResponseCodes\\UrlScanResponseCode.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\Results\\CommentResult.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Results\\CommentResult.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\Results\\CreateCommentResult.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Results\\CreateCommentResult.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\Results\\DomainReport.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Results\\DomainReport.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\Results\\FileReport.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Results\\FileReport.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\Results\\IPReport.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Results\\IPReport.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\Results\\RescanResult.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Results\\RescanResult.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\Results\\ScanResult.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Results\\ScanResult.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\Results\\UrlReport.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Results\\UrlReport.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\Results\\UrlScanResult.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\Results\\UrlScanResult.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\VirusTotal.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\VirusTotal.cs',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\VirusTotalNet.csproj',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\VirusTotalNet.csproj',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\bin\\Debug\\netstandard2.0\\VirusTotalNet.deps.json',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\bin\\Debug\\netstandard2.0\\VirusTotalNet.deps.json',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\bin\\Debug\\netstandard2.0\\VirusTotalNet.pdb',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\bin\\Debug\\netstandard2.0\\VirusTotalNet.pdb',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard1.6\\.NETStandard,Version=v1.6.AssemblyAttributes.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard1.6\\.NETStandard,Version=v1.6.AssemblyAttributes.cs',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard1.6\\VirusTotalNet.AssemblyInfo.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard1.6\\VirusTotalNet.AssemblyInfo.cs',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard1.6\\VirusTotalNet.AssemblyInfoInputs.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard1.6\\VirusTotalNet.AssemblyInfoInputs.cache',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard1.6\\VirusTotalNet.GeneratedMSBuildEditorConfig.editorconfig',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard1.6\\VirusTotalNet.GeneratedMSBuildEditorConfig.editorconfig',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.0\\.NETStandard,Version=v2.0.AssemblyAttributes.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.0\\.NETStandard,Version=v2.0.AssemblyAttributes.cs',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.0\\VirusTotalNet.AssemblyInfo.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.0\\VirusTotalNet.AssemblyInfo.cs',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.0\\VirusTotalNet.AssemblyInfoInputs.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.0\\VirusTotalNet.AssemblyInfoInputs.cache',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.0\\VirusTotalNet.GeneratedMSBuildEditorConfig.editorconfig',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.0\\VirusTotalNet.GeneratedMSBuildEditorConfig.editorconfig',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.0\\VirusTotalNet.assets.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.0\\VirusTotalNet.assets.cache',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.0\\VirusTotalNet.csproj.AssemblyReference.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.0\\VirusTotalNet.csproj.AssemblyReference.cache',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.0\\VirusTotalNet.csproj.BuildWithSkipAnalyzers',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.0\\VirusTotalNet.csproj.BuildWithSkipAnalyzers',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.0\\VirusTotalNet.csproj.CoreCompileInputs.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.0\\VirusTotalNet.csproj.CoreCompileInputs.cache',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.0\\VirusTotalNet.csproj.FileListAbsolute.txt',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.0\\VirusTotalNet.csproj.FileListAbsolute.txt',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.0\\VirusTotalNet.pdb',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.0\\VirusTotalNet.pdb',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.0\\VirusTotalNet.sourcelink.json',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.0\\VirusTotalNet.sourcelink.json',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.1\\.NETStandard,Version=v2.1.AssemblyAttributes.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.1\\.NETStandard,Version=v2.1.AssemblyAttributes.cs',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.1\\VirusTotalNet.AssemblyInfo.cs',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.1\\VirusTotalNet.AssemblyInfo.cs',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.1\\VirusTotalNet.AssemblyInfoInputs.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.1\\VirusTotalNet.AssemblyInfoInputs.cache',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.1\\VirusTotalNet.GeneratedMSBuildEditorConfig.editorconfig',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.1\\VirusTotalNet.GeneratedMSBuildEditorConfig.editorconfig',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.1\\VirusTotalNet.assets.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.1\\VirusTotalNet.assets.cache',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.1\\VirusTotalNet.csproj.AssemblyReference.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\Debug\\netstandard2.1\\VirusTotalNet.csproj.AssemblyReference.cache',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\VirusTotalNet.csproj.nuget.dgspec.json',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\VirusTotalNet.csproj.nuget.dgspec.json',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\VirusTotalNet.csproj.nuget.g.props',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\VirusTotalNet.csproj.nuget.g.props',
+   'DATA'),
+  ('VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\VirusTotalNet.csproj.nuget.g.targets',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\VirusTotalNet.csproj.nuget.g.targets',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\obj\\project.assets.json',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\project.assets.json',
+   'DATA'),
+  ('VirusTotal Solution\\src\\VirusTotalNet\\obj\\project.nuget.cache',
+   'C:\\Users\\Owner\\Desktop\\EDR\\EDR project\\Merged\\EDR\\VirusTotal '
+   'Solution\\src\\VirusTotalNet\\obj\\project.nuget.cache',
+   'DATA'),
   ('base_library.zip',
    'C:\\Users\\Owner\\Desktop\\EDR\\EDR '
    'project\\Merged\\EDR\\build\\DotnetProjectLunch\\base_library.zip',
@@ -222,7 +2714,7 @@
  [],
  False,
  False,
- 1716210111,
+ 1716229495,
  [('run.exe',
    'C:\\Users\\Owner\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\run.exe',
    'EXECUTABLE')],

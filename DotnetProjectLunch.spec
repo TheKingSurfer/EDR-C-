@@ -5,7 +5,7 @@ a = Analysis(
     ['DotnetProjectLunch.py'],
     pathex=[],
     binaries=[],
-    datas=[],
+    datas=[('C:/Users/Owner/Desktop/EDR/EDR project/Merged/EDR/EDR.sln', '.'), ('C:/Users/Owner/Desktop/EDR/EDR project/Merged/EDR/Agent Solution', 'Agent Solution'), ('C:/Users/Owner/Desktop/EDR/EDR project/Merged/EDR/Server Solution', 'Server Solution'), ('C:/Users/Owner/Desktop/EDR/EDR project/Merged/EDR/DataService', 'DataService'), ('C:/Users/Owner/Desktop/EDR/EDR project/Merged/EDR/VirusTotal Solution', 'VirusTotal Solution')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
