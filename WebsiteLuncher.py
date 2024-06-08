@@ -1,5 +1,4 @@
 import subprocess
-import os
 import threading
 
 def start_process(command, cwd=None, wait=False):
@@ -23,6 +22,11 @@ def start_process(command, cwd=None, wait=False):
                     break
                 if error:
                     print(error.strip())
+            
+            # Close process streams
+            process.stdout.close()
+            process.stderr.close()
+            process.wait()
         else:
             # Asynchronously read and print the output and errors
             def print_output(process):
@@ -33,37 +37,22 @@ def start_process(command, cwd=None, wait=False):
                     if line:
                         print(line.strip())
 
+                # Close process streams after reading
+                process.stdout.close()
+                process.stderr.close()
+                process.wait()
+
             # Create a thread to handle the output printing
             threading.Thread(target=print_output, args=(process,), daemon=True).start()
     except Exception as e:
         print(f"An error occurred while starting process: {e}")
 
-def build_project(solution_path):
-    # Path to MSBuild.exe, change this according to your Visual Studio installation
-    msbuild_path = r"C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\MSBuild.exe"
-    
-    # Build the project
-    build_command = f'"{msbuild_path}" "{solution_path}" /p:Configuration=Debug'
-    result = subprocess.run(build_command, shell=True, capture_output=True, text=True)
-    
-    if result.returncode == 0:
-        print("Build succeeded")
-        return True
-    else:
-        print("Build failed")
-        print(result.stdout)
-        print(result.stderr)
-        return False
-
 def main():
-    website_project_path = r"C:\Users\Owner\Desktop\edr-website-mui"
+    # Corrected path to the npm project folder
+    website_project_path = r"..\..\..\..\edr-Website-mui"
     
     print("Starting npm project...")
     start_process("npm start", cwd=website_project_path, wait=True)
-    
-   
-
-   
 
 if __name__ == "__main__":
     main()

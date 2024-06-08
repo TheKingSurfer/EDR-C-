@@ -220,8 +220,7 @@ class Server
                         {
                             var executableHashCode = jsonObject["ExecutableHashCode"]?.ToString();
                             if (!string.IsNullOrEmpty(executableHashCode))
-                            {
-                                // TODO: call the function and use VT to check the file hash code 
+                            { 
                                 SpecialEvents(jsonObject, clientStream, tcpClient);
                             }
                         }else if (jsonObject["EventName"]?.ToString() == "ProcessStarted")
